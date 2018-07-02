@@ -2,3 +2,6 @@ Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/ra
 This is a cool app
 It sure is!
 I just created a branch for the usermodel
+
+
+Damian passed by here
