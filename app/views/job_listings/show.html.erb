@@ -9,7 +9,7 @@
 <div>
   <p><%= @job_listing.description %></p>
   <p><%= @job_listing.event.venue %></p>
-  <p><%= @job_listing.start_date %> -- <%= @job_listing.end_date %></p>
+  <p><%= @job_listing.start_date.strftime("%d %m %Y") %> -- <%= @job_listing.end_date.strftime("%d %m %Y") %></p>
 </div>
 
 <div>
