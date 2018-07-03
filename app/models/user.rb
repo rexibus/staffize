@@ -5,13 +5,14 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :events, dependent: :destroy
+
   has_many :job_listings, through: :events, dependent: :destroy
   has_many :bookings, dependent: :destroy
   has_many :reviews, through: :bookings, dependent: :destroy
 
   validates :role, inclusion: { in: ["candidate", "employer"]}
-  before_validation :strip_email
-  validates :email, presence: true, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
+  # before_validation :strip_email
+  # validates :email, presence: true, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
   # validates :first_name, :last_name, :email, :address, presence: true
   # validates :zip_code, :province, :country, :position, presence: true
 
