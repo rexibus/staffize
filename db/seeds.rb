@@ -20,7 +20,7 @@ job_two = JobListing.new(title: "Hostess wanted for corporate congress", categor
 job_two.event = event_one
 job_two.save
 
-job_twhree = JobListing.new(title: "Hostess wanted for corporate congress", category: "hostess", description: "hostess needed for corporate congress", start_date: "01/09/2018", end_date: "04/09/2018", salary: "200", currency: "EUR")
+job_three = JobListing.new(title: "Hostess wanted for corporate congress", category: "hostess", description: "hostess needed for corporate congress", start_date: "01/09/2018", end_date: "04/09/2018", salary: "200", currency: "EUR")
 job_three.event = event_one
 job_three.save
 
