@@ -32,8 +32,10 @@ class BookingsController < ApplicationController
 
 
   def destroy
-    @booking = Booking.where(:user_id == current_user.id)
+    @bookings = Booking.where(:user_id == current_user.id)
+    @booking = @bookings.find(params[:id])
     @booking.destroy
+    redirect_to job_listing_bookings_path
   end
 
   private
