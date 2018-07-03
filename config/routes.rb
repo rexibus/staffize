@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resources :job_listings do
     resources :bookings
+    # only: [:create, new, edit, delete]
   end
 
   root to: 'pages#home'
