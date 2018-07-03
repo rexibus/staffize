@@ -1,7 +1,13 @@
+<div>
+  <%= form_tag(job_listings_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Jobs" %>
+    <%= submit_tag "Search", :name => nil %>
+<% end %>
+</div>
+
 <h1>Job Listings</h1>
-<p>Find me in app/views/job_listings/index.html.erb</p>
 
 <% @job_listings.each do |job| %>
-<ul><li><%= job.title %></li></ul>
+<ul><li><%= link_to job.title, job_listing_path(job) %></li></ul>
 <% end %>
 
