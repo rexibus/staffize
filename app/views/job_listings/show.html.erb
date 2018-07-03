@@ -1,1 +1,20 @@
-<%= @job_listing.title %>
+<div>
+  <h1><%= @job_listing.title %></h1>
+</div>
+
+<div>
+  <h3><%= @job_listing.salary %> <%= @job_listing.currency %></h3>
+</div>
+
+<div>
+  <p><%= @job_listing.description %></p>
+  <p><%= @job_listing.event.venue %></p>
+  <p><%= @job_listing.start_date.strftime("%d %m %Y") %> -- <%= @job_listing.end_date.strftime("%d %m %Y") %></p>
+  <p><%= @counter %> applied to this job<p>
+</div>
+
+<div>
+  <%= link_to "Apply for this job", user_session_path, :class => "btn btn-primary" %>
+</div>
+
+<%= link_to "Back", job_listings_path %>
