@@ -5,8 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :events, dependent: :destroy
+  has_many :job_listings, though: :events, dependent: :destroy
   has_many :bookings, dependent: :destroy
-  has_many :reviews, dependent: :destroy
+  has_many :reviews, through: :bookings, dependent: :destroy
 
   validates :role, inclusion: { in: ["candidate", "employer"]}
   before_validation :strip_email
