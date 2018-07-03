@@ -1,7 +1,6 @@
 class BookingsController < ApplicationController
   before_action :set_job_listing
-  # before_action :authenticate_user!
-
+  before_action :authenticate_user!
 
   def index
     @bookings = Booking.all
@@ -12,15 +11,19 @@ class BookingsController < ApplicationController
   end
 
   def create
-    # job_listing_id = params[:user][:job_listing_id]
-    job_listing = JobListing.find(params[:id])
     @booking = Booking.new(booking_params)
-    @booking.job_listing = @booking
+    @booking.status = "applied"
+    @booking.job_listing_id = @job_listing.id
+    @booking.user_id = current_user.id
+
     if @booking.save
-      redirect_to cocktail_path(@cocktail)
+      flash[:notice] = "You have successfully applied for this job"
+      redirect_to job_listing_path(@job_listing)
     else
-      render "job_listing/show" #syntax ?
+      flash[:alert] = "Your application did not go through"
+      redirect_to job_listing_path(@job_listing)
     end
+
   end
 
   def show
@@ -36,7 +39,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:status, :start_date, :end_date, :id)
+    params.require(:booking).permit(:status, :start_date, :end_date)
   end
 
   def set_job_listing
