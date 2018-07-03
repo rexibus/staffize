@@ -1,0 +1,10 @@
+rails g migration AddFieldsToUsers company_name:string title:string first_name:string last_name:string email:string address:string zip_code:string province:string country:string vat_number:string land_phone:string mobile_phone:string gender:string ssn:string position:string date_of_birth:datetime experience:text language:string
+
+rails g model Event user:references title:string description:text start_date:datetime end_date:datetime venue:text venue_detail:text address:string zip_code:string province:string country:string
+
+rails g model JobListing event:references title:string category:string description:text requirement:text  schedule_detail:text salary:integer start_date:datetime end_date:datetime gender:string currency:string
+
+rails g model Booking user:references job_listing:references start_date:datetime end_date:datetime status:string
+
+rails g model Review user:references booking:references rating:integer details:text
+
