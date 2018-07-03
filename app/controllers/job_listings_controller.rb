@@ -4,6 +4,7 @@ class JobListingsController < ApplicationController
   end
 
   def show
+    @job_listing = JobListing.find(params[:id])
 
   end
 end
