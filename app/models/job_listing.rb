@@ -6,6 +6,6 @@ class JobListing < ApplicationRecord
   # validates :start_date, :end_date, :currency, presence: true
 
   def self.search(search)
-    where("title LIKE ? OR category LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
+    where("title LIKE ? OR category LIKE ?", "%#{search}%", "%#{search}%")
   end
 end
