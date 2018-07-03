@@ -1,4 +1,5 @@
 class JobListingsController < ApplicationController
+
   def index
     @job_listings = JobListing.all
     if params[:search]
@@ -10,6 +11,7 @@ class JobListingsController < ApplicationController
 
   def show
     set_job_listing
+    count
   end
 
   private
@@ -17,4 +19,11 @@ class JobListingsController < ApplicationController
   def set_job_listing
     @job_listing = JobListing.find(params[:id])
   end
+
+  def count
+    bookings = Booking.where(:status == "applied")
+    @counter = bookings.count
+    @counter > 0 ? @counter : "Be the first to apply"
+  end
+
 end
