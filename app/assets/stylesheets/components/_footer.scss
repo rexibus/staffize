@@ -1,13 +1,15 @@
 
-*{
-  padding: 0px;
+
+
+#footer-title {
+  text-align: center;
   margin: 0px;
-  box-sizing: border-box;
 }
 
 .footer {
+  margin: 0px;
+  padding: 10px;
   background: #3895D3;
-  display: flex;
   width: 100%;
   border: #3895D3;
   background: #3895D3;
@@ -16,3 +18,24 @@
 
 }
 
+.footer-stuff {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+
+
+}
+
+.item {
+  flex-direction: row;
+
+}
+
+.copyright {
+  text-align: center;
+}
+
+p {
+  margin: 0px 50px;
+}
