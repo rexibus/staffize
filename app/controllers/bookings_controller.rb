@@ -1,5 +1,4 @@
 class BookingsController < ApplicationController
-  before_action :set_job_listing
   before_action :authenticate_user!
 
   def index
@@ -7,14 +6,17 @@ class BookingsController < ApplicationController
   end
 
   def show
+    set_job_listing
     @booking = Booking.find(params[:id])
   end
 
   def new
+    set_job_listing
     @booking = Booking.new
   end
 
   def create
+    set_job_listing
     @booking = Booking.new(booking_params)
     @booking.status = "applied"
     @booking.job_listing_id = @job_listing.id
@@ -35,7 +37,7 @@ class BookingsController < ApplicationController
     @bookings = Booking.where(:user_id == current_user.id)
     @booking = @bookings.find(params[:id])
     @booking.destroy
-    redirect_to job_listing_bookings_path
+    redirect_to bookings_path
   end
 
   private
