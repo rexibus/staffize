@@ -3,6 +3,11 @@
     <ul>
       <li>Login</li>
       <li>Sign Up</li>
+        <% if user_signed_in? %>
+
+      <!-- Links when logged in -->
+      <li><%= link_to "My bookings", bookings_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+      <% end %>
     </ul>
   </div>
 </div>
