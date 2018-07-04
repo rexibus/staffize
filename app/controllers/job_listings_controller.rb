@@ -11,13 +11,23 @@ class JobListingsController < ApplicationController
 
   def show
     set_job_listing
+    set_event
     count
+  end
+
+  def new
+    raise
+
   end
 
   private
 
   def set_job_listing
     @job_listing = JobListing.find(params[:id])
+  end
+
+  def set_event
+    @event = @job_listing.event
   end
 
   def count
