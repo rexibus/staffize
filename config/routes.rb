@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   resources :events do
     resources :job_listings, only: [:new, :create, :edit, :update] do
       resources :bookings, only: [:new, :create, :edit, :update, :index]
-      end
     end
+  end
 
   resources :job_listings, only: [:index, :show, :destroy]
   resources :bookings, only: [:destroy]
