@@ -1,41 +1,53 @@
 class BookingsController < ApplicationController
-  before_action :set_job_listing
-  # before_action :authenticate_user!
 
+  before_action :set_job_listing, only: [:show, :new, :create, :edit, :update]
+
+  before_action :authenticate_user!
+  
   def index
-    @bookings = Booking.all
+    @bookings = Booking.where(:user_id == current_user.id)
+  end
+
+  def show
+    @booking = Booking.find(params[:id])
   end
 
   def new
     @booking = Booking.new
   end
 
-  def create
-    # job_listing_id = params[:user][:job_listing_id]
-    job_listing = JobListing.find(params[:id])
-    @booking = Booking.new(booking_params)
-    @booking.job_listing = @booking
-    if @booking.save
-      redirect_to cocktail_path(@cocktail)
-    else
-      render "job_listing/show" #syntax ?
-    end
+  def my_bookings
+    @bookings = Booking.where(user_id: current_user.id)
   end
 
-  def show
-    @booking = Booking.find(params[:id])
-    @job_listings = JobListing.where(booking_id: params[:id])
+  def create
+    @event = @job_listing.event
+    @booking = Booking.new(booking_params)
+    @booking.job_listing_id = @job_listing.id
+    @booking.user_id = current_user.id
+
+    if @booking.save
+      flash[:notice] = "You have successfully applied for this job"
+      redirect_to job_listing_path(@job_listing)
+    else
+      flash[:alert] = "Your have already applied for this job"
+      redirect_to job_listing_path(@job_listing)
+    end
+
   end
+
 
   def destroy
-    @booking = Booking.find(params[:id])
+    @bookings = Booking.where(:user_id == current_user.id)
+    @booking = @bookings.find(params[:id])
     @booking.destroy
+    redirect_to bookings_path
   end
 
   private
 
   def booking_params
-    params.require(:booking).permit(:status, :start_date, :end_date, :id)
+    params.require(:booking).permit(:status, :start_date, :end_date)
   end
 
   def set_job_listing

@@ -1,2 +1,13 @@
+<h2>Are you sure you want to apply for this job?</h2>
+<hr>
 
-<h2>New Bookings Page</h2>
+
+<%= simple_form_for @booking, url: event_job_listing_bookings_path,  method: :post do |f| %>
+  <%= f.input :start_date, :input_html => { :value => @job_listing.start_date }, as: :hidden %>
+  <%= f.input :end_date, :input_html => { :value => @job_listing.end_date }, as: :hidden %>
+  <%= f.button :submit, class: "btn-primary"%>
+<% end %>
+<hr>
+
+
+<%= link_to "Go back", job_listing_path(@job_listing) %>
