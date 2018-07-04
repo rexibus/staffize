@@ -1,5 +1,5 @@
-//= require rails-ujs
-//= require_tree .
+navbar.js
+
 var nav = document.getElementById('nav');
 
   window.onscroll = function(){
