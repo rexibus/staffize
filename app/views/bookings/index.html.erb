@@ -5,6 +5,10 @@
   <h2><%= booking.job_listing.title %></h2>
   <h4><%= booking.status %></h4>
   <h4><%= booking.start_date %></h4>
+  <h4><%= booking.end_date %></h4>
+  <%= link_to "Delete", job_listing_booking_path(@job_listing, booking),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
 <% end %>
 </div>
 

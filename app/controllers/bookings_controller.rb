@@ -3,7 +3,11 @@ class BookingsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @bookings = Booking.all
+    @bookings = Booking.where(:user_id == current_user.id)
+  end
+
+  def show
+    @booking = Booking.find(params[:id])
   end
 
   def new
@@ -26,14 +30,12 @@ class BookingsController < ApplicationController
 
   end
 
-  def show
-    @booking = Booking.find(params[:id])
-    @job_listings = JobListing.where(booking_id: params[:id])
-  end
 
   def destroy
-    @booking = Booking.find(params[:id])
+    @bookings = Booking.where(:user_id == current_user.id)
+    @booking = @bookings.find(params[:id])
     @booking.destroy
+    redirect_to job_listing_bookings_path
   end
 
   private
