@@ -1,4 +1,5 @@
 class JobListingsController < ApplicationController
+  before_action :set_event, only: [:new, :create]
 
   def index
     @job_listings = JobListing.all
@@ -11,14 +12,27 @@ class JobListingsController < ApplicationController
 
   def show
     set_job_listing
-    set_event
+    @event = @job_listing.event
     count
   end
 
   def new
-    raise
-
+    @job_listing = JobListing.new
   end
+
+  def create
+    @job_listing = JobListing.new(job_listing_params)
+    @job_listing.event = @event
+
+    if @job_listing.save
+      flash[:notice] = "You have successfully created a new job"
+      redirect_to job_listing_path(@job_listing)
+    else
+      flash[:alert] = "Your job creation did not go through"
+      redirect_to new_event_job_listing_path(@job_listing)
+    end
+  end
+
 
   private
 
@@ -27,13 +41,18 @@ class JobListingsController < ApplicationController
   end
 
   def set_event
-    @event = @job_listing.event
+    @event = Event.find(params[:event_id])
   end
 
   def count
     bookings = Booking.where(:status == "applied")
     @counter = bookings.count
     @counter > 0 ? @counter : "Be the first to apply"
+  end
+
+  def job_listing_params
+    params.require(:job_listing).permit(:title, :salary, :start_date, :end_date, :event_id)
+
   end
 
 end
