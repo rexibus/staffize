@@ -1,8 +1,19 @@
 
-<div>
-<ul>
-  <li><%= link_to "I am looking for job", job_listings_path %></li>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(15,15,15,0.8) 100%, rgba(0,36,61,0.6) 5%), url(<%= image_path 'StaffizeLandingPage' %>)">
 
-  <li><%= link_to "I am creating a job position", new_event_path %></li>
-</ul>
+  <div class = "banner-container">
+    <div class = "banner-text-container">
+      <h1>STAFFIZE</h1>
+      <h3>Find work and workers for your next event on the go</h3>
+    </div>
+  </div>
+
+  <div class = "home-buttons">
+
+    <%= link_to "Find a job", job_listings_path, class:"btn btn-outline" %>
+    <!-- TODO put path events -->
+    <%= link_to "Create Job", new_event_path, class:"btn btn-outline" %>
+
+  </div>
 </div>
+
