@@ -1,0 +1,19 @@
+<h1>That could be displayed in the canditates view ?</h1>
+<p>Find me in app/views/events/index.html.erb</p>
+
+
+<div>
+  <%= form_tag(events_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Event" %>
+    <%= submit_tag "Search", :name => nil %>
+<% if @events.blank? %>
+  <h4>There are no events containing the term <%= params[:search] %>.</h4>
+<% end %>
+<% end %>
+</div>
+
+<h1>Events</h1>
+
+<% @events.each do |event| %>
+<ul><li><%= link_to event.title, events_path(event) %></li></ul>
+<% end %>
