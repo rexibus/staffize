@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_job_listing
+  before_action :set_job_listing, only: [:show, :create, :update]
   before_action :authenticate_user!
 
   def index
@@ -11,7 +11,12 @@ class BookingsController < ApplicationController
   end
 
   def new
+    raise
     @booking = Booking.new
+  end
+
+  def my_bookings
+    @bookings = Booking.where(user_id: current_user.id)
   end
 
   def create
@@ -32,6 +37,7 @@ class BookingsController < ApplicationController
 
 
   def destroy
+    raise
     @bookings = Booking.where(:user_id == current_user.id)
     @booking = @bookings.find(params[:id])
     @booking.destroy

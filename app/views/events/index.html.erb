@@ -15,5 +15,6 @@
 <h1>Events</h1>
 
 <% @events.each do |event| %>
-<ul><li><%= link_to event.title, events_path(event) %></li></ul>
+<ul><li><%= link_to event.title, event_path(event) %></li></ul>
 <% end %>
+<%= link_to "new event", new_event_path %>
