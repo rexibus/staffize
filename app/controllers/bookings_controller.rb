@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_job_listing, only: [:show, :create, :update]
+  before_action :set_job_listing, only: [:show, :new, :create, :edit, :update]
   before_action :authenticate_user!
 
   def index
@@ -11,7 +11,6 @@ class BookingsController < ApplicationController
   end
 
   def new
-    raise
     @booking = Booking.new
   end
 
@@ -20,8 +19,8 @@ class BookingsController < ApplicationController
   end
 
   def create
+    @event = @job_listing.event
     @booking = Booking.new(booking_params)
-    @booking.status = "applied"
     @booking.job_listing_id = @job_listing.id
     @booking.user_id = current_user.id
 
@@ -29,7 +28,7 @@ class BookingsController < ApplicationController
       flash[:notice] = "You have successfully applied for this job"
       redirect_to job_listing_path(@job_listing)
     else
-      flash[:alert] = "Your application did not go through"
+      flash[:alert] = "Your have already applied for this job"
       redirect_to job_listing_path(@job_listing)
     end
 
@@ -37,11 +36,10 @@ class BookingsController < ApplicationController
 
 
   def destroy
-    raise
     @bookings = Booking.where(:user_id == current_user.id)
     @booking = @bookings.find(params[:id])
     @booking.destroy
-    redirect_to job_listing_bookings_path
+    redirect_to bookings_path
   end
 
   private
