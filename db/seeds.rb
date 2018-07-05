@@ -6,6 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Booking.delete_all
+JobListing.delete_all
+Event.delete_all
+User.delete_all
 
 job_one = JobListing.new(title: "ArbiEvents is seeking for hostess for corporate congress",
                         category: "hostess",
@@ -116,7 +120,7 @@ job_six = JobListing.new(title: "Steward for cinema exhibition",
 
 event_five = Event.new(title: "Venice cinema exhibition",
                       description: "Showing of new indie films",
-                      start_date: "22/07/2018", end_date: "26/09/2018",
+                      start_date: "22/07/2018", end_date: "26/07/2018",
                       venue: "Different venues in Lido di Venezia", address: "Lido Di Venezia, Venezia, VE")
 
 employer_five = User.new(company_name: "Still-Arbi", role: "employer", email: "arbi@still.com", password: "arbi@still.com")
@@ -138,7 +142,7 @@ job_seven = JobListing.new(title: "Hostess for Arbi's soccer game",
 
 event_six = Event.new(title: "Arbi's soccer game",
                       description: "Soccer game to prove who's the best player",
-                      start_date: "10/07/2018", end_date: "10/09/2018",
+                      start_date: "10/07/2018", end_date: "10/07/2018",
                       venue: "Campo comunale Cologna Spiaggia",
                       address: "Via C. Romualdi, Piane Tordino, Cologna Spiaggia")
 
