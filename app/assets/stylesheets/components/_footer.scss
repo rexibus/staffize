@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+body {
+   min-height: 200px;
+   margin-bottom: 100px;
+   clear: both;
+}
+
 
 .footer {
   height: 100px;

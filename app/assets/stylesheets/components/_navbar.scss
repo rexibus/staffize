@@ -31,9 +31,8 @@
   margin: 5px;
   flex-direction: row;
   justify-content: flex-end;
-}
-
-.navbar ul li:hover {
+  &:hover {
   color: white;
   background: #3895D3;
+  }
 }

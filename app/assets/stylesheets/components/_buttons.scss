@@ -1,1 +1,17 @@
-_buttons.scss
+
+// Button style from homepage
+.btn {
+  list-style-type: none;
+  display: inline-block;
+  color: #3895D3;
+  border: 3px solid #3895D3;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 5px;
+  flex-direction: row;
+  justify-content: flex-end;
+  &:hover {
+    color: white;
+    background: #3895D3;
+  }
+}
