@@ -16,6 +16,14 @@ class JobListingsController < ApplicationController
   end
 
   def show
+    @events = Event.where.not(latitude: nil, longitude: nil)
+
+    @markers = @events.map do |e|
+      {
+        lat: e.latitude,
+        lng: e.longitude
+      }
+    end
     set_job_listing
     @event = @job_listing.event
     count
