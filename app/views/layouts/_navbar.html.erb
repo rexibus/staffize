@@ -2,11 +2,13 @@
   <div class = "navbar-items">
     <ul>
 
-      <li><%= link_to "Login", user_session_path, class: "login" %></li>
-      <li><%= link_to "Sign Up", new_user_registration_path, class: "signup" %></li>
+
       <% if user_signed_in? %>
       <!-- Links when logged in -->
       <li><%= link_to "My bookings", bookings_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+      <% else %>
+      <li><%= link_to "Login", user_session_path, class: "login" %></li>
+      <li><%= link_to "Sign Up", new_user_registration_path, class: "signup" %></li>
       <% end %>
     </ul>
   </div>
