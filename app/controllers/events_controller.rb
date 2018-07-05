@@ -8,16 +8,11 @@ class EventsController < ApplicationController
     elsif current_user.role == "candidate"
       @events = Event.all
     end
-
-
     if params[:search] && !(params[:search] == "")
       @events = @events.search_generic(params[:search]).order("created_at DESC")
     else
       @events = @events.all.order("created_at DESC")
     end
-
-
-
   end
 
   def show
