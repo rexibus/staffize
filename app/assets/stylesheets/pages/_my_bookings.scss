@@ -1,0 +1,67 @@
+
+h1 {
+  text-align:center;
+  font-weight: bold;
+}
+
+.bookings {
+  display:flex;
+  flex-direction: column;
+}
+
+.card-items {
+  border: 3px solid #3895D3;
+  background-color: rgb(40,40,40);
+  color:#3895D3;
+  box-shadow: 2px 2px 2px #3895D3;
+  padding: 16px;
+  width: 840px;
+  margin: 20px auto;
+  border-radius: 10px;
+}
+
+.bookings-buttons {
+  display:flex;
+}
+
+
+.delete-button a {
+  flex-direction: row;
+  margin: 15px;
+  color: white;
+  padding: 3px;
+  border: 3px solid white;
+  border-radius: 8px;
+  display:inline;
+  text-decoration: none;
+}
+
+.delete-button a:hover {
+  background-color: red;
+  color:white;
+  // box-shadow: 2px;
+  padding: 3px;
+  border: 3px solid red;
+  border-radius: 8px;
+}
+
+.view-button a {
+  flex-direction: row;
+  margin: 15px 0px;
+  color: white;
+  padding: 3px;
+  border: 3px solid white;
+  border-radius: 8px;
+  display:inline;
+  text-decoration: none;
+}
+
+.view-button a:hover {
+  background-color: green;
+  color:white;
+  // box-shadow: 2px;
+  padding: 3px;
+  border: 3px solid green;
+  border-radius: 8px;
+}
+
