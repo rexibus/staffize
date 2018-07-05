@@ -5,10 +5,31 @@
 
       <% if user_signed_in? %>
       <!-- Links when logged in -->
-      <li><%= link_to "My bookings", bookings_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+      <li>
+        <%= link_to "My bookings", bookings_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      </li>
+
+      <% if current_user.role == "employer" %>
+      <li>
+        <%= link_to "My events", events_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      </li>
+
+      <% elsif current_user.role == "candidate" %>
+      <li>
+        <%= link_to "Browse Events", events_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      </li>
+      <% end %>
+      <li>
+        <%= link_to "Log Out", destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      </li>
+
       <% else %>
-      <li><%= link_to "Login", user_session_path, class: "login" %></li>
-      <li><%= link_to "Sign Up", new_user_registration_path, class: "signup" %></li>
+      <li>
+        <%= link_to "Login", new_user_session_path, class: "login" %>
+      </li>
+      <li>
+        <%= link_to "Sign Up", new_user_registration_path, class: "signup" %>
+      </li>
       <% end %>
     </ul>
   </div>

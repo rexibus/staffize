@@ -3,7 +3,12 @@ class EventsController < ApplicationController
   before_action :authenticate_user!
 
   def index
+    if current_user == "employer"
+      @events = Event.where(user_id: current_user.id)
+    elsif current_user == "candidate"
       @events = Event.all
+    end
+
     if params[:search]
       @events = Event.search(params[:search]).order("created_at DESC")
     else
@@ -43,6 +48,8 @@ class EventsController < ApplicationController
   end
 
   def destroy
+    @event.destroy
+    redirect_to events_path
   end
 
   private
