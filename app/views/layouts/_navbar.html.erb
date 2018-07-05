@@ -1,36 +1,66 @@
 <div class = "navbar">
   <div class = "navbar-items">
     <ul>
-
-
       <% if user_signed_in? %>
+        <% if current_user.role == "employer" %>
+          <!-- visitor is logged in as employer -->
+          <li>
+            <%= link_to "Browse Candidates", nil, class: "navbar-wagon-item navbar-wagon-link" %>
+          </li>
 
-      <!-- Links when logged in -->
-      <li>
-        <%= link_to "My bookings", bookings_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      </li>
+          <li>
+            <%= link_to "My Events", events_path, class: "navbar-wagon-item navbar-wagon-link" %>
+          </li>
+          <li>
+            <%= link_to "My Jobs", nil, class: "navbar-wagon-item navbar-wagon-link" %>
+          </li>
 
-      <% if current_user.role == "employer" %>
-      <li>
-        <%= link_to "My events", events_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      </li>
+          <li>
+            <%= link_to "Create an Event", new_event_path, class: "navbar-wagon-item navbar-wagon-link" %>
+          </li>
 
-      <% elsif current_user.role == "candidate" %>
-      <li>
-        <%= link_to "Browse Events", events_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      </li>
-      <% end %>
-      <li>
-        <%= link_to "Log Out", destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      </li>
+        <% end %>
+
+        <% if current_user.role == "candidate" %>
+          <!-- visitor is logged in as candidate-->
+
+          <li>
+            <%= link_to "Browse Jobs", job_listings_path, class: "navbar-wagon-item navbar-wagon-link" %>
+          </li>
+
+          <li>
+            <%= link_to "My Incoming Request", nil, class: "navbar-wagon-item navbar-wagon-link" %>
+          </li>
+
+          <li>
+            <%= link_to "My Applications", nil, class: "navbar-wagon-item navbar-wagon-link" %>
+          </li>
+
+        <% end %>
+
+        <!-- visitor logged in -->
+        <li>
+          <%= link_to "Log Out", destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+        </li>
 
       <% else %>
-      <li>
-        <%= link_to "Login", new_user_session_path, class: "login" %>
-      </li>
-      <li>
-        <%= link_to "Sign Up", new_user_registration_path, class: "signup" %>
-      </li>
+        <!-- visitor is logged out -->
+
+          <li>
+            <%= link_to "Browse Candidates", nil, class: "navbar-wagon-item navbar-wagon-link" %>
+          </li>
+
+          <li>
+            <%= link_to "Browse Jobs", job_listings_path, class: "navbar-wagon-item navbar-wagon-link" %>
+          </li>
+
+          <li>
+            <%= link_to "Login", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link login" %>
+          </li>
+
+          <li>
+            <%= link_to "Sign Up", new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link signup" %>
+          </li>
       <% end %>
 
     </ul>
