@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :job_listings, only: [:index, :show, :destroy]
+  resources :job_listings, only: [:index, :show, :destroy, :create]
   resources :bookings, only: [:destroy]
   get "/bookings", to: "bookings#my_bookings"
 

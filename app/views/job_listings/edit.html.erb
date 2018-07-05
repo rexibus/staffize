@@ -1,8 +1,6 @@
-<h1>Events#edit</h1>
-<p>Find me in app/views/events/edit.html.erb</p>
+# TODO : put data into a form
 
-
-<%= form_for(@event) do |f| %>
+<%= simple_form_for [@event ,@job_listing] do |f| %>
   <div class="form-group">
     <%= f.label :title %>
     <%= f.text_field :title, class: 'form-control' %>
@@ -25,3 +23,5 @@
 
   <%= f.submit class: 'btn btn-primary' %>
 <% end %>
+
+<%= link_to "Back", job_listings_path %>
