@@ -13,6 +13,11 @@
 <% @job_listings.each do |job| %>
 <div class ="job-listing-cards">
 <h3><%= link_to job.title, job_listing_path(job) %></h3>
+<p><%= job.description %></p>
+<p>Dates: <%= job.start_date.strftime("%d %m %Y") %> // <%= job.end_date.strftime("%d %m %Y") %></p>
+<p><%= job.event.title %></p>
+<p><%= job.event.venue %></p>
+<p><%= job.salary %> <%= job.currency %></p>
 </div>
 </div>
 <% end %>
