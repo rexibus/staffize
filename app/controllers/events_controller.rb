@@ -4,10 +4,11 @@ class EventsController < ApplicationController
 
   def index
     if current_user.role == "employer"
-      @events = Event.where(user_id: current_user.id)
+      @events = current_user.events
     elsif current_user.role == "candidate"
       @events = Event.all
     end
+
     if params[:search] && !(params[:search] == "")
       @events = @events.search_generic(params[:search]).order("created_at DESC")
     else
