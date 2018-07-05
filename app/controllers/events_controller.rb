@@ -3,17 +3,20 @@ class EventsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    if current_user == "employer"
+    if current_user.role == "employer"
       @events = Event.where(user_id: current_user.id)
-    elsif current_user == "candidate"
+    elsif current_user.role == "candidate"
       @events = Event.all
     end
 
-    if params[:search]
-      @events = Event.search(params[:search]).order("created_at DESC")
+
+    if params[:search] && !(params[:search] == "")
+      @events = @events.search_generic(params[:search]).order("created_at DESC")
     else
-      @events = Event.all.order("created_at DESC")
+      @events = @events.all.order("created_at DESC")
     end
+
+
 
   end
 

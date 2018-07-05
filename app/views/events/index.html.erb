@@ -17,10 +17,19 @@
 <% @events.each do |event| %>
 <ul>
   <li>
-    <p> <strong><%= link_to event.title, event_path(event) %></strong> -- <%= link_to "Update Event", edit_event_path(event) %> -- <%= link_to "Delete Event", event_path(event),
+    <p> <strong><%= link_to event.title, event_path(event) %></strong></p>
+    <p> <%= event.description %></p>
+    <p> from: <%= event.start_date.strftime("%d/%m/%Y") %> -  to: <%= event.end_date.strftime("%d/%m/%Y") %></p>
+    <p> <%= event.venue %></p>
+    <p> <%= event.address %></p>
+      <% if current_user.role == "employer" %>
+        <p> <%= link_to "Update Event", edit_event_path(event) %> -- <%= link_to "Delete Event", event_path(event),
       method: :delete,
       data: { confirm: "Are you sure?" } %></p>
+      <% end %>
   </li>
 </ul>
 <% end %>
-<%= link_to "new event", new_event_path %>
+<% if current_user.role == "employer" %>
+  <%= link_to "new event", new_event_path %>
+<% end %>
