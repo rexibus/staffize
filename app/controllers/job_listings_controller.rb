@@ -1,5 +1,5 @@
 class JobListingsController < ApplicationController
-  before_action :set_event, only: [:new, :create]
+  before_action :set_event, only: [:new, :create, :edit, :update]
 
   def index
     @job_listings = JobListing.all
@@ -34,6 +34,24 @@ class JobListingsController < ApplicationController
   end
 
 
+  def edit
+    @job_listing = JobListing.find(params[:id])
+  end
+
+  def update
+    set_job_listing
+    @job_listing.update(job_listing_params)
+    redirect_to job_listing_path(@job_listing)
+  end
+
+  def destroy
+    @job_listings = JobListing.where(:user_id == current_user.id)
+    @job_listing = @job_listings.find(params[:id])
+    @job_listing.destroy
+    redirect_to job_listing_path(@job_listing)
+  end
+
+
   private
 
   def set_job_listing
@@ -51,7 +69,7 @@ class JobListingsController < ApplicationController
   end
 
   def job_listing_params
-    params.require(:job_listing).permit(:title, :salary, :start_date, :end_date, :event_id)
+    params.require(:job_listing).permit(:title, :description, :salary, :start_date, :end_date, :event_id)
 
   end
 
