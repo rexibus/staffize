@@ -1,9 +1,8 @@
 class BookingsController < ApplicationController
 
   before_action :set_job_listing, only: [:show, :new, :create, :edit, :update]
-
   before_action :authenticate_user!
-  
+
   def index
     @bookings = Booking.where(:user_id == current_user.id)
   end

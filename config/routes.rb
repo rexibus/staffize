@@ -7,7 +7,12 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :job_listings, only: [:index, :show, :destroy, :create]
+  resources :job_listings, only: [:index, :show, :destroy, :create] do
+    collection do
+      get "candidates" # /job_listings/candidates
+    end
+  end
+
   resources :bookings, only: [:destroy]
   get "/bookings", to: "bookings#my_bookings"
 

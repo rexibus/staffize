@@ -1,18 +1,19 @@
-<div class = "navbar">
-  <div class = "navbar-items">
+<%= link_to "Home", root_path, class: "navbar-wagon-brand" %>
+<div class="navbar">
+  <div class="navbar-items">
     <ul>
       <% if user_signed_in? %>
         <% if current_user.role == "employer" %>
           <!-- visitor is logged in as employer -->
           <li>
-            <%= link_to "Browse Candidates", nil, class: "navbar-wagon-item navbar-wagon-link" %>
+            <%= link_to "Browse Candidates", candidates_job_listings_path, class: "navbar-wagon-item navbar-wagon-link" %>
           </li>
 
           <li>
             <%= link_to "My Events", events_path, class: "navbar-wagon-item navbar-wagon-link" %>
           </li>
           <li>
-            <%= link_to "My Jobs", nil, class: "navbar-wagon-item navbar-wagon-link" %>
+            <%= link_to "My Jobs", job_listings_path, class: "navbar-wagon-item navbar-wagon-link" %>
           </li>
 
           <li>

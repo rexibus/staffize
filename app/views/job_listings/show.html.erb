@@ -13,18 +13,18 @@
   <p><%= @job_listing.start_date.strftime("%d %m %Y") %> -- <%= @job_listing.end_date.strftime("%d %m %Y") %></p>
   <p><%= @job_listing.schedule_detail %></p>
   <p><%= @job_listing.dress_code %></p>
-  <% if current_user.role == "candidate" %>
+  <% if current_user and current_user.role == "candidate" %>
     <p><%= @counter %> applied to this job<p>
   <% end %>
 </div>
 
 <div>
-  <% if current_user.role == "candidate" %>
+  <% if current_user and current_user.role == "candidate" %>
     <%= link_to "Apply for this job", new_event_job_listing_booking_path(@event,@job_listing), :class => "btn btn-primary" %>
     <% end %>
 </div>
 
-<% if current_user.role == "employer" %>
+<% if current_user and current_user.role == "employer" %>
   <p> <%= link_to "Update the job", edit_event_job_listing_path(@event) %></p>
   <p><%= link_to "Delete the job", job_listings_path,
       method: :delete,

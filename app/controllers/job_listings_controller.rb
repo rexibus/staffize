@@ -2,11 +2,16 @@ class JobListingsController < ApplicationController
   before_action :set_event, only: [:new, :create, :edit, :update]
 
   def index
-    @job_listings = JobListing.all
-    if params[:search]
-      @job_listings = JobListing.search(params[:search]).order("created_at DESC")
+    if current_user and current_user.role == "employer"
+      # User is logged in, and employer:
+      @job_listings = current_user.job_listings
     else
-      @job_listings = JobListing.all.order("created_at DESC")
+      # User is logged out, all jobs displayed:
+      if params[:search]
+        @job_listings = JobListing.search(params[:search]).order("created_at DESC")
+      else
+        @job_listings = JobListing.all.order("created_at DESC")
+      end
     end
   end
 
@@ -49,6 +54,10 @@ class JobListingsController < ApplicationController
     @job_listing = @job_listings.find(params[:id])
     @job_listing.destroy
     redirect_to job_listing_path(@job_listing)
+  end
+
+  def candidates
+    @users = User.where(role: "candidate")
   end
 
 
