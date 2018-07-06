@@ -10,10 +10,11 @@
   margin: 5px;
   flex-direction: row;
   justify-content: flex-end;
-  &:hover {
+}
+
+.btn a:hover{
+    color: #3895D3;
     color: white;
-    background: #3895D3;
-  }
 }
 
 .apply-for-job-button {
@@ -26,7 +27,7 @@
   margin: 5px;
   flex-direction: row;
   justify-content: flex-end;
-  &:hover {
+  & :hover {
     color: white;
     background: #3895D3;
   }
