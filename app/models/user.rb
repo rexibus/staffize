@@ -11,6 +11,8 @@ class User < ApplicationRecord
   has_many :reviews, through: :bookings, dependent: :destroy
 
   validates :role, inclusion: { in: ["candidate", "employer"]}
+
+  mount_uploader :photo, PhotoUploader
   # before_validation :strip_email
   # validates :email, presence: true, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
   # validates :first_name, :last_name, :email, :address, presence: true

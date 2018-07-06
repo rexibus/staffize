@@ -14,6 +14,16 @@ class EventsController < ApplicationController
     else
       @events = @events.all.order("created_at DESC")
     end
+
+    @events = Event.where.not(latitude: nil, longitude: nil)
+
+    @markers = @events.map do |e|
+      {
+        lat: e.latitude,
+        lng: e.longitude#,
+
+      }
+    end
   end
 
   def show
@@ -60,7 +70,7 @@ class EventsController < ApplicationController
   end
 
   def set_event
-     @event = Event.find(params[:id])
-  end
+   @event = Event.find(params[:id])
+ end
 
 end
