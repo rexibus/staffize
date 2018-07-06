@@ -25,7 +25,7 @@ event_one = Event.new(title: "Fashion industry congress",
                       start_date: "01/09/2018", end_date: "04/09/2018",
                       venue: "Hilton Hotel Milano", address: "Via Luigi Galvani, 12, 20124 Milano")
 
-employer_one = User.new(company_name: "ArbiEvents", role: "employer", email: "arbi@events.com", password: "arbi@events.com" )
+employer_one = User.new(company_name: "ArbiEvents", role: "employer", email: "arbi@events.com", password: "arbi@events.com", password_confirmation: "arbi@events.com" )
 employer_one.save
 
 
