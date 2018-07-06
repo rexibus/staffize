@@ -1,0 +1,44 @@
+temp.html.erb
+
+
+<h1>CREATE A JOB: STEP 2</h1>
+<h5>Create the job you will offer for <%= event.title.upcase %></h5>
+
+<%= form_for @job_listing, url:event_job_listings_path(@event), method: :post do |f|%>
+
+<div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'form-control' %>
+  </div>
+
+<div class ="form-group">
+    <%= f.label :description %>
+    <%= f.text_field  :description, class: 'form-control' %>
+
+
+  <div class="form-group row">
+    <div class = col-xs-6>
+    <%= f.label :start_date %>
+    <%= f.date_field :start_date, class: 'form-control' %>
+  </div>
+
+  <div class="form-group col-xs-6">
+    <%= f.label :end_date %>
+    <%= f.date_field :end_date, class: 'form-control' %>
+  </div>
+</div>
+
+  <div class="form-group col-xs-4">
+    <%= f.label :schedule_detail %>
+    <%= f.text_field :schedule_detail %>
+  </div>
+
+  <div class ="form-group">
+    <%= f.label :venue %>
+    <%= f.text_field :venue, class: 'form-control'%>
+  </div>
+
+  <div class = "form-group">
+    <%= f.label :address  %>
+    <%= f.text_field :address, class: 'form-control' %>
+  </div>

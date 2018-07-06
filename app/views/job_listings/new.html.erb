@@ -12,14 +12,33 @@
     <%= f.text_field :description, class: 'form-control' %>
   </div>
 
-  <div class="form-group">
-    <%= f.label :start_date %>
-    <%= f.date_field :start_date, class: 'form-control' %>
+  <div class= "row">
+    <div class = "form-group col-xs-4">
+     <%= f.label :start_date %>
+      <%= f.date_field :start_date, class: 'form-control' %>
+    </div>
+
+    <div class="form-group col-xs-4">
+     <%= f.label :end_date %>
+      <%= f.date_field :end_date, class: 'form-control' %>
+    </div>
+
+    <div class="form-group col-xs-4">
+     <%= f.label :schedule_detail %>
+      <%= f.text_field :schedule_detail, class: 'form-control' %>
+    </div>
   </div>
 
-  <div class="form-group">
-    <%= f.label :end_date %>
-    <%= f.date_field :end_date, class: 'form-control' %>
+  <div class = "row">
+    <div class="form-group col-xs-6">
+      <%= f.label :dress_code %>
+      <%= f.text_field :dress_code, class: 'form-control' %>
+    </div>
+
+    <div class="form-group col-xs-6">
+      <%= f.label :salary  %>
+      <%= f.text_field :salary, class: 'form-control'%>
+    </div>
   </div>
 
   <%= f.submit class: 'btn btn-primary' %>
