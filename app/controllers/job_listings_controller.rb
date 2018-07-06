@@ -70,6 +70,14 @@ class JobListingsController < ApplicationController
     @users = User.where(role: "candidate")
   end
 
+  def my_applicants
+    @job_listing = JobListing.find(params[:id])
+    @bookings = @job_listing.bookings
+    @applicants = []
+    @bookings.each do |b|
+      @applicants << b.user
+    end
+  end
 
   private
 
