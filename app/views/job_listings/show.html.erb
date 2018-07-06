@@ -1,14 +1,19 @@
 <div>
   <h1><%= @job_listing.title %></h1>
 </div>
+<div class = "card-container">
 
-<div>
-  <h3><%= @job_listing.salary %> <%= @job_listing.currency %></h3>
+<div class = "left-show-cards">
+<p><%= @counter %> people applied to this job<p>
 </div>
 
-<div>
+<div class = "left-show-cards">
   <p><%= @job_listing.description %></p>
+</div>
+
+<div class = "left-show-cards">
   <p><%= @job_listing.event.venue %></p>
+<<<<<<< HEAD
   <p><%= @job_listing.event.address %></p>
   <p><%= @job_listing.start_date.strftime("%d %m %Y") %> -- <%= @job_listing.end_date.strftime("%d %m %Y") %></p>
   <p><%= @job_listing.schedule_detail %></p>
@@ -30,5 +35,24 @@
       method: :delete,
       data: { confirm: "Are you sure?" } %></p>
 <% end %>
+=======
+  <p><%= @job_listing.event.venue_detail %></p>
+</div>
+<div class = "left-show-cards">
+  <p><%= @job_listing.start_date.strftime("%d %m %Y") %> -- <%= @job_listing.end_date.strftime("%d %m %Y") %></p>
+</div>
+</div>
+
+
+  <div class = "right-show-cards">
+  <h3><%= @job_listing.salary %> <%= @job_listing.currency %></h3>
+</div>
+
+  <div class = "apply-for-job-button"><%= link_to "Apply for this job", new_event_job_listing_booking_path(@event,@job_listing), :class => "btn btn-primary" %></div>
+
+
+<%= link_to "Back", job_listings_path %>
+<%= link_to "Update the job", edit_event_job_listing_path(@event) %>
+>>>>>>> saving
 
   <p> <%= link_to "Back", job_listings_path %></p>
