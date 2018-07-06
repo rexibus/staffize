@@ -25,8 +25,11 @@
   margin: 5px;
   flex-direction: row;
   justify-content: flex-end;
-  &:hover {
-  color: white;
-  background: #3895D3;
-  }
+
+}
+
+
+.navbar ul li a:hover {
+  color: rgb(40,40,40);
+
 }

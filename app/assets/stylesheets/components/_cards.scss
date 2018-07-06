@@ -17,48 +17,39 @@
   border-radius: 10px;
 }
 
-.card-container {
-  display:flex;
-  align-items:flex-start;
-  justify-content:center;
-}
 
 .card-items {
   border: 3px solid #3895D3;
   background-color: rgb(40,40,40);
   color:#3895D3;
   box-shadow: 2px 2px 2px #3895D3;
-  padding: 16px;
-  width: 840px;
-  margin: 20px auto;
   border-radius: 10px;
 }
+
+
 
 .left-show-cards {
-  flex-direction:column;
-  list-style-type: none;
+  // list-style-type: none;
   border: 3px solid #3895D3;
   background-color: rgb(40,40,40);
   color:#3895D3;
   box-shadow: 2px 2px 2px #3895D3;
-  padding: 16px;
-  width: 600px;
-  margin: 20px 60px;
   border-radius: 10px;
-
+  height: 12%;
+  padding: 20px;
+  margin: 24px;
 }
+
 .right-show-cards {
-  list-style-type: none;
+  //list-style-type: none;
   border: 3px solid #3895D3;
   background-color: rgb(40,40,40);
   color:#3895D3;
   box-shadow: 2px 2px 2px #3895D3;
-  padding: 16px;
-  width: 400px;
-  margin: 20px 60px;
   border-radius: 10px;
-
+  height: 12%;
+  padding: 24px 16px;
+  margin: 24px;
 }
-
 
 
