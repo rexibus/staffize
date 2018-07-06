@@ -11,7 +11,7 @@ JobListing.delete_all
 Event.delete_all
 User.delete_all
 
-job_one = JobListing.new(title: "ArbiEvents is seeking for hostess for corporate congress",
+job_one = JobListing.new(title: "Boggi is seeking for hostess for corporate congress",
                         category: "hostess",
                         description: "Hostess will need to greet guests upon arrival and give general
                         directions about the venue and surrounding areas",
@@ -54,7 +54,7 @@ event_two.user = employer_one
 event_two.save
 job_two.save
 
-job_three = JobListing.new(title: "ArbiEvents is seeking for hostess for corporate congress",
+job_three = JobListing.new(title: "Le Wagon is seeking for hostess for corporate congress",
                         category: "hostess",
                         description: "Hostess will need to greet guests upon arrival and give general
                         directions about the venue and surrounding areas",
@@ -73,7 +73,7 @@ job_four = JobListing.new(title: "Polish speaker hostess to present new make-up 
                           schedule_detail: "10:00 - 18:00",
                           salary: "150,00", currency: "EUR")
 
-event_three = Event.new(title: "Cosmetics for all by ArbiCosmetics",
+event_three = Event.new(title: "Cosmetics for all by Rex Cosmetics",
                       description: "Cosmetics fair for upcoming make-up lines",
                       start_date: "11/09/2018", end_date: "14/09/2018",
                       venue: "Hotel Golden Tulip Plaza.", address: "Viale Lamberti, Caserta, CE,")
@@ -89,7 +89,7 @@ job_four.save
 
 
 
-job_five = JobListing.new(title: "Interpreter needed for ArbiMediations international conference",
+job_five = JobListing.new(title: "Interpreter needed for Doctor Ass. international conference",
                           category: "interpreter",
                           description: "Italian to French translator",
                           dress_code: "Business smart",
@@ -155,10 +155,27 @@ job_seven.event = event_six
 job_seven.save
 
 
-candidate_one = User.new(first_name: "Brigitte", last_name: "Bardot", role: "candidate", email: "brigitte@test.com", password: "brigitte@test.com")
-candidate_two = User.new(first_name: "Cristiano", last_name: "Malgioglio", role: "candidate", email: "cristiano@test.com", password: "cristiano@test.com")
-candidate_three = User.new(first_name: "Weird Al", last_name: "Yankovic", role: "candidate", email: "al@test.com", password: "al@test.com")
+candidate_one = User.new(first_name: "Brigitte", last_name: "Bardot", role: "candidate", email: "brigitte@test.com", password: "brigitte@test.com", photo:"url1")
+candidate_two = User.new(first_name: "Laura", last_name: "Paselli", role: "candidate", email: "laura@test.com", password: "laura@test.com", photo:"url2")
+candidate_three = User.new(first_name: "Cristiano", last_name: "Malgioglio", role: "candidate", email: "cristiano@test.com", password: "cristiano@test.com", photo:"url3")
+candidate_four = User.new(first_name: "Al", last_name: "Yankovic", role: "candidate", email: "al@test.com", password: "al@test.com", photo:"url4")
 
+
+url1 = "http://res.cloudinary.com/orexibus/image/upload/v1530867814/Staffize%20profile%20pict/businesswoman-portrait-picture-id501368096.jpg"
+candidate_one.remote_photo_url = url1
+candidate_one.save
+
+url2 = "http://res.cloudinary.com/orexibus/image/upload/v1530867801/Staffize%20profile%20pict/businesswoman2967123b.jpg"
+candidate_two.remote_photo_url = url2
+candidate_two.save
+
+url3 = "http://res.cloudinary.com/orexibus/image/upload/v1530868104/Staffize%20profile%20pict/Lloyd-Morgan-crop.jpg"
+candidate_three.remote_photo_url = url3
+candidate_three.save
+
+url4 = "http://res.cloudinary.com/orexibus/image/upload/v1530868091/Staffize%20profile%20pict/wpid-picsart_1389881209335.jpg"
+candidate_four.remote_photo_url = url4
+candidate_four.save
 
 
 booking_one = Booking.new(start_date: "07/09/2018", end_date: "07/09/2018")

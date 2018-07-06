@@ -1,7 +1,17 @@
+
+<h1>Select your staff according to your needs</h1>
+<p>Hundred of profile with a background in the event industry. Most of our canditates speak diffent languages </p>
+
+
 <% @users.each do |user| %>
 
 <div>
-  <%= user.email %>
+  <%= user.first_name %>
+  <%= user.date_of_birth %>
+  <%= user.language %>
+  <%= cl_image_tag user.photo, height: 300, width: 400, crop: :fill %>
+
+
 </div>
 
 <% end %>
