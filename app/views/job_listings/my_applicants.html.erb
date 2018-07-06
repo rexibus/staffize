@@ -1,0 +1,27 @@
+<h1>Applicants</h1>
+
+
+
+
+<% @applicants.each do |applicant| %>
+
+ <p> <%= applicant.first_name %>  <%= applicant.last_name %> </p>
+<% booking = applicant.bookings.where(job_listing_id: params[:id]).first %>
+<% if booking.status.nil? %>
+<%= link_to "Accept", elisabetta_path(booking, :status => "accepted"), class: "btn btn-success"%>
+<%= link_to "Decline", elisabetta_path(booking, :status => "declined"), class: "btn btn-danger"%>
+
+<% elsif booking.status == "accepted" %>
+<li>Accepted</li>
+
+<% elsif booking.status == "declined" %>
+<li>Declined</li>
+
+<% end %>
+
+
+<% end %>
+
+
+
+

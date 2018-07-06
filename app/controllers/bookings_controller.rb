@@ -35,12 +35,35 @@ class BookingsController < ApplicationController
 
   end
 
+  def accept_booking
+    @booking = Booking.find(params[:id])
+    if params[:status] == "accepted"
+      @booking.status = params[:status]
+      @booking.save
+      redirect_to my_applicants_job_listing_path(@booking.job_listing)
+    elsif params[:status] == "declined"
+      @booking.status = params[:status]
+      @booking.save
+      redirect_to my_applicants_job_listing_path(@booking.job_listing)
+    end
+  end
+
 
   def destroy
     @bookings = Booking.where(:user_id == current_user.id)
     @booking = @bookings.find(params[:id])
     @booking.destroy
     redirect_to bookings_path
+  end
+
+  def accept
+    @booking = current_user.booking_id.find(params[:id])
+    @booking.accept
+  end
+
+  def decline
+    @booking = current_user.booking_id.find(params[:id])
+    @booking.decline
   end
 
   private
