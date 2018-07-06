@@ -37,13 +37,8 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     @event.user_id = current_user.id
 
-    if @event.save
-      flash[:notice] = "You have successfully applied for this job"
-      redirect_to new_event_job_listing_path(@event)
-    else
-      flash[:alert] = "Your application did not go through"
-      redirect_to new_event_path(@event)
-    end
+    @event.save
+    redirect_to new_event_job_listing_path(@event)
 
   end
 
