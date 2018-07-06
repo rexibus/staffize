@@ -21,9 +21,11 @@ class JobListingsController < ApplicationController
     @markers = @events.map do |e|
       {
         lat: e.latitude,
-        lng: e.longitude
+        lng: e.longitude#,
+
       }
     end
+
     set_job_listing
     @event = @job_listing.event
     count

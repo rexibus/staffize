@@ -21,7 +21,7 @@ class EventsController < ApplicationController
       {
         lat: e.latitude,
         lng: e.longitude#,
-        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+
       }
     end
   end
