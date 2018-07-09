@@ -20,10 +20,18 @@ class BookingsController < ApplicationController
   end
 
   def create
-    if !(params[:booking][:job_listing_id].empty?)
-      @job_listing = JobListing.find(params[:booking][:job_listing_id])
-    else
-      set_job_listing
+    if current_user.role == "candidate"
+      if !(params[:event_id].empty?)
+        @job_listing = JobListing.find(params[:event_id])
+      else
+        set_job_listing
+      end
+    elsif current_user.role == "employer"
+      if !(params[:booking][:job_listing_id].empty?)
+        @job_listing = JobListing.find(params[:booking][:job_listing_id])
+      else
+        set_job_listing
+      end
     end
 
     @event = @job_listing.event
@@ -35,6 +43,7 @@ class BookingsController < ApplicationController
     elsif current_user.role == "employer"
       @booking.user_id = params[:booking][:user].to_i
     end
+
 
     if current_user.role == "candidate"
       if @booking.save
