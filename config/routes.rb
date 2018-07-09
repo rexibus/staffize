@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :job_listings, only: [:index, :show, :destroy, :create] do
     collection do
       get "candidates" # /job_listings/candidates
+      get "candidates/:id", to: "job_listings#candidate_show", as: :candidate
     end
 
     member do
@@ -20,6 +21,7 @@ Rails.application.routes.draw do
   get "/bookings/:id", to: "bookings#accept_booking", as: :elisabetta
   resources :bookings, only: [:destroy]
   get "/bookings", to: "bookings#my_bookings"
+  post "/bookings", to: "bookings#create"
 
 
 root to: 'pages#home'

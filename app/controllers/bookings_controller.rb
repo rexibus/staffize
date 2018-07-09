@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
 
-  before_action :set_job_listing, only: [:show, :new, :create, :edit, :update]
+  before_action :set_job_listing, only: [:show, :new, :edit, :update]
   before_action :authenticate_user!
 
   def index
@@ -20,19 +20,39 @@ class BookingsController < ApplicationController
   end
 
   def create
+    if !(params[:booking][:job_listing_id].empty?)
+      @job_listing = JobListing.find(params[:booking][:job_listing_id])
+    else
+      set_job_listing
+    end
+
     @event = @job_listing.event
     @booking = Booking.new(booking_params)
     @booking.job_listing_id = @job_listing.id
-    @booking.user_id = current_user.id
 
-    if @booking.save
-      flash[:notice] = "You have successfully applied for this job"
-      redirect_to job_listing_path(@job_listing)
-    else
-      flash[:alert] = "Your have already applied for this job"
-      redirect_to job_listing_path(@job_listing)
+    if current_user.role == "candidate"
+      @booking.user_id = current_user.id
+    elsif current_user.role == "employer"
+      @booking.user_id = params[:booking][:user].to_i
     end
 
+    if current_user.role == "candidate"
+      if @booking.save
+        flash[:notice] = "You have successfully applied for this job"
+        redirect_to job_listing_path(@job_listing)
+      else
+        flash[:alert] = "Your have already applied for this job"
+        redirect_to job_listing_path(@job_listing)
+      end
+    elsif current_user.role == "employer"
+      if @booking.save
+        flash[:notice] = "You have successfully offered #{@job_listing.title} to #{@booking.user.first_name} "
+        redirect_to candidate_job_listings_path(@booking.user_id)
+      else
+        flash[:alert] = "Your have already offered #{@job_listing.title} to this candidate"
+        redirect_to candidate_job_listings_path(Booking.where(user: params[:booking][:user]).first.user)
+      end
+    end
   end
 
   def accept_booking
