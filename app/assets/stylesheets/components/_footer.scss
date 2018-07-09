@@ -46,7 +46,7 @@ body {
 }
 
 .item {
-
+  text-align:center;
   color: rgb(40,40,40);
   margin: 0px 40px;
 }
@@ -65,14 +65,19 @@ p {
 
 }
 
-.fa {
-    padding: 20px;
+.fab {
+    padding: 0px 10px;
     font-size: 30px;
-    width: 50px;
+    width: 45px;
     text-align: center;
     text-decoration: none;
+    color:rgb(40,40,40);
 
 }
+
+a i:hover {
+      color:white;
+    }
 
 
 #footer-title {

@@ -3,28 +3,31 @@
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="http://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css">
 
-<div class = "footer">
-  <div class = "left-container">
-    <div class = "left-container-stuff">
-    <h5><%= link_to "STAFFIZE", root_path, id:"footer-title" %></h5>
+
+  <div class = "footer">
+
+    <div class = "left-container">
+      <div class = "left-container-stuff">
+        <h5><%= link_to "STAFFIZE", root_path, id:"footer-title" %></h5>
+      </div>
+      <div class ="icons">
+        <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+        <a href = "https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+        <a href = "https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+      </div>
     </div>
-    <div class ="icons">
-    <i class="fa fa-facebook" aria-hidden="true"></i>
-    <i class="fa fa-twitter" aria-hidden="true"></i>
-    <i class="fa fa-instagram" aria-hidden="true"></i>
+
+    <div class = "right-container">
+      <div class="footer-links">
+        <%= link_to "Find Jobs", job_listings_path, class:"item" %>
+        <%= link_to "Find Staff", job_listings_path, class:"item"  %>
+        <%= link_to "Create Account", new_user_registration_path, class:"item"  %>
+      </div>
+      <div class = "copyright">
+        <h6>&copy; 2018 Staffize.it<h6>
+      </div>
+    </div>
+
   </div>
-  </div>
 
-
-  <div class = "right-container">
-    <%= link_to "Find Jobs", job_listings_path, class:"item" %>
-    <%= link_to "Find Staff", candidates_job_listings_path, class:"item"  %>
-    <%= link_to "Create Account", new_user_registration_path, class:"item"  %>
-  </div>
-
-<div class = "copyright">
-<h6>&copy; 2018 Staffize.it<h6>
-</div>
-
-</div>
 

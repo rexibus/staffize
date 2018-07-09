@@ -6,10 +6,10 @@
 
 .job-listing-cards {
   list-style-type: none;
-  border: 3px solid #3895D3;
-  background-color: rgb(40,40,40);
-  color:#3895D3;
-  box-shadow: 2px 2px 2px #3895D3;
+  border: 2px solid rgb(40,40,40);
+  background-color: rgb(240,240,240);
+  color:rgb(40,40,40);
+  box-shadow: 1px 1px 1px rgb(40,40,40);
   padding: 16px;
   width: 840px;
   margin: 20px auto;
@@ -18,10 +18,10 @@
 
 
 .card-items {
-  border: 3px solid #3895D3;
-  background-color: rgb(40,40,40);
-  color:#3895D3;
-  box-shadow: 2px 2px 2px #3895D3;
+  border: 2px solid rgb(40,40,40);
+  background-color: rgb(240,240,240);
+  color:rgb(40,40,40);
+  box-shadow: 1px 1px 1px rgb(40,40,40);
   border-radius: 10px;
 }
 
@@ -29,26 +29,34 @@
 
 .left-show-cards {
   // list-style-type: none;
-  border: 3px solid #3895D3;
-  background-color: rgb(40,40,40);
-  color:#3895D3;
-  box-shadow: 2px 2px 2px #3895D3;
+  border: 2px solid rgb(40,40,40);
+  background-color: rgb(240,240,240);
+  color:rgb(40,40,40);
+  box-shadow: 1px 1px 1px rgb(40,40,40);
   border-radius: 10px;
   height: 12%;
   padding: 20px;
   margin: 24px;
+
+  p {
+    margin: 0px;
+  }
 }
 
 .right-show-cards {
   //list-style-type: none;
-  border: 3px solid #3895D3;
-  background-color: rgb(40,40,40);
-  color:#3895D3;
-  box-shadow: 2px 2px 2px #3895D3;
+  border: 2px solid rgb(40,40,40);
+  background-color: rgb(240,240,240);
+  color:rgb(40,40,40);
+  box-shadow: 1px 1px 1px rgb(240,240,240);
   border-radius: 10px;
   height: 12%;
   padding: 24px 16px;
   margin: 24px;
+
+  p {
+    margin: 0px;
+  }
 }
 
 
