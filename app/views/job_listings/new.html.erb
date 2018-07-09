@@ -1,5 +1,8 @@
+<div class="container">
+
 <h1>CREATE A JOB: STEP 2</h1>
 <p>Create the job you will offer for <%=@event.title.upcase%></p>
+
 
 <%= form_for @job_listing, url: event_job_listings_path(@event),  method: :post do |f| %>
   <div class="form-group">
@@ -43,3 +46,4 @@
 
   <%= f.submit class: 'btn btn-primary' %>
 <% end %>
+</div>
