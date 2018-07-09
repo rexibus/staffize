@@ -1,8 +1,10 @@
 
 <!-- height: 300, width: 400, crop: :fill -->
-
-
+<% if !user.photo.file.nil? %>
   <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path(user.photo) %>);">
+    <% else %>
+    <div class="card">
+      <% end %>
     <div class="card-category">Popular</div>
     <div class="card-description">
       <h2><%= user.first_name %></h2>
