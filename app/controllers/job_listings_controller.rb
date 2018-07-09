@@ -90,7 +90,7 @@ class JobListingsController < ApplicationController
   end
 
   def count
-    bookings = Booking.where(:status == "applied")
+    bookings = @job_listing.bookings.where(:status == "applied")
     @counter = bookings.count
     @counter > 0 ? @counter : "Be the first to apply"
   end
