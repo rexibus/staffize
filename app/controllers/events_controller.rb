@@ -14,23 +14,18 @@ class EventsController < ApplicationController
     else
       @events = @events.all.order("created_at DESC")
     end
-
-    @events = Event.where.not(latitude: nil, longitude: nil)
-
-    @markers = @events.map do |e|
-      {
-        lat: e.latitude,
-        lng: e.longitude#,
-
-      }
-    end
   end
 
   def show
   end
 
   def new
-    @event = Event.new
+    if current_user.role == "employer"
+      @event = Event.new
+    else
+      flash[:alert] = "Error, you need to authenticate as a business to access the page"
+      redirect_to root_path
+    end
   end
 
   def create
