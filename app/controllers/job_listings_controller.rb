@@ -66,6 +66,12 @@ class JobListingsController < ApplicationController
     @users = User.where(role: "candidate")
   end
 
+  def candidate_show
+    @user = User.find(params[:id])
+    @booking = Booking.new
+
+  end
+
   def my_applicants
     @job_listing = JobListing.find(params[:id])
     @bookings = @job_listing.bookings
