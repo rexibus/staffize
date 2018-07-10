@@ -8,10 +8,12 @@
   list-style-type: none;
   border: 1px solid rgb(240,240,240);
   background-color: white;
-  color:rgb(40,40,40);
-  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
   border-radius: 3px;
   margin: 5px 16px;
+
+  h3 {
+    font-size: 24px;
+  }
 
 }
 
@@ -22,6 +24,7 @@
   border-radius: 10px;
   p {
     margin: 0;
+    font-size: 16px;
   }
 }
 
@@ -32,6 +35,15 @@
 
 .job-details-middle {
   padding: 10px;
+  p {
+    font-weight: lighter;
+    color: gray;
+    font-size: 14px;
+  }
+
+  span {
+    font-size: 14px;
+  }
 }
 
 .job-details-bottom {
@@ -47,18 +59,19 @@
   border-right: 1px solid #e2e1dd;
   padding-top: 10px;
   text-align: left;
+  font-size: 16px;
 }
 
 .job-details-bottom-salary {
   padding-top: 10px;
   text-align: center;
+  font-size: 16px;
 }
 
 .job-status-cards {
   border: 1px solid rgb(240,240,240);
   background-color: white;
   color:rgb(40,40,40);
-  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
   border-radius: 3px;
   padding: 12px 18px;
   margin: 16px;
