@@ -35,8 +35,9 @@
             <% if booking.status == "declined" %>
               <% counter += 1 %>
             <% end %>
-            <%= counter %> declined
+            <% counter %>
           <% end %>
+          <%= counter %> declined
         </li>
         <li>
           <% counter_2 = 0 %>
@@ -44,8 +45,9 @@
             <% if booking.status == "accepted" %>
               <% counter_2 += 1 %>
             <% end %>
-            <%= counter_2 %> accepted
+            <% counter_2 %>
           <% end %>
+          <%= counter_2 %> accepted
         </li>
       </ul>
     <% end %>
