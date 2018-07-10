@@ -7,4 +7,14 @@ class Booking < ApplicationRecord
   validates :user_id, uniqueness: { scope: :job_listing_id }
   validates :job_listing_id, presence: true
 
+  def accept
+    self.status = "accepted"
+    save
+  end
+
+  def decline
+    self.status = "declined"
+    save
+  end
+
 end
