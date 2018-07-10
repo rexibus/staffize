@@ -12,7 +12,8 @@
   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
   border-radius: 3px;
   padding: 12px 18px;
-  margin: 16px;
+  margin: 8px 16px;
+
 }
 
 
@@ -54,7 +55,7 @@
   text-align: center;
 }
 
-.job-applicants-cards {
+.job-status-cards {
   border: 1px solid rgb(240,240,240);
   background-color: white;
   color:rgb(40,40,40);
@@ -67,6 +68,21 @@
     list-style-type: none;
   }
 }
+
+.employer-job-listings {
+  display: flex;
+
+}
+
+.jobcard {
+  width: 65%;
+}
+
+.statuscard {
+  width: 35%;
+}
+
+
 
 
 
