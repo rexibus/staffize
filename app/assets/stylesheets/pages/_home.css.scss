@@ -1,0 +1,144 @@
+// Specific CSS for your home-page
+body {
+  margin: 0;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.border {
+border-left-color: lightgray;
+border-left-style: solid;
+border-left-width: 1px;
+
+}
+.overlay-effect {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transition: 1s ease;
+  background-repeat: no-repeat;
+  background: linear-gradient(-225deg, rgba(79, 234, 167,0.6) 0%, rgba(44, 171, 164,0.6) 50%), url(FindAJob.jpeg) 0 0 no-repeat;
+  background-size: cover;
+  background-position: center;
+  overflow:hidden;
+  display: flex;
+  align-self: auto;
+  justify-content: center;
+}
+
+.full {
+  background-color: rgba(44, 171, 164,1);
+  height:100vh; //// CHECH THISSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+  width: 50%;
+  background-size: cover;
+  position: relative;
+  align-self: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.full:hover .overlay-effect {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.full a {
+  color: #fff;
+  text-decoration: none;
+}
+.full h3 {
+  padding: 15px 30px;
+}
+
+.full-second {
+  background-color: rgba(0,101,168,1);
+  height:100vh;
+  width: 50%;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  align-self: auto;
+  justify-content: center;
+}
+
+.full-second:hover .overlay-effect-second {
+  opacity: 1;
+  cursor: pointer;
+  z-index: 0;
+}
+
+.overlay-effect-second {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transition: 1s ease;
+  background-repeat: no-repeat;
+  background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(FindStaff.jpg) 0 0 no-repeat;
+  background-size: cover;
+  background-position: center;
+  overflow:hidden;
+  display: flex;
+  align-self: auto;
+  justify-content: center;
+}
+
+.overlay-effect-second:hover .overlay-effect:hover {
+  z-index:0;
+}
+
+.test {
+  margin: auto;
+  z-index: 1
+}
+
+.test:hover {
+  z-index: 1;
+}
+
+.full-second a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.full-second h3 {
+  padding: 15px 30px;
+}
+
+.text {
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.wrapper_text {
+  position: absolute;
+  z-index: 1;
+  top: 14vh;
+   min-width: 69vw;
+
+}
+
+
+
+/*@media screen and (max-width: 768px) {
+  .full, .half, .half2 {margin-bottom: 10px;}
+}*/
+
+
+
+
+
+
+
+
+
