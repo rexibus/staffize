@@ -12,7 +12,7 @@
               <p>From: <%= job.start_date.strftime("%d %B %Y") %> </p> <p> To: <%= job.end_date.strftime("%d %B %Y") %></p>
             </div>
             <div class="job-details-middle">
-              <p>Event: <%= link_to job.event.title, event_path(job.event) %></p>
+              <span>Event:</span> <%= link_to job.event.title, event_path(job.event) %>
             </div>
             <div class="job-details-bottom">
               <div class="job-details-bottom-venue col-xs-7 col-sm-6 col-md-7">

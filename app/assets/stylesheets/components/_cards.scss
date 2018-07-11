@@ -74,7 +74,7 @@
   color:rgb(40,40,40);
   border-radius: 3px;
   padding: 12px 18px;
-  margin: 16px;
+  margin: 5px 16px;
 
   li {
     list-style-type: none;
@@ -92,6 +92,15 @@
 
 .statuscard {
   width: 35%;
+
+  h3 {
+    font-size: 24px;
+  }
+
+  li {
+    font-weight: lighter;
+    font-size: 14px;
+  }
 }
 
 
