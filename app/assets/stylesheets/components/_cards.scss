@@ -1,6 +1,7 @@
+
 .job-listings {
   display:flex;
-  flex-direction: column;
+  flex-direction:column;
   list-style-type: none;
 }
 
@@ -18,17 +19,18 @@
 
 
 .card-items {
-  
-  
+
+
   background-color: rgb(240,240,240);
   color:rgb(40,40,40);
   box-shadow: 1px 1px 1px rgb(40,40,40);
-  
+
   border: 1px solid rgb(40,40,40);
   //border: 1px solid rgb(240,240,240);
   // background-color: white;
   border-radius: 3px;
   margin: 5px 16px;
+
 
   h3 {
     font-size: 24px;
@@ -70,6 +72,8 @@
   padding: 12px;
   margin: 8px;
 
+}
+
 
 .job-details-middle {
   padding: 10px;
@@ -98,7 +102,7 @@
   margin: 8px;
 }
 
-  
+
   .job-details-bottom {
   border-top: 1px solid #e2e1dd;
   width: 100%;
