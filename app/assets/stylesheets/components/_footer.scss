@@ -6,16 +6,21 @@
   height: 70px;
   margin: 0px;
   //padding: 10px;
-  background: #ebebeb;
+  background: $footergrey;
   width: 100%;
-  border: #ebebeb;
+  border: $footergrey;
   justify-content: flex-start;
   align-items: center;
   position: fixed;
   bottom: 20px;
   display: flex;
-  justify-content: space-around
-
+  justify-content: space-around;
+    a, h6 {
+      color: white;
+    };
+    a:hover {
+      color: $mainblue;
+    }
 }
 
 .footer2 {
@@ -23,15 +28,18 @@
   height: 30px;
   margin: 0px;
   //padding: 10px;
-  background: #ebebeb;
+  background: $footergrey;
   width: 100%;
-  border: #ebebeb;
-  justify-content: flex-start;
+  border: $footergrey;
+
   align-items: center;
   position: fixed;
   bottom: 0;
   display: flex;
-  justify-content: space-around
+  justify-content: center;
+  h6 {
+      color: white;
+    }
 
 }
 .flex {
@@ -40,7 +48,7 @@
 
 .footer-row-icons {
   font-size: 20px;
-    display: flex;
+  display: flex;
   justify-content: space-around;
   min-width: 14vw;
 }
