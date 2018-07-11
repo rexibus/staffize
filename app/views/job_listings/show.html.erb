@@ -80,10 +80,10 @@
 
     <div class="right-show-cards">
       <div>
-      <h4 style="display: inline;">Start Time: </h4><p style="display: inline;"><%= @job_listing.start_date.strftime("%H:%M") %>
+      <h4 style="display: inline;">Start Time: </h4><p style="display: inline;"><%= @job_listing.start_time.strftime("%H:%M") %>
       </div>
         <div>
-       <h4 style="display: inline;">End Time: </h4> <p style="display: inline;"><%= @job_listing.end_date.strftime("%H:%M")%></p>
+       <h4 style="display: inline;">End Time: </h4> <p style="display: inline;"><%= @job_listing.end_time.strftime("%H:%M")%></p>
         </div>
     </div>
 
