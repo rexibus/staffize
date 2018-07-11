@@ -1,0 +1,30 @@
+.flex-container {
+  display: flex;
+}
+
+.sidebar {
+  display: block;
+  float: left;
+  width: 18%;
+  background-color: white;
+  color:rgb(40,40,40);
+  border-radius: 3px;
+  margin-bottom: 5px;
+
+}
+
+.right-side {
+  display: block;
+  float: right;
+  width: 82%;
+  padding-left: 40px;
+}
+
+#job-listings-title {
+  margin-bottom: 50px;
+  h1 {
+  text-align: left;
+  font-weight: lighter;
+
+  }
+}

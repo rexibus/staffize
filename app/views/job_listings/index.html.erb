@@ -1,59 +1,136 @@
-<div>
-  <%= form_tag(job_listings_path, :method => "get", id: "search-form") do %>
-  <%= text_field_tag :search, params[:search], placeholder: "Search Jobs" %>
-  <%= submit_tag "Search", :name => nil %>
-  <% if @job_listings.blank? %>
-  <h4>No results</h4>
-  <% end %>
-  <% end %>
-</div>
+<% if current_user && current_user.role == "employer" %>
+  <div class="container">
+    <div class="employer-job-listings">
+      <% @job_listings.each do |job| %>
+        <div class="job-listing-cards jobcard">
+          <div class="job-details">
+            <div class="job-details-top">
+              <h3><%= link_to job.title, job_listing_path(job) %></h3>
+              <p><%= job.description %></p>
+            </div>
+            <div class="job-details-middle">
+              <p>From: <%= job.start_date.strftime("%d %B %Y") %> </p> <p> To: <%= job.end_date.strftime("%d %B %Y") %></p>
+            </div>
+            <div class="job-details-middle">
+              <span>Event:</span> <%= link_to job.event.title, event_path(job.event) %>
+            </div>
+            <div class="job-details-bottom">
+              <div class="job-details-bottom-venue col-xs-7 col-sm-6 col-md-7">
+                <p><span><%= job.event.venue %></span>, <span><%= job.event.city %>, <%= job.event.province %></span></p>
+              </div>
+              <div class="job-details-bottom-salary col-xs-5 col-sm-6 col-md-5">
+                <span>Daily salary:</span> <span><strong><%= job.salary %> <%= job.currency %></strong></span>
+              </div>
+            </div>
+          </div>
+        </div>
 
-<h1>Job Listings</h1>
-<div class = "job-listings">
-  <% @job_listings.each do |job| %>
-  <div class ="job-listing-cards">
-    <h3><%= link_to job.title, job_listing_path(job) %></h3>
-    <p><%= job.description %></p>
-    <p>Dates: <%= job.start_date.strftime("%d %m %Y") %> // <%= job.end_date.strftime("%d %m %Y") %></p>
-    <p><%= link_to job.event.title, event_path(job.event) %></p>
-    <p><%= job.event.venue %></p>
-    <p><%= job.salary %> <%= job.currency %></p>
+        <div class="job-status-cards statuscard">
+          <h3>Status</h3>
+          <ul>
+            <li>
+              Job created: <%= job.created_at.strftime("%d %B %Y")%>
+            </li>
+            <li>
+              <%= link_to "#{job.bookings.count}" + " applied", my_applicants_job_listing_path(job) %>
+            </li>
+            <li>
+              <% counter = 0 %>
+              <% job.bookings.each do |booking|%>
+                <% if booking.status == "declined" %>
+                  <% counter += 1 %>
+                <% end %>
+              <% counter %>
+              <% end %>
+              <%= counter %> declined
+            </li>
+            <li>
+              <% counter_2 = 0 %>
+              <% job.bookings.each do |booking|%>
+                <% if booking.status == "accepted" %>
+                  <% counter_2 += 1 %>
+                <% end %>
+              <% counter_2 %>
+              <% end %>
+              <%= counter_2 %> accepted
+            </li>
+            <li>
+              <% counter_2 = 0 %>
+              <% job.bookings.each do |booking|%>
+                <% if booking.status == "pending" %>
+                  <% counter_2 += 1 %>
+                <% end %>
+              <% counter_2 %>
+              <% end %>
+              <%= counter_2 %> pending
+            </li>
+          </ul>
+        </div>
+      <% end %>
+    <!-- job-listings end -->
+    </div>
+  <!-- container end -->
   </div>
+<% else %>
+  <div class="container">
+    <div class="flex-container">
+      <div class="sidebar">
+        <br>
+        <p>filters will go here</p>
+      <!-- left-side end -->
+      </div>
 
-  <div>
-    <% if current_user && current_user.role == "employer" %>
-      <ul>
-        <li>
-          Job created: <%= job.created_at.strftime("%d %m %Y")%>
-        </li>
-        <li>
-          <%= link_to "#{job.bookings.count}" + " applied", my_applicants_job_listing_path(job) %>
-        </li>
-        <li>
-          <% counter = 0 %>
-          <% job.bookings.each do |booking|%>
-            <% if booking.status == "declined" %>
-              <% counter += 1 %>
-            <% end %>
-            <% counter %>
-          <% end %>
-          <%= counter %> declined
-        </li>
-        <li>
-          <% counter_2 = 0 %>
-          <% job.bookings.each do |booking|%>
-            <% if booking.status == "accepted" %>
-              <% counter_2 += 1 %>
-            <% end %>
-            <% counter_2 %>
-          <% end %>
-          <%= counter_2 %> accepted
-        </li>
-      </ul>
-    <% end %>
+      <div class="row right-side job-listings">
+        <div class="row">
+          <div class="col-xs-10 col-md-7">
+            <div class="form-group jobs-searchbar">
+              <%= form_tag(job_listings_path, :method => "get", class: "form-inline") do%>
+              <%= text_field_tag :search, params[:search], placeholder: "Search Jobs", id: "jobs-search", class: "form-group" %>
+              <%= submit_tag "Search", :name => nil, class: "form-group" %>
+              <% if @job_listings.blank? %>
+                <h4>No results</h4>
+              <% end %>
+              <% end %>
+            </div>
+          </div>
+          <div class="col-xs-2 col-md-5">
+            <div class="sort-by">
+              <p>-sort by dropdown-</p>
+            </div>
+          </div>
+        </div>
+        <% @job_listings.each do |job| %>
+          <div class="col-xs-12 col-sm-6 col-md-10 job-listing-cards">
+            <div class="job-details">
+              <div class="job-details-top">
+                <h3><%= link_to job.title, job_listing_path(job) %></h3>
+                <p><%= job.description %></p>
+              </div>
+              <div class="job-details-middle">
+                <p>From: <%= job.start_date.strftime("%d %B %Y") %> </p> <p> To: <%= job.end_date.strftime("%d %B %Y") %></p>
+              </div>
+              <div class="job-details-middle">
+                <span>Event:</span> <%= link_to job.event.title, event_path(job.event) %>
+              </div>
+              <div class="job-details-bottom">
+                <div class="job-details-bottom-venue col-xs-7 col-sm-6 col-md-7">
+                  <p><span><%= job.event.venue %></span>, <span><%= job.event.city %>, <%= job.event.province %></span></p>
+                </div>
+                <div class="job-details-bottom-salary col-xs-5 col-sm-6 col-md-5">
+                  <span>Daily salary:</span> <span><strong><%= job.salary %> <%= job.currency %></strong></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <!-- job-listings end -->
+      </div>
+    <!-- flex-container end -->
+    </div>
+  <!-- container end -->
   </div>
-</div>
 <% end %>
+
 
 
 

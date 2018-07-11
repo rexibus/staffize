@@ -5,7 +5,7 @@
 <%= simple_form_for @booking, url: event_job_listing_bookings_path,  method: :post do |f| %>
   <%= f.input :start_date, :input_html => { :value => @job_listing.start_date }, as: :hidden %>
   <%= f.input :end_date, :input_html => { :value => @job_listing.end_date }, as: :hidden %>
-  <%= f.button :submit, class: "btn-primary"%>
+  <%= f.button :submit, "Apply", class: "btn-primary"%>
 <% end %>
 <hr>
 
