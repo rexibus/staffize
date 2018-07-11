@@ -1,9 +1,9 @@
+
 .job-listings {
   display:flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction:column;
+  list-style-type: none;
 }
-
 
 .job-listing-cards {
   list-style-type: none;
@@ -19,13 +19,41 @@
 
 
 .card-items {
-  border: 1px solid rgb(40,40,40);
+
+
   background-color: rgb(240,240,240);
   color:rgb(40,40,40);
   box-shadow: 1px 1px 1px rgb(40,40,40);
-  border-radius: 10px;
+
+  border: 1px solid rgb(40,40,40);
+  //border: 1px solid rgb(240,240,240);
+  // background-color: white;
+  border-radius: 3px;
+  margin: 5px 16px;
+
+
+  h3 {
+    font-size: 24px;
+  }
+
 }
 
+
+.job-details {
+  display: block;
+  // have a look
+  position: relative;
+  border-radius: 10px;
+  p {
+    margin: 0;
+    font-size: 16px;
+  }
+}
+
+
+.job-details-top {
+  padding: 10px;
+}
 
 
 .job-title {
@@ -44,10 +72,23 @@
   padding: 12px;
   margin: 8px;
 
+}
+
+
+.job-details-middle {
+  padding: 10px;
+
   p {
-    margin: 0px;
+    font-weight: lighter;
+    color: gray;
+    font-size: 14px;
+  }
+
+  span {
+    font-size: 14px;
   }
 }
+
 
 .right-show-cards {
   //list-style-type: none;
@@ -59,11 +100,70 @@
   height: 12%;
   padding: 18px 12px;
   margin: 8px;
+}
 
-  p {
-    margin: 0px;
+
+  .job-details-bottom {
+  border-top: 1px solid #e2e1dd;
+  width: 100%;
+  right: 0;
+  bottom: 0;
+  height: 50px;
+  padding: 0;
+}
+
+.job-details-bottom-venue {
+  border-right: 1px solid #e2e1dd;
+  padding-top: 10px;
+  text-align: left;
+  font-size: 16px;
+}
+
+.job-details-bottom-salary {
+  padding-top: 10px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.job-status-cards {
+  border: 1px solid rgb(240,240,240);
+  background-color: white;
+  color:rgb(40,40,40);
+  border-radius: 3px;
+  padding: 12px 18px;
+  margin: 5px 16px;
+
+
+  li {
+    list-style-type: none;
   }
 }
+
+.employer-job-listings {
+  display: flex;
+
+}
+
+.jobcard {
+  width: 65%;
+}
+
+.statuscard {
+  width: 35%;
+
+  h3 {
+    font-size: 24px;
+  }
+
+  li {
+    font-weight: lighter;
+    font-size: 14px;
+  }
+}
+
+
+
+
 
 
 

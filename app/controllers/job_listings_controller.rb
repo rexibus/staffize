@@ -16,19 +16,15 @@ class JobListingsController < ApplicationController
   end
 
   def show
-    @events = Event.where.not(latitude: nil, longitude: nil)
-
-    @markers = @events.map do |e|
-      {
+    set_job_listing
+    @event = []
+    @event << @job_listing.event
+    count
+    @markers = @event.map do |e| {
         lat: e.latitude,
-        lng: e.longitude#,
-
+        lng: e.longitude
       }
     end
-
-    set_job_listing
-    @event = @job_listing.event
-    count
   end
 
   def new
@@ -70,6 +66,20 @@ class JobListingsController < ApplicationController
     @users = User.where(role: "candidate")
   end
 
+  def candidate_show
+    @user = User.find(params[:id])
+    @booking = Booking.new
+
+  end
+
+  def my_applicants
+    @job_listing = JobListing.find(params[:id])
+    @bookings = @job_listing.bookings
+    @applicants = []
+    @bookings.each do |b|
+      @applicants << b.user
+    end
+  end
 
   private
 
@@ -82,9 +92,8 @@ class JobListingsController < ApplicationController
   end
 
   def count
-    bookings = Booking.where(:status == "applied")
+    bookings = @job_listing.bookings.where(:status == "applied")
     @counter = bookings.count
-    @counter > 0 ? @counter : "Be the first to apply"
   end
 
   def job_listing_params

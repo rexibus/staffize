@@ -1,27 +1,32 @@
+<h1>My Applications</h1>
 
-<h1>My Bookings</h1>
 
 <div class ="bookings">
 
-<% @bookings.each do |booking| %>
+  <% @bookings.each do |booking| %>
 
   <div class = "card-items">
 
-      <h2><%= booking.job_listing.title %></h2>
-      <h4><%= booking.status %></h4>
-      <h4>start date: <%= booking.start_date.strftime("%d/%m/%Y") %></h4>
-      <h4>end date: <%= booking.end_date.strftime("%d/%m/%Y") %></h4>
-      <div class = "bookings-buttons">
-      <div class = "view-button"><%= link_to "View",root_path %></div>
+    <h2><%= booking.job_listing.title %></h2>
+    <h4>Application status: <%= booking.status %>
+      <% if booking.status == nil  %>
+      <%= "pending" %>
+      <% end %>
+    </h4>
+    <h4>start date: <%= booking.start_date.strftime("%d/%m/%Y") %></h4>
+    <h4>end date: <%= booking.end_date.strftime("%d/%m/%Y") %></h4>
+    <div class = "bookings-buttons">
+      <div class = "view-button"><%= link_to "View", job_listing_path(booking.job_listing) %></div>
       <div class = "delete-button"><%= link_to "Delete", booking_path(booking),
-          method: :delete,
-          data: { confirm: "Are you sure?" } %></div>
-      </div>
+      method: :delete,
+      data: { confirm: "Are you sure?" } %></div>
+    </div>
   </div>
 
   <% end %>
 
 </div>
+
 
 
 
