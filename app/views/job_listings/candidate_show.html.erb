@@ -1,0 +1,15 @@
+<h1><%= "#{@user.first_name}" + " " + "#{@user.last_name}" %> </h1>
+
+<%= image_tag (cl_image_path(@user.photo)) %>
+
+<h2><%= @user.position %></h2>
+
+<p><%= @user.experience %></p>
+<p><%= @user.language %></p>
+<p><%= @user.gender %></p>
+
+<%= simple_form_for @booking do |f| %>
+  <%= f.input :user, :input_html => { :value => @user.id }, as: :hidden %>
+  <%= f.association :job_listing, collection: current_user.job_listings, selected: current_user.job_listings.first %>
+  <%= submit_tag 'Offer a job', class: 'btn btn-primary' %>
+<% end %>

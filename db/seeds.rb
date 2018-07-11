@@ -23,7 +23,8 @@ job_one = JobListing.new(title: "Boggi is seeking for hostess for corporate cong
 event_one = Event.new(title: "Fashion industry congress",
                       description: "The most important fashion congress in Northern Italy",
                       start_date: "01/09/2018", end_date: "04/09/2018",
-                      venue: "Hilton Hotel Milano", address: "Via Luigi Galvani, 12, 20124 Milano")
+                      venue: "Hilton Hotel Milano", address: "Via Luigi Galvani, 12",
+                      zip_code: "20124", city: "Milano", province: "MI")
 
 employer_one = User.new(company_name: "ArbiEvents", role: "employer", email: "arbi@events.com", password: "arbi@events.com", password_confirmation: "arbi@events.com" )
 employer_one.save
@@ -47,7 +48,8 @@ job_two = JobListing.new(title: "Trade show model for RedBull Racing Night event
 event_two = Event.new(title: "RedBull Racing Night",
                       description: "RedBull promotional night in famous nightclub",
                       start_date: "09/07/2018", end_date: "09/07/2018",
-                      venue: "Discoteca Hotel Capo dei Greci", address: "Via Nazionale, 421, Sant'Alessio Siculo, ME")
+                      venue: "Discoteca Hotel Capo dei Greci", address: "Via Nazionale, 421",
+                      zip_code: "98030", city: "Sant'Alessio Siculo", province: "ME")
 
 job_two.event = event_two
 event_two.user = employer_one
@@ -76,7 +78,8 @@ job_four = JobListing.new(title: "Polish speaker hostess to present new make-up 
 event_three = Event.new(title: "Cosmetics for all by Rex Cosmetics",
                       description: "Cosmetics fair for upcoming make-up lines",
                       start_date: "11/09/2018", end_date: "14/09/2018",
-                      venue: "Hotel Golden Tulip Plaza.", address: "Viale Lamberti, Caserta, CE,")
+                      venue: "Hotel Golden Tulip Plaza.", address: "Viale Lamberti",
+                      zip_code: "81100", city: "Caserta", province: "CE")
 
 employer_three = User.new(company_name: "ArbiCosmetics", role: "employer", email: "arbi@cosmetics.com", password: "arbi@cosmetics.com" )
 
@@ -100,7 +103,8 @@ job_five = JobListing.new(title: "Interpreter needed for Doctor Ass. internation
 event_four = Event.new(title: "Mediators worldwide conference",
                       description: "Worldwide meeting for mediation professionals",
                       start_date: "07/09/2018", end_date: "07/09/2018",
-                      venue: "Villa Necchi Campiglio", address: "Via Mozart,12, Milano")
+                      venue: "Villa Necchi Campiglio", address: "Via Mozart, 12",
+                      zip_code: "20122", city: "Milano", province: "MI")
 
 employer_four = User.new(company_name: "ArbiMediations", role: "employer", email: "arbi@mediations.com", password: "arbi@mediations.com")
 
@@ -121,7 +125,8 @@ job_six = JobListing.new(title: "Steward for cinema exhibition",
 event_five = Event.new(title: "Venice cinema exhibition",
                       description: "Showing of new indie films",
                       start_date: "22/07/2018", end_date: "26/07/2018",
-                      venue: "Different venues in Lido di Venezia", address: "Lido Di Venezia, Venezia, VE")
+                      venue: "Different venues in Lido di Venezia", address: "Lido Di Venezia",
+                      zip_code: "30126", city: "Venezia", province: "VE")
 
 employer_five = User.new(company_name: "Still-Arbi", role: "employer", email: "arbi@still.com", password: "arbi@still.com")
 
@@ -144,7 +149,8 @@ event_six = Event.new(title: "Arbi's soccer game",
                       description: "Soccer game to prove who's the best player",
                       start_date: "10/07/2018", end_date: "10/07/2018",
                       venue: "Campo comunale Cologna Spiaggia",
-                      address: "Via C. Romualdi, Piane Tordino, Cologna Spiaggia")
+                      address: "Via C. Romualdi, Piane Tordino",
+                      zip_code: "64026", city: "Cologna Spiaggia", province: "TE")
 
 employer_six = User.new(company_name: "Arbi", role: "employer", email: "arbi@soccer.com", password: "arbi@soccer.com")
 
@@ -155,10 +161,10 @@ job_seven.event = event_six
 job_seven.save
 
 
-candidate_one = User.new(first_name: "Brigitte", last_name: "Bardot", role: "candidate", email: "brigitte@test.com", password: "brigitte@test.com", photo:"url1")
-candidate_two = User.new(first_name: "Laura", last_name: "Paselli", role: "candidate", email: "laura@test.com", password: "laura@test.com", photo:"url2")
-candidate_three = User.new(first_name: "Cristiano", last_name: "Malgioglio", role: "candidate", email: "cristiano@test.com", password: "cristiano@test.com", photo:"url3")
-candidate_four = User.new(first_name: "Al", last_name: "Yankovic", role: "candidate", email: "al@test.com", password: "al@test.com", photo:"url4")
+candidate_one = User.new(first_name: "Brigitte", last_name: "Bardot", role: "candidate", email: "brigitte@test.com", password: "brigitte@test.com")
+candidate_two = User.new(first_name: "Laura", last_name: "Paselli", role: "candidate", email: "laura@test.com", password: "laura@test.com")
+candidate_three = User.new(first_name: "Cristiano", last_name: "Malgioglio", role: "candidate", email: "cristiano@test.com", password: "cristiano@test.com")
+candidate_four = User.new(first_name: "Al", last_name: "Yankovic", role: "candidate", email: "al@test.com", password: "al@test.com")
 
 
 url1 = "http://res.cloudinary.com/orexibus/image/upload/v1530867814/Staffize%20profile%20pict/businesswoman-portrait-picture-id501368096.jpg"
