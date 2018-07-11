@@ -1,43 +1,169 @@
-.banner {
-  width: 100%;
-  height: calc(100vh - 170px);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+.backcolor {
+/*transition: 1s ease-in-out;*/
+background-color: rgba(44, 171, 164,1) !important;
+cursor: pointer;
+transition: 0.2s ease-in-out;
 
 }
 
-.banner-container {
+.backcolor2 {
+/*transition: 1s ease-in-out;*/
+background: rgba(0,101,168,1) !important;
+cursor: pointer;
+transition: 0.2s ease-in-out;
+
+}
+
+.backimage2 {
+  /*transition: 1s ease;*/
+  background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(worker2.jpg) 0 0 no-repeat;
+  overflow: hidden;
+}
+
+.backimage {
+  background: linear-gradient(-225deg, rgba(44, 171, 164,0.6) 0%, rgba(0,36,61,0.6) 50%), url(worker.jpeg) 0 0 no-repeat;
+  overflow: hidden;
+}
+
+.wrapper {
+
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.full {
+
+  height:100vh;
+  width: 50%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  align-self: auto;
   display: flex;
   justify-content: center;
-  align-items: center;
-
 }
 
-.banner-text-container {
+
+.full-second {
+
+  height:100vh;
+  width: 50%;
+  background-size: cover;
+  position: relative;
+  /*background-position: center;*/
+  align-self: auto;
   display: flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  margin-top: 16%;
-
+  justify-content: center;
 }
 
-
-h1 {
-  color: #3895D3;
-  font-size: 48px;
+.full a {
+  color: #fff;
+  text-decoration: none;
+}
+.full h3 {
+  padding: 15px 30px;
 }
 
-.specific-class {
-  h3 {
-    color: #3895D3;
-    font-size: 32px;
+.full a {
+  color: #fff;
+  text-decoration: none;
+}
+.full h3 {
+  padding: 15px 30px;
+}
+
+.full-second a {
+  color: #fff;
+  text-decoration: none;
+}
+.full-second h3 {
+  padding: 15px 30px;
+}
+
+.text {
+margin-top: 50%;
+z-index:10;
+p {
+  text-align: center;
+  color: white;
+  padding: 0;
+  margin: 0;
+
+}
+ h3 {
+  font-size: 50px;
+  color: white;
+  text-align: center;
+  font-size: bold;
+  padding: 0;
+  margin: 0;
   }
 }
 
-a:hover {
-   text-decoration: none;
+
+
+/*.border {
+border-left-color: lightgray;
+border-left-style: solid;
+border-left-width: 1px;
+
+}*/
+
+
+/*.full:hover .overlay-effect {
+  opacity: 1;
+  cursor: pointer;
 }
+.overlay-effect {
+  background-color: rgba(0,101,168,1);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transition: 1s ease;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  overflow:hidden;
+  display: flex;
+  align-self: auto;
+  justify-content: center;
+}*/
 
 
+
+
+/*.full-second:hover .overlay-effect-second {
+  opacity: 1;
+  cursor: pointer;
+}
+*//*.overlay-effect-second {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transition: 1s ease;
+  background: linear-gradient(-225deg, rgba(79, 234, 167,0.6) 0%, rgba(44, 171, 164,0.6) 50%), url(worker2.jpg) 0 0 no-repeat;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  overflow:hidden;
+}*/
+
+
+
+
+
+
+
+
+/*@media screen and (max-width: 768px) {
+  .full, .half, .half2 {margin-bottom: 10px;}
+}*/

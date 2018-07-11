@@ -1,25 +1,22 @@
+<div class="wrapper banner">
+  <div class="full backimage">
+    <div class="text">
+      <p>I am a candidate</p>
+      <h3>LOOKING <br> FOR A JOB</h3>
+      <%=link_to "Find a job", job_listings_path, class: "btn landing-button" %>
+    </div>
 
-<div class="banner" style="background-image: linear-gradient(-270deg, rgba(132, 220, 207, 0.8) 50%, rgba(0, 55, 94, 0.8) 50%), url(<%= image_path 'StaffizeLandingPage.jpg' %>)">
-
-
-
-
-
-
-
-  <div class = "banner-container">
-    <div class = "banner-text-container">
-      <h2 class = "title">STAFFIZE {Event}</h2>
-      <h3>Find work and workers for your next event on the go</h3>
+    </div>
+    <div class="full-second backcolor2">
+      <div class="text">
+        <p>I am an employer</p>
+        <h3>MANAGING <br> AN EVENT</h3>
+        <%=link_to "Find your staff", candidates_job_listings_path, class: "btn home-button" %>
+      </div>
     </div>
   </div>
-
-  <div class = "home-buttons">
-
-    <%= link_to "Find a Job", job_listings_path, class: "btn btn-primary" %>
-    <!-- TODO put path events -->
-    <%= link_to "Create a Job", new_event_path, class: "btn btn-primary" %>
-
-  </div>
 </div>
+<%= javascript_pack_tag "application" %>
+<%= javascript_pack_tag "banner" %>
+
 
