@@ -17,6 +17,7 @@ job_one = JobListing.new(title: "Boggi is seeking for hostess for corporate cong
                         directions about the venue and surrounding areas",
                         dress_code: "Black dress, elegant shoes",
                         start_date: "01/09/2018", end_date: "04/09/2018",
+                        start_time: "10:08", end_time: "18:06",
                         schedule_detail: "07:00 - 19:00",
                         salary: "200,00", currency: "EUR")
 
@@ -42,6 +43,7 @@ job_two = JobListing.new(title: "Trade show model for RedBull Racing Night event
                         description: "The girl will entertain guests during the event ",
                         dress_code: "Denim shorts, RedBull top tank will be provided",
                         start_date: "20/07/2018", end_date: "20/07/2018",
+                        start_time: "11:08", end_time: "22:06",
                         schedule_detail: "19:00 - 02:00",
                         salary: "200,00", currency: "EUR")
 
@@ -72,6 +74,7 @@ job_four = JobListing.new(title: "Polish speaker hostess to present new make-up 
                           category: "hostess",
                           description: "Present our new make-up line to our Polish guests",
                           start_date: "01/09/2018", end_date: "01/09/2018",
+                          start_time: "6:05", end_time: "17:06",
                           schedule_detail: "10:00 - 18:00",
                           salary: "150,00", currency: "EUR")
 
@@ -98,6 +101,7 @@ job_five = JobListing.new(title: "Interpreter needed for Doctor Ass. internation
                           dress_code: "Business smart",
                           start_date: "12/07/2018", end_date: "12/07/2018",
                           schedule_detail: "08:00 - 17:00",
+                          start_time: "3:03", end_time: "10:06",
                           salary: "300,00", currency: "EUR")
 
 event_four = Event.new(title: "Mediators worldwide conference",
@@ -142,6 +146,7 @@ job_seven = JobListing.new(title: "Hostess for Arbi's soccer game",
                           description: "Hostess will escort Arbi's mates to the pitch",
                           dress_code: "not required",
                           start_date: "10/07/2018", end_date: "10/07/2018",
+                          start_time: "5:08", end_time: "5:09",
                           schedule_detail: "20:00 - 23:00",
                           salary: "20,00", currency: "EUR")
 
