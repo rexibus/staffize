@@ -16,10 +16,10 @@
             </div>
             <div class="job-details-bottom">
               <div class="job-details-bottom-venue col-xs-7 col-sm-6 col-md-7">
-                <span><%= job.event.venue %></span>
+                <p><span><%= job.event.venue %></span>, <span><%= job.event.city %>, <%= job.event.province %></span></p>
               </div>
               <div class="job-details-bottom-salary col-xs-5 col-sm-6 col-md-5">
-                <span><%= job.salary %> <%= job.currency %></span>
+                <span>Daily salary:</span> <span><strong><%= job.salary %> <%= job.currency %></strong></span>
               </div>
             </div>
           </div>
@@ -77,13 +77,12 @@
       <div class="sidebar">
         <br>
         <p>filters will go here</p>
-        <br>
       <!-- left-side end -->
       </div>
 
       <div class="row right-side job-listings">
         <div class="row">
-          <div class="col-xs-10 col-md-8">
+          <div class="col-xs-10 col-md-7">
             <div class="form-group jobs-searchbar">
               <%= form_tag(job_listings_path, :method => "get", class: "form-inline") do%>
               <%= text_field_tag :search, params[:search], placeholder: "Search Jobs", id: "jobs-search", class: "form-group" %>
@@ -94,9 +93,9 @@
               <% end %>
             </div>
           </div>
-          <div class="col-xs-2 col-md-4">
+          <div class="col-xs-2 col-md-5">
             <div class="sort-by">
-              <p>sort by dropdown</p>
+              <p>-sort by dropdown-</p>
             </div>
           </div>
         </div>
@@ -115,10 +114,10 @@
               </div>
               <div class="job-details-bottom">
                 <div class="job-details-bottom-venue col-xs-7 col-sm-6 col-md-7">
-                  <span><%= job.event.venue %></span>
+                  <p><span><%= job.event.venue %></span>, <span><%= job.event.city %>, <%= job.event.province %></span></p>
                 </div>
                 <div class="job-details-bottom-salary col-xs-5 col-sm-6 col-md-5">
-                  <span><%= job.salary %> <%= job.currency %></span>
+                  <span>Daily salary:</span> <span><strong><%= job.salary %> <%= job.currency %></strong></span>
                 </div>
               </div>
             </div>
