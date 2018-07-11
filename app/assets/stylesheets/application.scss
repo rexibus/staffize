@@ -15,12 +15,18 @@
 @import "pages/index";
 
 h1 {
+  font-weight: lighter;
+  color: #131033;
   text-align:center;
   font-weight: bold;
 }
 
 h3 {
-  color: $szblue;
+  color: #131033;
+}
+
+h4 {
+  color: 131033;
 }
 
 body {
