@@ -1,1 +1,18 @@
 // Specific CSS for your home-page
+.banner {
+  &:hover {
+    background-position: 0% 100%;
+
+    &.title {
+      text-shadow: 0 0 20px rgba(0,0,0,1);
+    }
+  }
+}
+
+.home-left-side {
+  background-color: #00375E;
+}
+
+.home-right-side-side {
+  background-color: #84DCCF;
+}

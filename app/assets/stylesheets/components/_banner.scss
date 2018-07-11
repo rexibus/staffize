@@ -14,7 +14,6 @@
 
 }
 
-
 .banner-text-container {
   display: flex;
   flex-direction:column;
@@ -30,7 +29,7 @@ h1 {
   font-size: 48px;
 }
 
-.specific-clqss {
+.specific-class {
   h3 {
     color: #3895D3;
     font-size: 32px;
@@ -45,38 +44,3 @@ a:hover {
 }
 
 
-.btn-outline {
-  color: white;
-
-}
-
-
-.home-buttons {
-  display: flex;
-  justify-content:center;
-}
-
-
-.btn {
-  flex-direction: row;
-  color: #3895D3;
-  font-size: 24px;
-  background: none;
-  padding: 16px 24px;
-  border: 2px solid #3895D3;
-  border-radius: 5px;
-  transition: 0.5s;
-  cursor:pointer;
-  display:inline-block;
-  position: relative;
-  margin: 24px 8%;
-
-
-}
-
-.btn:hover {
-  color:white;
-  background: #3895D3;
-  text-decoration: none;
-
-}
