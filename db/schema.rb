@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_11_105609) do
+ActiveRecord::Schema.define(version: 2018_07_11_110319) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 2018_07_11_105609) do
     t.datetime "updated_at", null: false
     t.text "dress_code"
     t.datetime "end_time"
+    t.datetime "start_time"
     t.index ["event_id"], name: "index_job_listings_on_event_id"
   end
 
