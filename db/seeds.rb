@@ -198,7 +198,6 @@ candidate7 = User.new(first_name: "Francesca", last_name: "DeNiro", role: "candi
     language: "Italian, English", experience: "Maid for 15 years.", ssn: "987654321", date_of_birth: "06/06/1989")
 candidate8 = User.new(first_name: "Stephanie", last_name: "Tanner", role: "candidate", email: "ladygirlsteph@hotmail.com", password: "ladygirlsteph@hotmail.com",
     language: "Italian, Spanish", experience: "Event assistant in beverage, serving, loading for 8 years", ssn: "444889918", date_of_birth: "21/07/1993")
-
 employer1 = User.new(first_name: "Jeremiah", last_name: "Scrooge", company_name: "Woolworth", position: "Hiring manager",
     vat_number: "84921393",  land_phone: "+1 216 890 5673", role: "employer")
 employer2 = User.new(first_name: "Arbi", last_name: "Velaj", company_name: "Spiambot", position: "Bossman",
@@ -294,6 +293,13 @@ candidate3.save
 url4 = "http://res.cloudinary.com/orexibus/image/upload/v1530868091/Staffize%20profile%20pict/wpid-picsart_1389881209335.jpg"
 candidate4.remote_photo_url = url4
 candidate4.save
+
+
+candidate5.save
+candidate6.save
+candidate7.save
+candidate8.save
+
 
 
 
