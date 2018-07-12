@@ -10,3 +10,5 @@
 // console.log('Hello World from Webpacker');
 // import "maps";
 import "../plugins/flatpickr"
+import "banner"
+
