@@ -1,3 +1,10 @@
+// .equal {
+//   display: flex;
+//   display: -webkit-flex;
+//   flex-wrap: wrap;
+// }
+
+
 .card-items {
   background-color: rgb(240,240,240);
   color:rgb(40,40,40);
@@ -73,7 +80,6 @@
   }
 }
 
-
 .right-show-cards {
   //list-style-type: none;
   border: 1px solid rgb(240,240,240);
@@ -81,7 +87,26 @@
   color:rgb(40,40,40);
   border-radius: 3px;
   height: 12%;
-  padding: 19px 12px;
+  padding: 18px 12px;
+  margin: 8px;
+  h4 {
+    font-size: 20px;
+    font-weight: lighter;
+  }
+  p {
+    font-size: 14px;
+    font-weight: lighter;
+  }
+}
+
+.right-show-cards-candidate {
+  //list-style-type: none;
+  border: 1px solid rgb(240,240,240);
+  background-color: white;
+  color:rgb(40,40,40);
+  border-radius: 3px;
+  height: 12%;
+  padding: 18px 12px;
   margin: 8px;
   h4 {
     font-size: 20px;
