@@ -10,13 +10,18 @@
   <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
 </head>
   <body>
-
-
+    <% if  current_page?("/") %>
+    <%= render 'layouts/navbar_home' %>
+    <% else %>
     <%= render 'layouts/navbar' %>
+    <% end %>
+
+
+
     <%= render 'shared/flashes' %>
     <%= yield %>
 
-
+    
 
     <%#= stylesheet_link_tag 'application', media: 'all' %>
 
