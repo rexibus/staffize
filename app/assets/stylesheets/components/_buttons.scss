@@ -1,34 +1,35 @@
-
-
-
-
-// .btn {
-
-//   list-style-type: none;
-//   display: inline;
-//   color: #26C485;
-//   border: 3px solid #446DF6;
-//   border-radius: 8px;
-//   padding: 10px;
-//   margin: 0px !important;
-//   flex-direction: row;
-//   justify-content: flex-end;
-
-//   &:hover {
-//     color: white;
-//     background: #446DF6;
-//   }
-// }
 .right-side-button {
   margin: 8px;
 }
 
-.btn-right-side-main {
+.btn-right-side-main-employer {
   width: 74%;
+  background: $mainblue;
 }
 
-.btn-right-side-secondary {
+.btn-apply-candidate {
+  margin-top: 2px;
+  width: 74%;
+  background-color: $maingreen;
+  color: white;
+}
+
+.btn-apply-candidate:hover {
+  background-color: $hovergreen;
+  color: white;
+}
+
+.btn-right-side-secondary-candidate {
+  margin-top: 2px;
   width: 25%;
+  background-color: $maingreen;
+  border-color: $maingreen;
+}
+
+.btn-right-side-secondary-candidate:hover {
+  background-color: $hovergreen;
+  border-color: $hovergreen;
+  color: white;
 }
 
 
