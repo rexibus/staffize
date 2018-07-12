@@ -54,13 +54,12 @@
       <%= f.text_field :dress_code, class: 'form-control' %>
     </div>
 
-    <div class="radio col-xs-6" style="display: inline;">
-      <legend class="col-form-label">Gender</legend>
-      <label class="radio-inline"><input type="radio" name="optradio" checked>Male/Female</label>
-      <label class="radio-inline"><input type="radio" name="optradio">Male</label>
-      <label class="radio-inline"><input type="radio" name="optradio">Female</label>
+      <div class="form-group col-xs-6">
+      <%= f.label :gender %>
+      <%= f.text_field :gender, placeholder: "Male, Female, or No prefence", class: 'form-control' %>
     </div>
   </div>
+
 
 <div class = "row">
   <div class="form-group col-xs-6">

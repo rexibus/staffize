@@ -15,7 +15,7 @@
       <h4>Description: </h4> <p><%= @job_listing.description %></p>
       </div>
 
-      <p><%= (@counter > 0) ? "#{@counter} people applied for this job" : "Be the first to apply" %></p>
+      <!-- <p><%= (@counter > 0) ? "#{@counter} people applied for this job" : "Be the first to apply" %></p> -->
 
     </div>
 
@@ -80,7 +80,7 @@
 
     <div class="right-show-cards">
       <div>
-      <h4 style="display: inline;">Start Time: </h4><p style="display: inline;"><%= @job_listing.start_time.strftime("%H:%M") %>
+          <h4 style="display: inline;">Start Time: </h4><p style="display: inline;"><%= @job_listing.start_time.strftime("%H:%M") %>
       </div>
         <div>
        <h4 style="display: inline;">End Time: </h4> <p style="display: inline;"><%= @job_listing.end_time.strftime("%H:%M")%></p>
@@ -96,7 +96,7 @@
     <div>
         <% if current_user and current_user.role == "candidate" %>
 
-          
+
 
           <p><%= (@counter > 0) ? "#{@counter} people applied for this job" : "Be the first to apply" %></p>
 
