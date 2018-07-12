@@ -37,8 +37,7 @@ const pick2 = document.querySelector(".full-second");
       pick1.classList.remove("backcolor");
       pick2.classList.remove("backimage2");
       pick2.classList.add("backcolor2");
-    }
-    else if ((pick2).classLiscontains("backcolor2")) {
+    } else if ((pick2).classList.contains("backcolor2")) {
       pick2.classList.add("backimage2");
       pick2.classList.remove("backcolor2");
       pick1.classList.remove("backimage");
