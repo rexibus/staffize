@@ -1,5 +1,15 @@
-.right-side-button {
+.right-side-buttons {
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-top: 8px;
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+}
+
+.right-side-button-employer {
   margin: 8px;
+  display: inline-block;
 }
 
 .btn-right-side-main-employer {
@@ -8,7 +18,7 @@
 }
 
 .btn-apply-candidate {
-  margin-top: 2px;
+  bottom: 0px;
   width: 74%;
   background-color: $maingreen;
   color: white;
@@ -20,15 +30,29 @@
 }
 
 .btn-right-side-secondary-candidate {
-  margin-top: 2px;
+  bottom: 0px;
   width: 25%;
   background-color: $maingreen;
   border-color: $maingreen;
 }
 
+.btn-right-side-secondary-employer {
+  margin-top: 2px;
+  margin-right: 3px;
+  width: 31%;
+  background-color: $mainblue;
+  border-color: $mainblue;
+}
+
 .btn-right-side-secondary-candidate:hover {
   background-color: $hovergreen;
   border-color: $hovergreen;
+  color: white;
+}
+
+.btn-right-side-secondary-employer:hover {
+  background-color: $hoverblue;
+  border-color: rgb(14, 37, 130);
   color: white;
 }
 
@@ -82,7 +106,7 @@
 
 .btn-banner2:hover {
   color:white;
-  background: rgba(44, 171, 164,1);
+  background: rgba(54,221,124,1);
   text-decoration: none;
 
 }
