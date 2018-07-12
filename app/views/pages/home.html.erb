@@ -3,7 +3,9 @@
     <div class="text">
       <p>I am a candidate</p>
       <h3>LOOKING <br> FOR A JOB</h3>
-      <%=link_to "Find a job", job_listings_path, class: "btn landing-button" %>
+      <div class="btn landing-button home-buttons btn-outline btn-banner1">
+        <%=link_to "Find a job", job_listings_path %>
+      </div>
     </div>
 
     </div>
@@ -11,12 +13,41 @@
       <div class="text">
         <p>I am an employer</p>
         <h3>MANAGING <br> AN EVENT</h3>
-        <%=link_to "Find your staff", candidates_job_listings_path, class: "btn home-button" %>
+        <div class="btn landing-button home-buttons btn-outline btn-banner2">
+          <%=link_to "Find staff", candidates_job_listings_path %>
+        </div>
       </div>
     </div>
   </div>
 </div>
-<%= javascript_pack_tag "application" %>
-<%= javascript_pack_tag "banner" %>
+
+<div class="wrapper promo-text text-center">
+  <h1>The on-demand event jobs platform, connecting
+  companies with people looking for flexible work</h1>
+</div>
+
+<div class="wrapper flex-splitter">
+  <div class="workers">
+    <div class="wrapper">
+      <ul>
+        <li><h2>Workers</h2></li>
+        <li>Find work across hundreds of companies</li>
+        <li>Get paid fast</li>
+        <li>Accept or decline job requests easily</li>
+      </ul>
+    </div>
+  </div>
+  <div class="employers">
+    <div class="wrapper">
+      <ul>
+        <li><h2>Employers</h2></li>
+        <li>Over 1.000 workers to choose from</li>
+        <li>Choose the best candidates and hire them easily</li>
+        <li>Let us handle paperwork and payroll</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
 
 

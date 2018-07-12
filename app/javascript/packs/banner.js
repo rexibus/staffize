@@ -13,7 +13,7 @@ second.addEventListener("mouseover", function(){
     // pick.style.background = "rgba(0,101,168,1)";
 
 
-    pick1.classList.toggle("backcolor");
+    pick1.classList.add("backcolor");
     pick1.classList.remove("backimage");
     pick2.classList.remove("backcolor2");
     pick2.classList.add("backimage2");
