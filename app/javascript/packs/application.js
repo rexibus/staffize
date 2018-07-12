@@ -10,3 +10,8 @@
 // console.log('Hello World from Webpacker');
 // import "maps";
 import "../plugins/flatpickr"
+// import "banner"
+
+import { initUpdateNavbarOnScroll } from '../navbar';
+initUpdateNavbarOnScroll();
+

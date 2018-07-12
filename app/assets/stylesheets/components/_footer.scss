@@ -2,7 +2,6 @@
 .footer {
   background: $footergrey;
   display: flex;
-
   flex-direction: column;
   // height: 100px;
   padding: 0px 50px;
@@ -15,9 +14,6 @@
     a:hover {
       color: $mainblue;
     }
-
-
-
 }
 
 .footer-row {

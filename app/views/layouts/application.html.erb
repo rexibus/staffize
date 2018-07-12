@@ -10,14 +10,18 @@
   <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
 </head>
   <body>
-
-
+    <% if  current_page?("/") %>
+    <%= render 'layouts/navbar_home' %>
+    <% else %>
     <%= render 'layouts/navbar' %>
+    <% end %>
+
+
+
     <%= render 'shared/flashes' %>
     <%= yield %>
-     <%= render 'layouts/footer' %>
 
-
+    
 
     <%#= stylesheet_link_tag 'application', media: 'all' %>
 
@@ -25,6 +29,7 @@
   <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
   <%= javascript_pack_tag "application" %>
   <%= javascript_pack_tag "maps" %>
+  <%= javascript_pack_tag "banner" %>
 
   </body>
 </html>
