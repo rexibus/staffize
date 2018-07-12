@@ -10,6 +10,7 @@
   color:rgb(40,40,40);
   border-radius: 3px;
   margin-bottom: 5px;
+  border: 1px solid $maingreen;
 
 }
 
@@ -20,11 +21,13 @@
   padding-left: 40px;
 }
 
-#job-listings-title {
-  margin-bottom: 50px;
-  h1 {
+#job-index-title {
   text-align: left;
-  font-weight: lighter;
+  color: black;
+}
 
-  }
+#job-title {
+  text-align: left;
+  color: black;
+
 }

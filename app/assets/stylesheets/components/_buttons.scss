@@ -1,34 +1,35 @@
-
-
-
-
-// .btn {
-
-//   list-style-type: none;
-//   display: inline;
-//   color: #26C485;
-//   border: 3px solid #446DF6;
-//   border-radius: 8px;
-//   padding: 10px;
-//   margin: 0px !important;
-//   flex-direction: row;
-//   justify-content: flex-end;
-
-//   &:hover {
-//     color: white;
-//     background: #446DF6;
-//   }
-// }
 .right-side-button {
   margin: 8px;
 }
 
-.btn-right-side-main {
+.btn-right-side-main-employer {
   width: 74%;
+  background: $mainblue;
 }
 
-.btn-right-side-secondary {
+.btn-apply-candidate {
+  margin-top: 2px;
+  width: 74%;
+  background-color: $maingreen;
+  color: white;
+}
+
+.btn-apply-candidate:hover {
+  background-color: $hovergreen;
+  color: white;
+}
+
+.btn-right-side-secondary-candidate {
+  margin-top: 2px;
   width: 25%;
+  background-color: $maingreen;
+  border-color: $maingreen;
+}
+
+.btn-right-side-secondary-candidate:hover {
+  background-color: $hovergreen;
+  border-color: $hovergreen;
+  color: white;
 }
 
 
@@ -46,7 +47,7 @@
 
 .landing-button {
   @extend .btn;
-  color: $szblue;
+  color: white;
 }
 
 
@@ -56,29 +57,36 @@
 }
 
 .home-buttons {
-  display: flex;
-  justify-content:center;
-  color: #3895D3;
+  text-align:center;
+  color: white;
   font-size: 24px;
   background: none;
   padding: 16px 24px;
-  border: 2px solid #3895D3;
+  border: 2px solid white;
   border-radius: 5px;
   transition: 0.5s;
   cursor:pointer;
-  display:inline-block;
   position: relative;
-  margin: 24px 8%;
+  margin: 10% 20%;
 
 
 }
 
-.btn-banner:hover {
+
+.btn-banner1:hover {
   color:white;
-  background: #3895D3;
+  background: rgba(0,101,168,1);
   text-decoration: none;
 
 }
+
+.btn-banner2:hover {
+  color:white;
+  background: rgba(44, 171, 164,1);
+  text-decoration: none;
+
+}
+
 
 
 .no-right-margin a {
@@ -172,4 +180,36 @@
     color: white;
     background: #00ff83;
   }
+}
+
+.button-view-job {
+  border: 1px solid $maingreen;
+  border-radius: 8px;
+  padding: 3px;
+  position: absolute;
+  right: 14%;
+  top: 20%;
+  font-size: 16px;
+  color: $maingreen;
+}
+
+.button-view-job:hover {
+  background-color: $maingreen;
+  color: white;
+}
+
+.button-view-job-employer {
+  border: 1px solid $mainblue;
+  border-radius: 8px;
+  padding: 3px;
+  position: absolute;
+  right: 50px;
+  top: 38px;
+  font-size: 16px;
+  color: $mainblue;
+}
+
+.button-view-job-employer:hover {
+  background-color: $mainblue;
+  color: white;
 }

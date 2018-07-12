@@ -2,24 +2,25 @@
   <div class="container">
     <div class="employer-job-listings">
       <% @job_listings.each do |job| %>
-        <div class="job-listing-cards jobcard">
+        <div class="job-listing-cards-employer jobcard">
           <div class="job-details">
             <div class="job-details-top">
-              <h3><%= link_to job.title, job_listing_path(job) %></h3>
+              <h3><%= link_to job.title, job_listing_path(job), id:"job-title"  %></h3>
+              <%= link_to "View job", job_listing_path(job), class: "btn button-view-job-employer text-right" %>
               <p><%= job.description %></p>
             </div>
             <div class="job-details-middle">
               <p>From: <%= job.start_date.strftime("%d %B %Y") %> </p> <p> To: <%= job.end_date.strftime("%d %B %Y") %></p>
             </div>
-            <div class="job-details-middle">
+           <!--  <div class="job-details-middle">
               <span>Event:</span> <%= link_to job.event.title, event_path(job.event) %>
-            </div>
+            </div> -->
             <div class="job-details-bottom">
-              <div class="job-details-bottom-venue col-xs-7 col-sm-6 col-md-7">
-                <p><span><%= job.event.venue %></span>, <span><%= job.event.city %>, <%= job.event.province %></span></p>
+              <div class="job-details-bottom-venue col-xs-7 col-sm-6 col-md-8">
+                <p><%=job.event.venue %>, <%= job.event.city %>, <%= job.event.province %></p>
               </div>
-              <div class="job-details-bottom-salary col-xs-5 col-sm-6 col-md-5">
-                <span>Daily salary:</span> <span><strong><%= job.salary %> <%= job.currency %></strong></span>
+              <div class="job-details-bottom-salary col-xs-5 col-sm-6 col-md-4">
+                <span>Total salary:</span> <span><%= job.salary %> <%= job.currency %></span>
               </div>
             </div>
           </div>
@@ -76,7 +77,7 @@
     <div class="flex-container">
       <div class="sidebar">
         <br>
-        <p>filters will go here</p>
+        <p></p>
       <!-- left-side end -->
       </div>
 
@@ -95,40 +96,46 @@
           </div>
           <div class="col-xs-2 col-md-5">
             <div class="sort-by">
-              <p>-sort by dropdown-</p>
+              <p></p>
             </div>
           </div>
         </div>
+
         <% @job_listings.each do |job| %>
-          <div class="col-xs-12 col-sm-6 col-md-10 job-listing-cards">
-            <div class="job-details">
+        <div class="job-details">
+            <div class="col-xs-10 col-sm-8 col-md-6 job-listing-cards-candidate">
               <div class="job-details-top">
-                <h3><%= link_to job.title, job_listing_path(job) %></h3>
+                <h3><%= link_to job.title, job_listing_path(job), id:"job-index-title" %>
+                </h3>
                 <p><%= job.description %></p>
+                <div class="text-right">
+                  <%= link_to "More info", job_listing_path(job), class: "btn button-view-job" %>
+                </div>
               </div>
               <div class="job-details-middle">
                 <p>From: <%= job.start_date.strftime("%d %B %Y") %> </p> <p> To: <%= job.end_date.strftime("%d %B %Y") %></p>
               </div>
-              <div class="job-details-middle">
-                <span>Event:</span> <%= link_to job.event.title, event_path(job.event) %>
-              </div>
+             <!--  <div class="job-details-middle">
+                <span> Event:</span> <%= link_to job.event.title, event_path(job.event) %>
+              </div> -->
               <div class="job-details-bottom">
                 <div class="job-details-bottom-venue col-xs-7 col-sm-6 col-md-7">
                   <p><span><%= job.event.venue %></span>, <span><%= job.event.city %>, <%= job.event.province %></span></p>
                 </div>
                 <div class="job-details-bottom-salary col-xs-5 col-sm-6 col-md-5">
-                  <span>Daily salary:</span> <span><strong><%= job.salary %> <%= job.currency %></strong></span>
+                  <span>Total salary:</span> <span><strong><%= job.salary %> <%= job.currency %></strong></span>
                 </div>
               </div>
             </div>
           </div>
         <% end %>
-      <!-- job-listings end -->
       </div>
-    <!-- flex-container end -->
+      <!-- job-listings end -->
     </div>
-  <!-- container end -->
+    <!-- flex-container end -->
   </div>
+  <!-- container end -->
+</div>
 <% end %>
 
 

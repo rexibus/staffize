@@ -278,6 +278,7 @@ job_listing6.event = event6
 job_listing6.save
 
 
+
 url1 = "http://res.cloudinary.com/orexibus/image/upload/v1530867814/Staffize%20profile%20pict/businesswoman-portrait-picture-id501368096.jpg"
 candidate1.remote_photo_url = url1
 candidate1.save

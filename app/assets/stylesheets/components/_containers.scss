@@ -1,5 +1,10 @@
 
 .job-show-container {
   background-color: #F6F6F6;
+  border: 1px solid $maingreen;
+  border-radius: 3px;
 }
 
+.job-title {
+  padding: 10px;
+}
