@@ -208,23 +208,26 @@
 
 .button-view-job {
   border: 1px solid $maingreen;
-  border-radius: 8px;
-  padding: 3px;
+  background-color: $maingreen;
+  padding: 15px 25px;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s;
   position: absolute;
   right: 14%;
   top: 20%;
-  font-size: 16px;
-  color: $maingreen;
+  font-size: 18px;
+  color: white;
 }
 
 .button-view-job:hover {
-  background-color: $maingreen;
-  color: white;
+  background-color: white;
+  color: $maingreen;
 }
 
 .button-view-job-employer {
   border: 1px solid $mainblue;
-  border-radius: 8px;
+  border-radius: 3px;
   padding: 3px;
   position: absolute;
   right: 50px;
@@ -250,4 +253,19 @@
 .button-form:hover {
   background-color: $hoverblue;
   color: white;
+}
+
+.button-search-candidate {
+  background-color: $maingreen;
+  color: white;
+  border: 1px solid $maingreen;
+  border-radius: 3px;
+  transition: background-color 0.3s;
+  padding: 2.5px;
+}
+
+.button-search-candidate:hover {
+  background-color: white;
+  color: $maingreen;
+
 }
