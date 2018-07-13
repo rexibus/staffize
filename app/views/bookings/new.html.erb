@@ -1,13 +1,23 @@
-<h2>Are you sure you want to apply for this job?</h2>
-<hr>
+<div class="container ">
+  <div class="row">
+    <div class="border-green booking-confirmation col-xs-12 col-sm-6 col-sm-offset-3">
+      <div>
+        <h2>Are you sure you want to apply for this job?</h2>
+      </div>
+          <%= simple_form_for @booking, url: event_job_listing_bookings_path,  method: :post do |f| %>
+            <%= f.input :start_date, :input_html => { :value => @job_listing.start_date }, as: :hidden %>
+            <%= f.input :end_date, :input_html => { :value => @job_listing.end_date }, as: :hidden %>
+      <div class="confirm-job">
+        <div>
+            <%= f.button :submit, "Apply", class: "btn-confirm-application"%>
+          <% end %>
+        </div>
+        <div>
+          <%= link_to "Go back", job_listing_path(@job_listing), class: " btn btn-back-confirm-application" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-
-<%= simple_form_for @booking, url: event_job_listing_bookings_path,  method: :post do |f| %>
-  <%= f.input :start_date, :input_html => { :value => @job_listing.start_date }, as: :hidden %>
-  <%= f.input :end_date, :input_html => { :value => @job_listing.end_date }, as: :hidden %>
-  <%= f.button :submit, "Apply", class: "btn-primary"%>
-<% end %>
-<hr>
-
-
-<%= link_to "Go back", job_listing_path(@job_listing) %>
+<!-- <a class="btn btn-primary btn-right-side-secondary-candidate" href="/job_listings">Back</a> -->
