@@ -29,3 +29,20 @@ a:hover {
   text-decoration: none;
 }
 
+.below-navbar {
+  padding: 80px;
+}
+
+
+.border-green {
+    background-color: white;
+    border: 1px solid $maingreen;
+    border-radius: 3px;
+
+}
+
+.container {
+  min-height: calc(100vh - 140px);
+}
+
+

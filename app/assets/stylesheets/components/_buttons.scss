@@ -22,11 +22,13 @@
   width: 74%;
   background-color: $maingreen;
   color: white;
+  transition: background-color 0.3s;
 }
 
 .btn-apply-candidate:hover {
-  background-color: $hovergreen;
-  color: white;
+  background-color: white;
+  color: $maingreen;
+  border-color: $maingreen;
 }
 
 .btn-right-side-secondary-candidate {
@@ -34,6 +36,7 @@
   width: 25%;
   background-color: $maingreen;
   border-color: $maingreen;
+  transition: background-color 0.3s;
 }
 
 .btn-right-side-secondary-employer {
@@ -45,9 +48,9 @@
 }
 
 .btn-right-side-secondary-candidate:hover {
-  background-color: $hovergreen;
-  border-color: $hovergreen;
-  color: white;
+  background-color: white;
+  border-color: $maingreen;;
+  color: $maingreen;
 }
 
 .btn-right-side-secondary-employer:hover {
@@ -214,23 +217,26 @@
 
 .button-view-job {
   border: 1px solid $maingreen;
-  border-radius: 8px;
-  padding: 3px;
-  position: relative;
+  background-color: $maingreen;
+  padding: 15px 25px;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  position: absolute;
   right: 14%;
-  bottom: 20%;
-  font-size: 16px;
-  color: $maingreen;
+  top: 20%;
+  font-size: 18px;
+  color: white;
 }
 
 .button-view-job:hover {
-  background-color: $maingreen;
-  color: white;
+  background-color: white;
+  color: $maingreen;
 }
 
 .button-view-job-employer {
   border: 1px solid $mainblue;
-  border-radius: 8px;
+  border-radius: 3px;
   padding: 3px;
   position: absolute;
   right: 50px;
@@ -259,3 +265,53 @@
   background-color: $hoverblue;
   color: white;
 }
+
+
+.btn-confirm-application {
+  border-radius: 3px;
+  bottom: 0px;
+  background-color: $maingreen;
+  color: white;
+}
+
+.btn-back-confirm-application {
+  border-radius: 3px;
+  bottom: 0px;
+  background-color: $maingreen;
+  color: white;
+  a {
+  color: white;
+  }
+}
+
+.btn-confirm-application:hover {
+  background-color: white;
+  border-color: $maingreen;
+  color: $maingreen;
+}
+
+.btn-back-confirm-application:hover {
+  background-color: white;
+  color: $maingreen;
+  border-color: $maingreen;
+  a {
+    color: $maingreen;
+  }
+}
+
+.button-search-candidate {
+  background-color: $maingreen;
+  color: white;
+  border: 1px solid $maingreen;
+  border-radius: 3px;
+  transition: background-color 0.3s;
+  padding: 2.5px;
+}
+
+.button-search-candidate:hover {
+  background-color: white;
+  color: $maingreen;
+
+}
+
+// comment comment comment
