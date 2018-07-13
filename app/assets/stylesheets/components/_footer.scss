@@ -64,12 +64,12 @@ margin-right: 25px;
 }
 
 .other-footer {
-  border-top: 1px solid black;
+  border-top: 1px solid #BABABA;
   margin: 60px auto 0 auto;
   bottom: 0;
   width: 90%;
    a {
-    color: black;
+    color: #8E8E8E;
   }
   a:hover {
     color: $mainblue;
@@ -79,7 +79,8 @@ margin-right: 25px;
 .footer2-other {
   margin-top: 26px;
   text-align: center;
-  color: black;
+  color: #8E8E8E;
+  font-weight: lighter;
 
 }
 

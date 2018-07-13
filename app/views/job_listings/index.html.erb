@@ -86,8 +86,8 @@
             <div class="col-xs-10 col-md-7">
               <div class="form-group jobs-searchbar">
                 <%= form_tag(job_listings_path, :method => "get", class: "form-inline") do%>
-                <%= text_field_tag :search, params[:search], placeholder: "Search Jobs", id: "jobs-search", class: "form-group" %>
-                <%= submit_tag "Search", :name => nil, class: "form-group" %>
+                <%= text_field_tag :search, params[:search], placeholder: "Search Jobs", id: "jobs-search-candidate", class: "form-group" %>
+                <%= submit_tag "Search", :name => nil, class: "form-group button-search-candidate" %>
                 <% if @job_listings.blank? %>
                   <h4>No results</h4>
                 <% end %>
