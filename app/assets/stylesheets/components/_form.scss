@@ -26,13 +26,27 @@
   }
 }
 
-.button-form {
-  width: 100%;
-  margin-bottom: 20px;
-  margin-left: 0;
-  background-color: $mainblue;
-  :hover {
-    background-color: $hoverblue;
-  }
+.forgot-your-password {
+  color: $mainblue;
+}
+
+.forgot-your-password:hover {
+  color: $hoverblue;
+}
+
+.sign-up-link-in-login {
+  color: $mainblue;
+}
+
+.sign-up-link-in-login:hover {
+  color: $hoverblue;
+}
+
+.login-link-in-sign-up {
+  color: $mainblue;
+}
+
+.login-link-in-sign-up:hover {
+  color: $hoverblue;
 }
 
