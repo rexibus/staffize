@@ -251,3 +251,35 @@
   background-color: $hoverblue;
   color: white;
 }
+
+.btn-confirm-application {
+  border-radius: 3px;
+  bottom: 0px;
+  background-color: $maingreen;
+  color: white;
+}
+
+.btn-back-confirm-application {
+  border-radius: 3px;
+  bottom: 0px;
+  background-color: $maingreen;
+  color: white;
+  a {
+  color: white;
+  }
+}
+
+.btn-confirm-application:hover {
+  background-color: white;
+  border-color: $maingreen;
+  color: $maingreen;
+}
+
+.btn-back-confirm-application:hover {
+  background-color: white;
+  color: $maingreen;
+  border-color: $maingreen;
+  a {
+    color: $maingreen;
+  }
+}
