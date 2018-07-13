@@ -22,11 +22,13 @@
   width: 74%;
   background-color: $maingreen;
   color: white;
+  transition: background-color 0.3s;
 }
 
 .btn-apply-candidate:hover {
-  background-color: $hovergreen;
-  color: white;
+  background-color: white;
+  color: $maingreen;
+  border-color: $maingreen;
 }
 
 .btn-right-side-secondary-candidate {
@@ -34,6 +36,7 @@
   width: 25%;
   background-color: $maingreen;
   border-color: $maingreen;
+  transition: background-color 0.3s;
 }
 
 .btn-right-side-secondary-employer {
@@ -45,9 +48,9 @@
 }
 
 .btn-right-side-secondary-candidate:hover {
-  background-color: $hovergreen;
-  border-color: $hovergreen;
-  color: white;
+  background-color: white;
+  border-color: $maingreen;;
+  color: $maingreen;
 }
 
 .btn-right-side-secondary-employer:hover {
