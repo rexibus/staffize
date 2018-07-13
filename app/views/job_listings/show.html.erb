@@ -1,96 +1,13 @@
-<div class="container">
-  <% if current_user && current_user.role == "employer" %>
-    <div class="job-show-container-employer">
-    <div class = "job-title">
-      <h1 style="display: inline;"><%= @job_listing.title %></h1>
-      <!-- <h6 style="display: inline; padding:20px;">[ Created at: <%= @job_listing.created_at %> ]</h6> -->
-    </div>
-    <div class="row">
-      <!--  <div class="col-xs-7" style="overflow:hidden;"> -->
-      <div class="col-xs-7">
-        <div class="left-show-cards">
-          <div>
-            <h4>Description: </h4> <p><%= @job_listing.description %></p>
-          </div>
-        </div>
-        <div class="left-show-cards">
-          <h4>Schedule Detail:</h4>
-          <p><%= @job_listing.schedule_detail %></p>
-        </div>
-        <div class="left-show-cards">
-          <div>
-            <h4>Requirements: </h4> <p><%= @job_listing.dress_code %></p>
-          </div>
-        </div>
-        <div class="left-show-cards">
-          <div>
-            <h4>Dress Code: </h4> <p><%= @job_listing.dress_code %></p>
-          </div>
-        </div>
-        <div class="left-show-cards">
-          <div>
-            <h4 style="display: inline;">Gender: </h4> <p style="display: inline;"><%= @job_listing.gender %></p>
-          </div>
-        </div>
-        <div class="left-show-cards">
-          <h4 style="display: inline;"><%= @counter %> </h4><p style="display: inline;"> applied to this job</p>
-        </div>
-      </div>
-      <!--   <div class="col-xs-5 " style="overflow-y: scroll;
-   height: 550px;"> -->
-      <div class="col-xs-5 ">
-        <div
-          id="map"
-          style="width: 96%;
-          height: 225px;
-          margin-top: 2.25%;
-          margin-left: 2%;"
-          data-markers="<%= @markers.to_json %>"
-          >
-        </div>
-        <div class="right-show-cards no-margin">
-          <h4 style="display: inline;">Address:</h4> <p style="display: inline;"><%= @job_listing.event.address %></p>
-        </div>
-        <div class="right-show-cards">
-          <div>
-            <h4 style="display: inline;">Start Date: </h4><p style="display: inline;"><%= @job_listing.start_date.strftime("%A, %d %B %Y") %>
-          </div>
-          <div>
-            <h4 style="display: inline;">End Date: </h4> <p style="display: inline;"><%= @job_listing.end_date.strftime("%A, %d %B %Y")%></p>
-          </div>
-        </div>
-        <div class="right-show-cards">
-          <div>
-            <h4 style="display: inline;">Start Time: </h4><p style="display: inline;"><%= @job_listing.start_time.strftime("%H:%M") %>
-          </div>
-          <div>
-            <h4 style="display: inline;">End Time: </h4> <p style="display: inline;"><%= @job_listing.end_time.strftime("%H:%M")%></p>
-          </div>
-        </div>
-        <div class="right-show-cards">
-          <h4 style="display: inline;">Total salary:</h4>
-          <h4 style="display: inline;"><%= @job_listing.salary %> <%= @job_listing.currency%></h4>
-        </div>
-        <div class="right-side-button-employer" style="display: inline;">
-          <%= link_to "Update the job", edit_event_job_listing_path(@event), class: "btn btn-primary btn-right-side-secondary-employer" %>
-          <%= link_to "Delete the job", job_listings_path,
-          method: :delete,
-          data: { confirm: "Are you sure?" }, class: "btn btn-primary btn-right-side-secondary-employer" %>
-          <%= link_to "Back", job_listings_path, class: "btn btn-primary btn-right-side-secondary-employer" %>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <% else %>
-    <div class="job-show-container-candidate">
+  <div class="container">
+    <% if current_user && current_user.role == "employer" %>
+      <div class="job-show-container-employer">
       <div class = "job-title">
         <h1 style="display: inline;"><%= @job_listing.title %></h1>
         <!-- <h6 style="display: inline; padding:20px;">[ Created at: <%= @job_listing.created_at %> ]</h6> -->
       </div>
       <div class="row">
         <!--  <div class="col-xs-7" style="overflow:hidden;"> -->
-        <div class="col-xs-7 ">
+        <div class="col-xs-7">
           <div class="left-show-cards">
             <div>
               <h4>Description: </h4> <p><%= @job_listing.description %></p>
@@ -116,7 +33,7 @@
             </div>
           </div>
           <div class="left-show-cards">
-            <h4 style="display: inline;"><%= (@counter > 0) ? "#{@counter} applied for this job" : "Be the first to apply" %> </h4>
+            <h4 style="display: inline;"><%= @counter %> </h4><p style="display: inline;"> applied to this job</p>
           </div>
         </div>
         <!--   <div class="col-xs-5 " style="overflow-y: scroll;
@@ -131,10 +48,10 @@
             data-markers="<%= @markers.to_json %>"
             >
           </div>
-          <div class="right-show-cards-candidate no-margin">
+          <div class="right-show-cards no-margin">
             <h4 style="display: inline;">Address:</h4> <p style="display: inline;"><%= @job_listing.event.address %></p>
           </div>
-          <div class="right-show-cards-candidate">
+          <div class="right-show-cards">
             <div>
               <h4 style="display: inline;">Start Date: </h4><p style="display: inline;"><%= @job_listing.start_date.strftime("%A, %d %B %Y") %>
             </div>
@@ -142,7 +59,7 @@
               <h4 style="display: inline;">End Date: </h4> <p style="display: inline;"><%= @job_listing.end_date.strftime("%A, %d %B %Y")%></p>
             </div>
           </div>
-          <div class="right-show-cards-candidate">
+          <div class="right-show-cards">
             <div>
               <h4 style="display: inline;">Start Time: </h4><p style="display: inline;"><%= @job_listing.start_time.strftime("%H:%M") %>
             </div>
@@ -150,15 +67,99 @@
               <h4 style="display: inline;">End Time: </h4> <p style="display: inline;"><%= @job_listing.end_time.strftime("%H:%M")%></p>
             </div>
           </div>
-          <div class="right-show-cards-candidate">
+          <div class="right-show-cards">
             <h4 style="display: inline;">Total salary:</h4>
             <h4 style="display: inline;"><%= @job_listing.salary %> <%= @job_listing.currency%></h4>
           </div>
-          <div class="right-side-buttons">
-            <%= link_to "Apply for this job", new_event_job_listing_booking_path(@event,@job_listing), :class => "btn btn-apply-candidate" %>
-            <%= link_to "Back", job_listings_path, class: "btn btn-primary btn-right-side-secondary-candidate" %>
+          <div class="right-side-button-employer" style="display: inline;">
+            <%= link_to "Update the job", edit_event_job_listing_path(@event), class: "btn btn-primary btn-right-side-secondary-employer" %>
+            <%= link_to "Delete the job", job_listings_path,
+            method: :delete,
+            data: { confirm: "Are you sure?" }, class: "btn btn-primary btn-right-side-secondary-employer" %>
+            <%= link_to "Back", job_listings_path, class: "btn btn-primary btn-right-side-secondary-employer" %>
           </div>
         </div>
+      </div>
     </div>
-  <% end %>
+
+    <% else %>
+      <div class="job-show-container-candidate">
+        <div class = "job-title">
+          <h1 style="display: inline;"><%= @job_listing.title %></h1>
+          <!-- <h6 style="display: inline; padding:20px;">[ Created at: <%= @job_listing.created_at %> ]</h6> -->
+        </div>
+        <div class="row">
+          <!--  <div class="col-xs-7" style="overflow:hidden;"> -->
+          <div class="col-xs-7 ">
+            <div class="left-show-cards">
+              <div>
+                <h4>Description: </h4> <p><%= @job_listing.description %></p>
+              </div>
+            </div>
+            <div class="left-show-cards">
+              <h4>Schedule Detail:</h4>
+              <p><%= @job_listing.schedule_detail %></p>
+            </div>
+            <div class="left-show-cards">
+              <div>
+                <h4>Requirements: </h4> <p><%= @job_listing.dress_code %></p>
+              </div>
+            </div>
+            <div class="left-show-cards">
+              <div>
+                <h4>Dress Code: </h4> <p><%= @job_listing.dress_code %></p>
+              </div>
+            </div>
+            <div class="left-show-cards">
+              <div>
+                <h4 style="display: inline;">Gender: </h4> <p style="display: inline;"><%= @job_listing.gender %></p>
+              </div>
+            </div>
+            <div class="left-show-cards">
+              <h4 style="display: inline;"><%= (@counter > 0) ? "#{@counter} applied for this job" : "Be the first to apply" %> </h4>
+            </div>
+          </div>
+          <!--   <div class="col-xs-5 " style="overflow-y: scroll;
+       height: 550px;"> -->
+          <div class="col-xs-5 ">
+            <div
+              id="map"
+              style="width: 96%;
+              height: 225px;
+              margin-top: 2.25%;
+              margin-left: 2%;"
+              data-markers="<%= @markers.to_json %>"
+              >
+            </div>
+            <div class="right-show-cards-candidate no-margin">
+              <h4 style="display: inline;">Address:</h4> <p style="display: inline;"><%= @job_listing.event.address %></p>
+            </div>
+            <div class="right-show-cards-candidate">
+              <div>
+                <h4 style="display: inline;">Start Date: </h4><p style="display: inline;"><%= @job_listing.start_date.strftime("%A, %d %B %Y") %>
+              </div>
+              <div>
+                <h4 style="display: inline;">End Date: </h4> <p style="display: inline;"><%= @job_listing.end_date.strftime("%A, %d %B %Y")%></p>
+              </div>
+            </div>
+            <div class="right-show-cards-candidate">
+              <div>
+                <h4 style="display: inline;">Start Time: </h4><p style="display: inline;"><%= @job_listing.start_time.strftime("%H:%M") %>
+              </div>
+              <div>
+                <h4 style="display: inline;">End Time: </h4> <p style="display: inline;"><%= @job_listing.end_time.strftime("%H:%M")%></p>
+              </div>
+            </div>
+            <div class="right-show-cards-candidate">
+              <h4 style="display: inline;">Total salary:</h4>
+              <h4 style="display: inline;"><%= @job_listing.salary %> <%= @job_listing.currency%></h4>
+            </div>
+            <div class="right-side-buttons">
+              <%= link_to "Apply for this job", new_event_job_listing_booking_path(@event,@job_listing), :class => "btn btn-apply-candidate" %>
+              <%= link_to "Back", job_listings_path, class: "btn btn-primary btn-right-side-secondary-candidate" %>
+            </div>
+          </div>
+      </div>
+    <% end %>
+  </div>
 </div>
