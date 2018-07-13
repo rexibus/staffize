@@ -1,5 +1,5 @@
-const first = document.querySelector(".full")
-const second = document.querySelector(".full-second")
+const first = document.querySelector(".full");
+const second = document.querySelector(".full-second");
 
 
 second.addEventListener("mouseover", function(){
