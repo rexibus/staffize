@@ -1,31 +1,52 @@
 <h1>My Applications</h1>
 
+<div class="container">
+  <div class="">
 
-<div class ="bookings">
 
-  <% @bookings.each do |booking| %>
+    <div class ="bookings">
 
-  <div class = "card-items">
 
-    <h2><%= booking.job_listing.title %></h2>
-    <h4>Application status: <%= booking.status %>
-      <% if booking.status == nil  %>
-      <%= "pending" %>
+      <% @bookings.each do |booking| %>
+
+      <div class = "bookings-candidate">
+
+        <div class="bookings-details">
+
+          <h3 class = booking-card-title><%= booking.job_listing.title.upcase %></h3>
+          <p class = booking-card-status>Application status: <%= booking.status %>
+            <% if booking.status == nil  %>
+            <%= "pending" %>
+            <% end %>
+          </p>
+
+          <p class = "booking-card1">From: <%= booking.start_date.strftime("%A, %d %B %Y") %></p>
+          <p class = "booking-card2">To: <%= booking.end_date.strftime("%A, %d %B %Y") %></p>
+        </div>
+
+        <div class = "bookings-buttons">
+          <div class = "btn view-button">
+            <%= link_to "View", job_listing_path(booking.job_listing) %>
+          </div>
+
+          <div class = "btn delete-button">
+            <%= link_to "Delete", booking_path(booking), method: :delete, data: { confirm: "Are you sure?" } %>
+          </div>
+        </div>
+
+      </div>
+
+
+
+
       <% end %>
-    </h4>
-    <h4>start date: <%= booking.start_date.strftime("%d/%m/%Y") %></h4>
-    <h4>end date: <%= booking.end_date.strftime("%d/%m/%Y") %></h4>
-    <div class = "bookings-buttons">
-      <div class = "view-button"><%= link_to "View", job_listing_path(booking.job_listing) %></div>
-      <div class = "delete-button"><%= link_to "Delete", booking_path(booking),
-      method: :delete,
-      data: { confirm: "Are you sure?" } %></div>
+
+
     </div>
+
   </div>
-
-  <% end %>
-
 </div>
+
 
 
 

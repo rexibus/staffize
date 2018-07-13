@@ -182,8 +182,12 @@
   margin-top: -1px;
 }
 
+.bookings {
+  display:flex;
+  flex-direction: column;
+  list-style-type: none;
 
-
+}
 
 
 .job-listings {
@@ -299,3 +303,50 @@
     color: $mainblue;
   }
 }
+
+.booking-card1 {
+  margin: 8px 0px 0px 36px;
+
+  font-weight:lighter;
+  color: gray;
+  font-size:14px;
+}
+
+.booking-card2 {
+  margin: 0px 0px 12px 36px;
+  font-weight:lighter;
+  color: gray;
+  font-size:14px;
+}
+
+.booking-card-status {
+  margin: 8px 0px 8px 32px;
+  padding: 4px;
+}
+
+.booking-card-title {
+
+  margin: 24px 0px 12px 32px;
+  color: black;
+  text-align: left;
+}
+
+.bookings-candidate {
+  list-style-type: none;
+  background-color: white;
+  border: 1px solid $maingreen;
+  border-radius: 3px;
+  margin: 5px 16px;
+  width: 100%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bookings-details {
+  padding-top:10px;
+  padding-bottom: 10px;
+}
+
+
