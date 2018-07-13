@@ -10,17 +10,15 @@
   <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
 </head>
   <body>
-    <% if  current_page?("/") %>
-    <%= render 'layouts/navbar_home' %>
-    <% else %>
+
+    <% if  !current_page?("/") %>
     <%= render 'layouts/navbar' %>
+    <%= render 'shared/flashes' %>
     <% end %>
 
-
-
-    <%= render 'shared/flashes' %>
     <%= yield %>
-    <% if !current_page?("/") %>
+
+    <% if  !current_page?("/") %>
     <%= render 'layouts/other_footer' %>
     <% end %>
 
