@@ -30,7 +30,7 @@ a:hover {
 }
 
 .below-navbar {
-  padding-top: 80px;
+  padding: 80px;
 }
 
 
@@ -42,7 +42,7 @@ a:hover {
 }
 
 .container {
-  margin-top: 40px;
+  min-height: calc(100vh - 140px);
 }
 
 
