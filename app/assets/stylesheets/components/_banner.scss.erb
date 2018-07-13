@@ -20,13 +20,16 @@ transition: 0.2s ease-in;
 
 .backimage2 {
   /*transition: 1s ease;*/
-  background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(worker2.jpg) 0 0 no-repeat;
+  background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), 0 0 no-repeat;
   overflow: hidden;
+  background-image:url('<%= asset_path("worker2.jpg") %> ');
 }
 
 .backimage {
-  background: linear-gradient(-225deg, rgba(54,221,124,0.6) 0%, rgba(0,36,61,0.6) 50%), url(worker.jpg) 0 0 no-repeat;
+  background: linear-gradient(-225deg, rgba(54,221,124,0.6) 0%, rgba(0,36,61,0.6) 50%), 0 0 no-repeat;
   overflow: hidden;
+  background-image:url('<%= asset_path("worker.jpg") %> ');
+
 }
 
 .wrapper {
