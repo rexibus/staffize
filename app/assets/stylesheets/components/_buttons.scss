@@ -237,3 +237,17 @@
   background-color: $mainblue;
   color: white;
 }
+
+.button-form {
+  width: 100%;
+  margin-bottom: 20px;
+  margin-left: 0;
+  background-color: $mainblue;
+  color: white;
+
+}
+
+.button-form:hover {
+  background-color: $hoverblue;
+  color: white;
+}
