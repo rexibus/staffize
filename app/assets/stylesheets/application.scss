@@ -30,11 +30,11 @@ a:hover {
 }
 
 .below-navbar {
-  padding-top: 80px;
+  padding: 80px;
 }
 
 .container {
-  margin-top: 40px;
+  min-height: calc(100vh - 140px);
 }
 
 
