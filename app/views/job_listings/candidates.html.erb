@@ -1,19 +1,19 @@
 
- <h1>Select your staff according to your needs</h1>
-<p>Hundred of profile with a background in the event industry. Most of our canditates speak diffent languages </p>
+  <h1>Select your staff according to your needs</h1>
+  <p>Hundred of profile with a background in the event industry. Most of our canditates speak diffent languages </p>
 
 
 
 
 
 
-<div class="container">
-  <div class="row">
-  <% @users.each do |user| %>
-      <div class="col-xs-12 col-sm-4">
-       <%= render "card_candidates", user:user  %>
-      </div>
-<% end %>
+  <div class="container">
+    <div class="row">
+    <% @users.each do |user| %>
+        <div class="col-xs-12 col-sm-4">
+         <%= render "card_candidates", user:user  %>
+        </div>
+  <% end %>
 
 
 
