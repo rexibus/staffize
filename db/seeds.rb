@@ -181,17 +181,17 @@ booking6 = Booking.new(start_date: "Wednesday, 25 July 2018", end_date: "Wednesd
 
 
 candidate1 = User.new(first_name: "Brigitte", last_name: "Bardot", role: "candidate", email: "brigitte@yahoo.com", password: "brigitte@yahoo.com",
-    language: "Italian, English", experience: "10 years in the service industry. Model for 5 years.", ssn: "123456789", date_of_birth: "11/07/2003", mobile_phone: "+1 440 320 5673")
+    language: "Italian, English", experience: "10 years in the service industry. Model for 5 years.", ssn: "123456789", date_of_birth: "11/07/1996", mobile_phone: "+1 440 320 5673")
 candidate2 = User.new(first_name: "Laura", last_name: "Paselli", role: "candidate", email: "laura@gmail.com", password: "laura@gmail.com",
     language: "Italian, French, German", experience: "4 years as a server in a high class restaurant. 3 years as a bartender. ", ssn: "444889918", date_of_birth: "21/07/1963", mobile_phone: "+1 216 890 5673")
 candidate3 = User.new(first_name: "Cristiano", last_name: "Malgioglio", role: "candidate", email: "cristiano@msn.com", password: "cristiano@msn.com",
-    language: "Italian, English", experience: "Butler for 20 years.", ssn: "987654321", date_of_birth: "30/12/1999", mobile_phone: "+39 48 29 22 22")
+    language: "Italian, English", experience: "Butler for 20 years.", ssn: "987654321", date_of_birth: "30/12/1986", mobile_phone: "+39 48 29 22 22")
 candidate4 = User.new(first_name: "Al", last_name: "Bundy", role: "candidate", email: "al@hotmail.com", password: "al@hotmail.com",
     language: "Italian, French, German", experience: "Promoter for 3 years. Bartender for 5 years.", ssn: "444889918", date_of_birth: "21/07/1993", mobile_phone: "+39 02 26 14 22")
 candidate5 = User.new(first_name: "Randy", last_name: "Smith", role: "candidate", email: "randtheman@yahoo.com", password: "randtheman@yahoo.com@yahoo.com",
     language: "Italian, English", experience: "10 years in the service industry. Model for 5 years.", ssn: "543390789", date_of_birth: "18/07/1998", mobile_phone: "+39 48 77 88 90")
 candidate6 = User.new(first_name: "Anna", last_name: "Tabbi", role: "candidate", email: "tabbianna@gmail.com", password: "tabbianna@gmail.com",
-    language: "Italian, French, Spanish", experience: "4 years as a server in a high class restaurant. 3 years as a bartender. ", ssn: "444889918", date_of_birth: "21/07/1983", mobile_phone: "+39 02 98 45 38")
+    language: "Italian, French, Spanish", experience: "4 years as a server in a high class restaurant. 3 years as a bartender. ", ssn: "444889918", date_of_birth: "21/07/1998", mobile_phone: "+39 02 98 45 38")
 candidate7 = User.new(first_name: "Francesca", last_name: "DeNiro", role: "candidate", email: "frenchie@gmail.com", password: "frenchie@gmail.com",
     language: "Italian, English", experience: "Maid for 15 years.", ssn: "987654321", date_of_birth: "06/06/1989", mobile_phone: "+39 48 29 22 22")
 candidate8 = User.new(first_name: "Stephanie", last_name: "Tanner", role: "candidate", email: "ladygirlsteph@hotmail.com", password: "ladygirlsteph@hotmail.com",

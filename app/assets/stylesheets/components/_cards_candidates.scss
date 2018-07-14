@@ -7,6 +7,24 @@
   position: relative;
   margin: 12px;
 }
+
+.card-name-age {
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  text-transform: uppercase;
+  width: 175px;
+}
+
+.card-name-age h2 {
+  margin: 0;
+  position: absolute;
+  top: 8px;
+  font-size: 18px;
+  text-transform: capitalize;
+}
+
+
 .card-user {
   position: absolute;
   right: 10px;
@@ -16,7 +34,7 @@
 }
 .card-category {
   position: absolute;
-  top: 10px;
+  top: 40px;
   left: 10px;
   font-size: 15px;
   text-transform: uppercase;
@@ -46,4 +64,16 @@
 }
 .card-link:hover {
   opacity: 0.1;
+}
+
+.rating-star {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.rating-star p {
+  font-size: 14px;
+  opacity: 0.7;
+  font-weight: lighter;
 }
