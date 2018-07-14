@@ -19,6 +19,7 @@
     <%= yield %>
 
     <% if  !current_page?("/") %>
+
     <%= render 'layouts/other_footer' %>
     <% end %>
 
@@ -32,6 +33,7 @@
   <%= javascript_pack_tag "application" %>
   <%= javascript_pack_tag "maps" %>
   <%= javascript_pack_tag "banner" %>
+
 
   </body>
 </html>

@@ -1,5 +1,13 @@
+
+console.log("banner");
 const first = document.querySelector(".full");
 const second = document.querySelector(".full-second");
+
+
+
+
+
+if ((typeof first !== 'null') && (typeof second !== 'null')) {
 
 
 second.addEventListener("mouseover", function(){
@@ -48,7 +56,7 @@ const pick2 = document.querySelector(".full-second");
 
 
 });
-
+}
 
 // first.addEventListener("mouseleave", function(){
 

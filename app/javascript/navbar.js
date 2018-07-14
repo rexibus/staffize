@@ -15,3 +15,4 @@ function initUpdateNavbarOnScroll() {
 }
 
 export { initUpdateNavbarOnScroll };
+
