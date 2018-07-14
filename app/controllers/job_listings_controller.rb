@@ -67,9 +67,13 @@ class JobListingsController < ApplicationController
   end
 
   def candidate_show
-    @user = User.find(params[:id])
-    @booking = Booking.new
-
+    if user_signed_in?
+      @user = User.find(params[:id])
+      @booking = Booking.new
+    else
+      flash[:alert] = "You must sign in to access the requested page"
+      redirect_to new_user_session_path
+    end
   end
 
   def my_applicants
