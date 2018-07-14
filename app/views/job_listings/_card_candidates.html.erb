@@ -20,7 +20,9 @@
         </div>
         <div class="rating-star">
           <p>
-          Rating: <%= rand(1..5) %>
+          <% rand(1..5).times do  %>
+          <span class="glyphicon glyphicon-star"></span>
+          <% end %>
           </p>
         </div>
 
