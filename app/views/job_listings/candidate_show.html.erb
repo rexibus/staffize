@@ -10,7 +10,11 @@
 
   <%= simple_form_for @booking do |f| %>
     <%= f.input :user, :input_html => { :value => @user.id }, as: :hidden %>
+    <% if !current_user.job_listings.nil? %>
     <%= f.association :job_listing, collection: current_user.job_listings, selected: current_user.job_listings.first %>
+    <% else %>
+    <%= flash[:alert] = "You have not created any jobs" %>
+    <% end %>
     <%= submit_tag 'Offer a job', class: 'btn btn-primary' %>
 <% end %>
 
