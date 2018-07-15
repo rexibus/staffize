@@ -9,7 +9,7 @@
 
 .right-side-button-employer {
   margin: 8px;
-  display: inline-block;
+  display: flex;
 }
 
 .btn-right-side-main-employer {
@@ -42,7 +42,14 @@
 .btn-right-side-secondary-employer {
   margin-top: 2px;
   margin-right: 3px;
-  width: 31%;
+  background-color: $mainblue;
+  border-color: $mainblue;
+}
+
+.btn-right-side-secondary-employer-back {
+  margin-top: 2px;
+  margin-right: 3px;
+  width: 26%;
   background-color: $mainblue;
   border-color: $mainblue;
 }
@@ -54,6 +61,12 @@
 }
 
 .btn-right-side-secondary-employer:hover {
+  background-color: $hoverblue;
+  border-color: rgb(14, 37, 130);
+  color: white;
+}
+
+.btn-right-side-secondary-employer-back:hover {
   background-color: $hoverblue;
   border-color: rgb(14, 37, 130);
   color: white;

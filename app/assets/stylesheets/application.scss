@@ -44,6 +44,13 @@ a:hover {
 
 }
 
+.border-blue {
+    background-color: white;
+    border: 1px solid $mainblue;
+    border-radius: 3px;
+
+}
+
 .container {
   min-height: calc(100vh - 140px);
 }
