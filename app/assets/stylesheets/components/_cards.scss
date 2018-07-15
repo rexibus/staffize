@@ -369,4 +369,51 @@
   padding-bottom: 10px;
 }
 
+.event-details {
+  display: block;
+  position: relative;
+  border-radius: 10px;
+  padding: 20px;
+  p {
+    margin: 0;
+    font-size: 16px;
+  }
+}
 
+.event-details-top {
+  padding-bottom: 16px;
+  width: 60%;
+  h3 a {
+    padding: 10px;
+    background-color: $mainblue;
+    color: white;
+    margin-left: 6px;
+  }
+  p {
+    padding: 10px;
+  }
+}
+
+.event-details-middle {
+  padding: 10px;
+  p {
+    font-weight: lighter;
+    color: gray;
+    font-size: 14px;
+  }
+  span {
+    font-size: 14px;
+  }
+}
+
+.event-details-bottom {
+  right: 0;
+  bottom: 0;
+  height: 50px;
+  padding: 0;
+
+  p {
+    padding: 10px;
+    font-weight: lighter;
+  }
+}
