@@ -1,20 +1,54 @@
-<h1><%= "#{@user.first_name}" + " " + "#{@user.last_name}" %> </h1>
+<div class="container">
 
-  <%= image_tag (cl_image_path(@user.photo)) %>
+  <div>
+    <div>
+      <div>avatar photo</div>
+      <div>Main info : name, age, spoken languages</div>
+      <div>I can join u as + list</div>
+      <div>Button offer a job</div>
+    </div>
+    <div>
+      x mission w staffize
+    </div>
+    <div>
+      rating
+    </div>
+  </div>
 
-  <h2><%= @user.position %></h2>
+  <div>
+    Photos to scroll right/left if more than one
+  </div>
 
-  <p><%= @user.experience %></p>
-  <p><%= @user.language %></p>
-  <p><%= @user.gender %></p>
+  <div>
+    content
+    <div>Who i am</div>
+    <div>My experiences</div>
+  </div>
 
-  <%= simple_form_for @booking do |f| %>
-    <%= f.input :user, :input_html => { :value => @user.id }, as: :hidden %>
-    <% if !current_user.job_listings.nil? %>
-    <%= f.association :job_listing, collection: current_user.job_listings, selected: current_user.job_listings.first %>
-    <% else %>
-    <%= flash[:alert] = "You have not created any jobs" %>
-    <% end %>
-    <%= submit_tag 'Offer a job', class: 'btn btn-primary' %>
-<% end %>
+      <h1 class="candidates-index-title">
+        <% age =  Date.today.year - @user.date_of_birth.year  %>
+        <% age -= 1 if Date.today < @user.date_of_birth.year + age.years  %>
+        <%= @user.first_name %>, <%= age %>
+      </h1>
+        <%= image_tag (cl_image_path(@user.photo)) %>
+
+
+
+        <p>Experiences: <%= @user.experience %></p>
+        <p>Experiences with Staffize: </p>
+        <p>Languages spoken<%= @user.language %></p>
+        <p><%= @user.gender %></p>
+
+        <%= simple_form_for @booking do |f| %>
+          <%= f.input :user, :input_html => { :value => @user.id }, as: :hidden %>
+          <% if !current_user.job_listings.nil? %>
+          <%= f.association :job_listing, collection: current_user.job_listings, selected: current_user.job_listings.first %>
+          <% else %>
+          <%= flash[:alert] = "You have not created any jobs" %>
+          <% end %>
+          <%= submit_tag 'Offer a job', class: 'btn btn-primary' %>
+      <% end %>
+
+</div>
+
 
