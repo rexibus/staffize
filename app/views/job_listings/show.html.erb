@@ -73,7 +73,7 @@
           </div>
           <div class="right-side-button-employer" style="display: inline;">
             <%= link_to "Update the job", edit_event_job_listing_path(@event), class: "btn btn-primary btn-right-side-secondary-employer" %>
-            <%= link_to "Delete the job", job_listings_path,
+            <%= link_to "Delete the job", job_listing_path(@job_listing),
             method: :delete,
             data: { confirm: "Are you sure?" }, class: "btn btn-primary btn-right-side-secondary-employer" %>
             <%= link_to "Back", job_listings_path, class: "btn btn-primary btn-right-side-secondary-employer-back" %>
