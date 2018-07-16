@@ -1,45 +1,59 @@
 <div class="container">
+<div class="profile">
 
-  <div>
-    <div>
-      <div>avatar photo</div>
-      <div>Main info : name, age, spoken languages</div>
-      <div>I can join u as + list</div>
-      <div>Button offer a job</div>
-    </div>
-    <div>
-      x mission w staffize
-    </div>
-    <div>
-      rating
-    </div>
-  </div>
+    <div class ="profile-row1">
 
-  <div>
-    Photos to scroll right/left if more than one
-  </div>
-
-  <div>
-    content
-    <div>Who i am</div>
-    <div>My experiences</div>
-  </div>
-
-      <h1 class="candidates-index-title">
+      <div class="avatar-large">
+        <%= image_tag (cl_image_path(@user.photo)) , class: "avatar-large"%>
+      </div>
+      <div class = "profile-main-info">
         <% age =  Date.today.year - @user.date_of_birth.year  %>
         <% age -= 1 if Date.today < @user.date_of_birth.year + age.years  %>
-        <%= @user.first_name %>, <%= age %>
-      </h1>
+        <p><%= @user.first_name %>, <%= age %></p>
+        <p><%= @user.gender %></p>
+        <p>Milano</p>
+        <p><%= @user.language %></p>
+      </div>
+      <div class = "profile-join-info">
+        <p>I can join u as a:</p>
+          <ul>
+            <li>Promoter</li>
+            <li>Event Assistant</li>
+          </ul>
+      </div>
+      <div class ="button-offer">
+        <%= submit_tag 'Offer a job', class: 'btn btn-primary' %>
+      </div>
+    </div>
 
-        <div class="avatar-large">
+    <div class ="profile-row2">
+        <div class="mission-number">
+        <p>Number of missions with Staffize: 5</p>
+        </div>
+        <div class="profile-show-rating">
+          <p>
+          <% rand(1..5).times do  %>
+          <span class="glyphicon glyphicon-star"></span>
+          <% end %>
+          </p>
+        </div>
+    </div>
+
+
+        <div class=profile-image>
         <%= image_tag (cl_image_path(@user.photo)) %>
         </div>
 
+      <div class="last-row">
+      <div class="profile-row3">
+        <h5>My presentation:</h5><p class="profile-presentation">"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
+      </div>
+      <div class="profile-row3">
+        <h5>My Experiences:</h5><p class="profile-experiences"> <%= @user.experience %></p>
+      </div>
+      </div>
+      </div>
 
-        <p>Experiences: <%= @user.experience %></p>
-        <p>Experiences with Staffize: </p>
-        <p>Languages spoken<%= @user.language %></p>
-        <p><%= @user.gender %></p>
 
         <%= simple_form_for @booking do |f| %>
           <%= f.input :user, :input_html => { :value => @user.id }, as: :hidden %>
@@ -48,7 +62,6 @@
           <% else %>
           <%= flash[:alert] = "You have not created any jobs" %>
           <% end %>
-          <%= submit_tag 'Offer a job', class: 'btn btn-primary' %>
       <% end %>
 
 </div>

@@ -1,0 +1,141 @@
+
+
+
+.profile {
+padding: 0px;
+flex-direction: column;
+
+}
+
+.profile-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  padding: 6px;
+  box-shadow: 0px 1px 2px rgba(10,10,10,0.3);
+
+
+}
+
+.profile-row1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  padding: 6px;
+  background-color: rgba(50,50,50,0.1);
+  box-shadow: 0px 1px 2px rgba(10,10,10,0.3);
+
+
+
+}
+
+.profile-row2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  padding: 6px;
+  background: white;
+  box-shadow: 0px 1px 2px rgba(10,10,10,0.3);
+  background-color: rgba(50,50,50,0.1);
+  margin-bottom: 20px;
+
+}
+
+.profile-row3 {
+  padding: 6px;
+  box-shadow: 0px 1px 2px rgba(10,10,10,0.3);
+  background-color: white;
+  margin: 30px;
+
+}
+// .message {
+//   flex-direction: row;
+//   display: flex;
+//   justify-content: space-between;
+//   padding: 2px;
+//   background: white;
+//   margin-bottom: 1px;
+//   box-shadow: 0px 3px 6px rgba(10,10,10,0.3);
+//   align-items: center;
+
+// }
+
+.avatar-large img {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  margin: 10px 20px 10px 36px;
+
+}
+
+.profile-main-info {
+  flex-grow: 1;
+  background-color:white;
+  margin: 0px 20px;
+  padding: 15px;
+  border-left: 1px solid rgba(10,10,10,0.2);
+}
+
+.profile-join-info {
+  min-width: 300px;
+  background-color:white;
+  text-align: left;
+  padding: 15px;
+  margin: 0px 20px;
+  border-left: 1px solid rgba(10,10,10,0.2);
+}
+
+
+.button-offer {
+  text-align: left;
+  margin: 0px 20px;
+  padding-left: 25px;
+  // border-left: 1px solid rgba(10,10,10,0.2);
+}
+
+.profile-show-rating {
+  color:$mainblue;
+  margin-right: 16px;
+  margin-top: 16px;
+}
+
+.mission-number {
+  margin-left:16px;
+  margin-top: 16px;
+}
+
+.profile-image {
+  background-color: rgba(50,50,50,0.1);
+}
+
+
+
+.profile-image img {
+  height: 320px;
+  width: 300px;
+  display: block;
+  margin: auto;
+  align: center;
+  margin-bottom: 20px;
+  box-shadow: 0px 1px 2px rgba(10,10,10,0.3);
+
+}
+
+.profile-presentation {
+  padding: 8px;
+
+}
+
+.profile-experiences {
+  padding: 8px;
+}
+
+
+.last-row {
+   background-color: rgba(50,50,50,0.1);
+   padding: 20px;
+   margin-bottom: 16px;
+}
