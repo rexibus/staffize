@@ -76,9 +76,47 @@
     <div class="container">
       <div class="flex-container">
         <div class="sidebar">
-          <br>
-          <p></p>
-        <!-- left-side end -->
+          <div class="filterbox">
+            <div class="filterbox-options">
+              <div class="filterbox-options-content">
+                <h3 class="filter-by">Filter By:</h3>
+                <div class="filterbox-category">
+                  <div class="filtercategory">
+                    <p>Category</p>
+                  </div>
+                  <div class="filteroptions">
+                    <%= link_to "Assembly/Dismantling Assistant", job_listings_path(category: "Assembly/Dismantling Assistant") %>
+                    <%= link_to "Event Assistant", job_listings_path(category: "Event Assistant") %>
+                    <%= link_to "Host/Hostess", job_listings_path(category: "Host/Hostess") %>
+                    <%= link_to "Promoter", job_listings_path(category: "Promoter") %>
+
+                  </div>
+                  <div class="filtercategory">
+                    <p>Location</p>
+                    <form class="navbar-form" method="get" action="/job_listings">
+                      <div class="form-group">
+                        <input type="text" name="search_value" class="form-control" placeholder="Search">
+                      </div>
+                      <button type="submit" class="btn btn-default "><span class="glyphicon glyphicon-search"></span></button>
+                    </form>
+
+                  </div>
+                  <div class="filteroptions">
+
+                  </div>
+                  <div class="filtercategory">
+                    <p>Gender</p>
+                    <%= link_to "Male", job_listings_path(gender: "Male") %>
+                    <%= link_to "Female", job_listings_path(gender: "Female") %>
+                  </div>
+                  <div class="filteroptions">
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- left-side end -->
         </div>
 
         <div class="row right-side job-listings">
@@ -101,7 +139,7 @@
             </div>
           </div>
 
-          <% @job_listings.each do |job| %>
+          <% @final.each do |job| %>
           <div class="job-details">
               <div class="col-xs-10 col-sm-8 col-md-6 job-listing-cards-candidate">
                 <div class="job-details-top">

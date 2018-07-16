@@ -11,6 +11,20 @@
   border-radius: 3px;
   margin-bottom: 5px;
   border: 1px solid $maingreen;
+  h3 {
+    text-align: center;
+    background-color: $maingreen;
+    color: white;
+    font-size: 20px;
+    margin-top: 0;
+    padding: 16px;
+  }
+
+  p {
+    font-size: 16px;
+    text-align: left;
+    padding: 12px;
+  }
 
 }
 

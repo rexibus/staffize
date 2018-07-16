@@ -8,4 +8,6 @@ class JobListing < ApplicationRecord
   def self.search(search)
     where("title LIKE ? OR category LIKE ?", "%#{search}%", "%#{search}%")
   end
+
+
 end

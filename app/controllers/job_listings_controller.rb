@@ -7,11 +7,40 @@ class JobListingsController < ApplicationController
       @job_listings = current_user.job_listings
     else
       # User is logged out, all jobs displayed:
-      if params[:search]
-        @job_listings = JobListing.search(params[:search]).order("created_at DESC")
+      # if params[:search]
+      #   @job_listings = JobListing.search(params[:search]).order("created_at DESC")
+      # else
+      #   @job_listings = JobListing.all.order("created_at DESC")
+
+
+
+
+      if params[:search] || params[:category]  || params[:search_value] || params[:gender]
+        @results = JobListing.search(params[:search]).order("created_at DESC")
+        @results2 = JobListing.search(params[:category]).order("created_at DESC")
+
+        if params[:search_value]
+          @events_near = Event.near(params[:search_value])
+          @results3 = []
+          @events_near.each do |e|
+            e.job_listings.each do |j|
+              @results3 << j
+            end
+          end
+        else
+          @results3 = JobListing.all.order("created_at DESC")
+        end
+
+        @results4 = JobListing.search(params[:gender]).order("created_at DESC")
+        @final = @if_results & @results & @results2 & @results4 & @results3 if !(@if_results.nil?)
+        @final = @results & @results2 & @results4 & @results3
+        @if_results = @results & @results2 & @results4 & @results3
+
       else
-        @job_listings = JobListing.all.order("created_at DESC")
+        @final = JobListing.all.order("created_at DESC")
       end
+
+
     end
   end
 
