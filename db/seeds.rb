@@ -70,7 +70,7 @@ job_listing1 = JobListing.create(title: "Event Assistant needed for exciting 201
     salary: "120",
     currency: "EUR"
   )
- job_listing5 = JobListing.create(title: "Host/Hostess",
+ job_listing5 = JobListing.create(title: "Host/Hostess needed for book festival",
     category: "Host/Hostess",
     description: "Seating people and serving wines, beers, long drinks etc. Key to this role is being smiley, proactive and extremely presentable.",
     requirement: "Must be able to serve guests with a smile.",
@@ -204,28 +204,28 @@ event3 = Event.new(title: "Eminem Concert",
 booking1 = Booking.new(start_date: "Tuesday, 24 July 2018", end_date: "Tuesday, 31 July 2018", status: "accepted")
 booking2 = Booking.new(start_date: "Saturday, 21 July 2018", end_date: "Tuesday, 05 August 2018", status: "declined")
 booking3 = Booking.new(start_date: "Wednesday, 25 July 2018", end_date: "Friday, 27 July 2018", status: "accepted")
-booking4 = Booking.new(start_date: "Friday, 20 July 2018", end_date: "Friday, 20 July 2018", status: "accepted")
-booking5 = Booking.new(start_date: "Friday, 21 July 2018", end_date: "Sunday, 23 July 2018", status: "declined")
+booking4 = Booking.new(start_date: "Friday, 20 July 2018", end_date: "Friday, 20 July 2018", status: "pending")
+booking5 = Booking.new(start_date: "Friday, 21 July 2018", end_date: "Sunday, 23 July 2018", status: "pending")
 booking6 = Booking.new(start_date: "Tuesday, 24 July 2018", end_date: "Tuesday, 27 July 2018", status: "accepted")
 booking7 = Booking.new(start_date: "Tuesday, 24 July 2018",end_date: "Tuesday, 24 July 2018", status: "accepted")
-booking8 = Booking.new(start_date: "Wednesday, 25 July 2018", end_date: "Friday, 27 July 2018", status: "accepted")
+booking8 = Booking.new(start_date: "Wednesday, 25 July 2018", end_date: "Friday, 27 July 2018", status: "pending")
 
 candidate1 = User.new(first_name: "Brigitte", last_name: "Bardot", role: "candidate", email: "brigitte@yahoo.com", password: "brigitte@yahoo.com",
-    language: "Italian, English", experience: "10 years in the service industry. Model for 5 years.", ssn: "123456789", date_of_birth: "11/07/1996", mobile_phone: "+1 440 320 5673")
+    language: "Italian, English", experience: "10 years in the service industry. Model for 5 years.", ssn: "123456789", date_of_birth: "11/07/2003", mobile_phone: "+1 440 320 5673", gender: "female")
 candidate2 = User.new(first_name: "Laura", last_name: "Paselli", role: "candidate", email: "laura@gmail.com", password: "laura@gmail.com",
-    language: "Italian, French, German", experience: "4 years as a server in a high class restaurant. 3 years as a bartender. ", ssn: "444889918", date_of_birth: "21/07/1963", mobile_phone: "+1 216 890 5673")
+    language: "Italian, French, German", experience: "4 years as a hostess in a high class restaurant. 3 years as an assistant for special events. ", ssn: "444889918", date_of_birth: "21/07/1963", mobile_phone: "+1 216 890 5673", gender: "female")
 candidate3 = User.new(first_name: "Cristiano", last_name: "Malgioglio", role: "candidate", email: "cristiano@msn.com", password: "cristiano@msn.com",
-    language: "Italian, English", experience: "Butler for 20 years.", ssn: "987654321", date_of_birth: "30/12/1986", mobile_phone: "+39 48 29 22 22")
+    language: "Italian, English", experience: "Butler for 20 years.", ssn: "987654321", date_of_birth: "30/12/1999", mobile_phone: "+39 48 29 22 22", gender: "male")
 candidate4 = User.new(first_name: "Al", last_name: "Bundy", role: "candidate", email: "al@hotmail.com", password: "al@hotmail.com",
-    language: "Italian, French, German", experience: "Promoter for 3 years. Bartender for 5 years.", ssn: "444889918", date_of_birth: "21/07/1993", mobile_phone: "+39 02 26 14 22")
+    language: "Italian, French, German", experience: "Promoter for 3 years. Personal assistant to Rihanna for 4 years.", ssn: "444889918", date_of_birth: "21/07/1993", mobile_phone: "+39 02 26 14 22", gender: "male")
 candidate5 = User.new(first_name: "Randy", last_name: "Smith", role: "candidate", email: "randtheman@yahoo.com", password: "randtheman@yahoo.com@yahoo.com",
-    language: "Italian, English", experience: "10 years in the service industry. Model for 5 years.", ssn: "543390789", date_of_birth: "18/07/1998", mobile_phone: "+39 48 77 88 90")
+    language: "Italian, English", experience: "10 years in the service industry. Model for 5 years.", ssn: "543390789", date_of_birth: "18/07/1998", mobile_phone: "+39 48 77 88 90", gender: "male")
 candidate6 = User.new(first_name: "Anna", last_name: "Tabbi", role: "candidate", email: "tabbianna@gmail.com", password: "tabbianna@gmail.com",
-    language: "Italian, French, Spanish", experience: "4 years as a server in a high class restaurant. 3 years as a bartender. ", ssn: "444889918", date_of_birth: "21/07/1998", mobile_phone: "+39 02 98 45 38")
+    language: "Italian, French, German", experience: "4 years as a hostess in a high class restaurant. 3 years as a bartender. ", ssn: "444889918", date_of_birth: "21/07/1983", mobile_phone: "+39 02 98 45 38", gender: "female")
 candidate7 = User.new(first_name: "Francesca", last_name: "DeNiro", role: "candidate", email: "frenchie@gmail.com", password: "frenchie@gmail.com",
-    language: "Italian, English", experience: "Maid for 15 years.", ssn: "987654321", date_of_birth: "06/06/1989", mobile_phone: "+39 48 29 22 22")
+    language: "Italian, English", experience: "Event assistant of all kinds for 15 years.", ssn: "987654321", date_of_birth: "06/06/1989", mobile_phone: "+39 48 29 22 22", gender: "female")
 candidate8 = User.new(first_name: "Stephanie", last_name: "Tanner", role: "candidate", email: "ladygirlsteph@hotmail.com", password: "ladygirlsteph@hotmail.com",
-    language: "Italian, Spanish", experience: "Event assistant in beverage, serving, loading for 8 years", ssn: "444889918", date_of_birth: "21/07/1993", mobile_phone: "+39 48 29 22 22")
+    language: "Italian, Spanish", experience: "Event assistant in beverage, serving, loading for 8 years", ssn: "444889918", date_of_birth: "21/07/1993", mobile_phone: "+39 48 29 22 22", gender: "female")
 
 employer1 = User.new(first_name: "Jeremiah", last_name: "Scrooge", company_name: "Woolworth", position: "Hiring manager",
     vat_number: "84921393",  land_phone: "+1 216 890 5673", role: "employer", email: "scrooge@gmail.com", password: "scrooge@gmail.com")
@@ -313,6 +313,7 @@ job_listing6.event = event6
 job_listing6.save
 job_listing7.event = event6
 job_listing6.save
+
 
 
 url1 = "http://res.cloudinary.com/orexibus/image/upload/v1530867814/Staffize%20profile%20pict/businesswoman-portrait-picture-id501368096.jpg"

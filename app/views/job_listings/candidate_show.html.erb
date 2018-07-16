@@ -30,8 +30,10 @@
         <% age -= 1 if Date.today < @user.date_of_birth.year + age.years  %>
         <%= @user.first_name %>, <%= age %>
       </h1>
-        <%= image_tag (cl_image_path(@user.photo)) %>
 
+        <div class="avatar-large">
+        <%= image_tag (cl_image_path(@user.photo)) %>
+        </div>
 
 
         <p>Experiences: <%= @user.experience %></p>
