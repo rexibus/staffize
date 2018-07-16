@@ -58,6 +58,7 @@
 
 .event-field {
   height: 32px;
+  background-color: white;
 }
 
 #job_listing_gender {
@@ -71,4 +72,12 @@
   width: 100%;
   height: 32px;
 }
+
+.form-control[disabled] {
+  background-color: white;
+  }
+
+  .form-control[readonly] {
+  background-color: white;
+  }
 
