@@ -4,49 +4,51 @@
       <div class="events-search-and-create">
         <div class="form-group events-search">
           <%= form_tag(events_path, :method => "get", class: "form-inline") do %>
-            <%= text_field_tag :search, params[:search], placeholder: "Search Event", id: "events-search-form", class: "form-group" %>
+            <%= text_field_tag :search, params[:search], placeholder: " Search an event within all your events", id: "events-search-form", class: "form-group" %>
             <%= submit_tag "Search", :name => nil, class: "button-search-employer" %>
-        <% if @events.blank? %>
-          <h4>No results</h4>
-        <% end %>
-        <% end %>
+            <% if @events.blank? %>
+              <h4>No results</h4>
+            <% end %>
+          <% end %>
         </div>
         <div class="events-create">
           <% if current_user.role == "employer" %>
-            <p> <%= link_to "Create new event", new_event_path, class: "btn btn-right-side-secondary-employer"%></p>
+            <%= link_to "Create new event", new_event_path, class: "btn btn-right-side-secondary-employer"%>
           <% end %>
         </div>
       </div>
 
-      <div class="row">
-        <% @events.each do |event| %>
-          <div class="col-xs-12">
-            <div class="events-card border-blue">
-              <div class="event-details">
-                <div class="event-details-top">
-                    <h3><strong><%= link_to event.title, event_path(event) %></strong></h3>
-                    <p> <%= event.description %></p>
-                </div>
-                <div class="event-details-middle">
-                    <p> From: <%= event.start_date.strftime("%d/%B/%Y") %> </p>
-                    <p>  To: <%= event.end_date.strftime("%d/%B/%Y") %></p>
-                </div>
-                <div class="event-details-bottom">
-                    <p> <%= event.venue %></p>
-                    <p> <%= event.address %></p>
-                </div>
+      <div class="events-list-wrapper">
 
-                <% if current_user.role == "employer" %>
-                  <div class="event-buttons">
-                    <%= link_to "Update Event", edit_event_path(event), class: "button-event-update-employer" %> <%= link_to "Delete Event", event_path(event),
-                      method: :delete,
-                      data: { confirm: "Are you sure?" }, class: "button-event-delete-employer" %>
+          <% @events.each do |event| %>
+              <div class="events-card border-blue">
+                <div class="event-details">
+                  <div class="event-details-top">
+                      <h3><%= link_to event.title, event_path(event) %></h3>
+                      <p> <%= event.description %></p>
                   </div>
-                <% end %>
+                  <div class="event-details-middle">
+                      <p> From: <%= event.start_date.strftime("%d/%B/%Y") %> </p>
+                      <p>  To: <%= event.end_date.strftime("%d/%B/%Y") %></p>
+                  </div>
+                  <div class="event-details-bottom">
+                      <p> <%= event.venue %></p>
+                      <p> <%= event.address %></p>
+                  </div>
+
+                  <% if current_user.role == "employer" %>
+                    <div class="event-buttons">
+                      <%= link_to "Update Event", edit_event_path(event), class: "button-event-update-employer" %>
+                      <%= link_to "Delete Event", event_path(event),
+                        method: :delete,
+                        data: { confirm: "Are you sure?" }, class: "button-event-delete-employer" %>
+                    </div>
+                  <% end %>
+                </div>
               </div>
-            </div>
-          </div>
-        <% end %>
+          <% end %>
+
       </div>
+
     </div>
 </div>
