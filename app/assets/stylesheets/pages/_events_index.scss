@@ -1,14 +1,22 @@
+.events-wrapper {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.events-list-wrapper {
+  width: 100%;
+}
+
 .events-search-and-create {
+  width: 100%;
   display: flex;
+  justify-content: space-between;
   margin-bottom: 32px;
   padding-top: 8px;
 }
 
 .events-create {
-  width: 14%;
-  justify-content: flex-end;
   margin-right: 5px;
-
 }
 
 .events-title {
