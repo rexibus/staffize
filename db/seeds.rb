@@ -12,159 +12,188 @@ User.delete_all
 
 # "Assembly/Dismantling Assistant", "Event assistant", "Host/Hostess", "Promoter"
 
-job_listing1 = JobListing.new(title: "Beverage Assistant needed for 2018 WOMEN'S HOCKEY WORLD CUP",
+job_listing1 = JobListing.create(title: "Event Assistant needed for exciting 2018 Women's Hockey World Cup preliminary match",
     category: "Event assistant",
     description: "Handles cash transactions between customer and store. Answers routine billing questions/issues from customers.
     Receives and processes all payments according to standard procedures. Scan products, operate scanning equipment and fix scanning issues.",
     requirement: "Capable of counting money back to customer in an accurate and concise manner. Is able to do manual handling, including heavy lifting.",
-    schedule_detail: "One hour break will be provided for each shift. The break not necessarily will be taken on the same time could be taken on several times (2 x 30mins) or (4 x 20mins).",
+    schedule_detail: "You will work the same shift every day for the eight days. One hour break will be provided for each shift. The break not necessarily will be taken on the same time could be taken on several times (2 x 30mins) or (4 x 20mins).",
     start_date: "Tuesday, 24 July 2018",
     end_date: "Tuesday, 31 July 2018",
-    start_time: "12:00",
+    start_time: "14:00",
     end_time: "22:00",
     gender: "No preference",
     dress_code: "Black Shoes (could be Black trainers without any visible logos), black socks, Black classic trousers (no jeans), Black Ironed Shirt.",
-    salary: "8.78 £/h",
-    currency: "£"
+    salary: "1000",
+    currency: "EUR"
   )
- job_listing2 = JobListing.new(title: "FOOD RUNNER NEEDED FOR EXCITING 2018 WOMEN'S HOCKEY WORLD CUP",
+ job_listing2 = JobListing.create(title: "Event Assistant needed for exciting 2018 Women's Hockey World Cup preliminary match",
     category: "Event assistant",
     description: "Delivering food orders from the kitchen to front of house counter rapidly and accurately
     Acting as the point of contact between Front of the House and Back of the House staff.",
     requirement: "Can ensure food is served in accordance with safety standards (e.g. proper temperature).",
-    schedule_detail: "You will receive 4 x 15 mins breaks.",
+    schedule_detail: "You will work all 16 days, and you will receive 4 x 15 mins breaks each shift.",
     start_date: "Saturday, 21 July 2018",
     end_date: "Tuesday, 05 August 2018",
-    start_time: "14:00",
+    start_time: "15:00",
     end_time: "23:30",
     gender: "Male",
     dress_code: "Black classic trousers (no jeans), Black Ironed Shirt, Red hat",
-    salary: "10 £/h (incl. holiday pay)",
-    currency: "£"
+    salary: "1575",
+    currency: "EUR"
   )
-  job_listing3 = JobListing.new(title: "Advertiser/Promoter for exciting sold out Eminem concert",
+  job_listing3 = JobListing.create(title: "Advertiser/Promoter for exciting sold out Eminem concert",
     category: "Promoter",
     description: "Maximise all selling opportunities in accordance with predefined rules / guidelines.",
     requirement: "You must not be afraid to approach potential customers. Exposure to loud noise and outdoor working are required.",
     schedule_detail: "One hour break will be provided for each shift. The break not necessarily will be taken on the same time could be taken on several times (2 x 30mins) or (4 x 20mins).",
     start_date: "Wednesday, 25 July 2018",
     end_date: "Friday, 27 July 2018",
-    start_time: "8:00",
+    start_time: "10:00",
     end_time: "23:00",
     gender: "No preference",
     dress_code: "Street clothes. Please pay attention to the weather forecast on the day and make sure you dress accordingly.",
-    salary: "$100 /day",
-    currency: "USD"
+    salary: "350",
+    currency: "EUR"
   )
-  job_listing4 = JobListing.new(title: "Helper for Event",
+  job_listing4 = JobListing.create(title: "Event Assistant needed for Le Wagon Demo Day",
     category: "Event assistant",
     description: "Assists with making sure everything goes smoothly for the night.",
     requirement: "Must have experience in crisis management, bartending, serving, cleaning, and handling promotional, technical, and educational events.",
     schedule_detail: "Will have a 10-minute break.",
     start_date: "Friday, 20 July 2018",
     end_date: "Friday, 20 July 2018",
-    start_time: "18:00",
+    start_time: "14:00",
     end_time: "22:00",
     gender: "No preference",
     dress_code: "Must wear typical nerd gear",
-    salary: "60 euro",
+    salary: "120",
     currency: "EUR"
   )
- job_listing5 = JobListing.new(title: "Host/Hostess/Server",
+ job_listing5 = JobListing.create(title: "Host/Hostess needed for book festival",
     category: "Host/Hostess",
-    description: "Seating people and serving wines, beers, long drinks etc. key to this role is being smiley, proactive and extremely presentable.",
-    requirement: "Must be able to serve guests with a smile, making drinks to spec, good cocktail understanding needed, spec sheet will be sent prior",
+    description: "Seating people and serving wines, beers, long drinks etc. Key to this role is being smiley, proactive and extremely presentable.",
+    requirement: "Must be able to serve guests with a smile.",
     schedule_detail: "You will receive 4 x 15 mins breaks.",
-    start_date: "Sunday, 15 July 2018",
-    end_date: "Sunday, 15 July 2018",
+    start_date: "Friday, 21 July 2018",
+    end_date: "Sunday, 23 July 2018",
     start_time: "14:00",
-    end_time: "23:30",
-    gender: "Male",
+    end_time: "20:30",
+    gender: "No preference",
     dress_code: "Clean Smart Black T-Shirt/ Black Jeans or Trousers (must have pockets)/ Black trainers or shoes",
-    salary: "84 euro",
+    salary: "250",
     currency: "EUR"
   )
-  job_listing6 = JobListing.new(title: "Bartender for Classy Party",
+  job_listing6 = JobListing.create(title: "Event Assistant needed for Mathematics Conference",
     category: "Host/Hostess",
-    description: "Handling money and transactions and also using an Ipad.",
-    requirement: "Good math skills and friendly demeanor.",
-    schedule_detail: "One hour break will be provided for each shift. The break not necessarily will be taken on the same time could be taken on several times (2 x 30mins) or (4 x 20mins).",
-    start_date: "Wednesday, 25 July 2018",
-    end_date: "Wednesday, 25 July 2018",
-    start_time: "15:00",
-    end_time: "23:00",
+    description: "Seat conference attendees during lunch and dinner.",
+    requirement: "Friendly demeanor and can follow instructions.",
+    schedule_detail: "One hour break will be provided for each shift. The break will not necessarily be taken on the same time could be taken on several times (2 x 30mins) or (4 x 20mins).",
+    start_date: "Tuesday, 24 July 2018",
+    end_date: "Friday, 27 July 2018",
+    start_time: "8:00",
+    end_time: "22:00",
     gender: "No preference",
     dress_code: "Presentation is of utmost importance. Long sleeved, crisp white shirt, black full length tailored trousers (strictly no jeans, chinos, leggings, skirts etc), smart 'leather look' black shoes (such as brogues). Strictly no suede, trainers, heels, boots (incl Dr Martins) or converse please. ",
-    salary: "200 euro plus tips",
+    salary: "150",
     currency: "EUR"
   )
 
-event1 = Event.new(title: "2018 WOMEN'S HOCKEY WORLD CUP",
+job_listing7 = JobListing.create(title: "Event Assistant needed for Mathematics Conference",
+    category: "Event Assistant",
+    description: "Assist people during with the registration process.",
+    requirement: "Must be able to use an Ipad. Good math and computerskills.",
+    schedule_detail: "One hour break will be provided for each shift. The break not necessarily will be taken on the same time could be taken on several times (2 x 30mins) or (4 x 20mins).",
+    start_date: "Tuesday, 24 July 2018",
+    end_date: "Tuesday, 24 July 2018",
+    start_time: "7:00",
+    end_time: "16:00",
+    gender: "No preference",
+    dress_code: "Presentation is of utmost importance. Long sleeved, crisp white shirt, black full length tailored trousers (strictly no jeans, chinos, leggings, skirts etc), smart 'leather look' black shoes (such as brogues). Strictly no suede, trainers, heels, boots (incl Dr Martins) or converse please. ",
+    salary: "150",
+    currency: "EUR"
+  )
+
+  job_listing8 = JobListing.create(title: "Assembly/Dismantling Assistant for exciting sold out Eminem concert",
+    category: "Assembly/Dismantling Assistant",
+    description: "Help set up and break down the stage and equipment for the concert.",
+    requirement: "Exposure to loud noise and outdoor working are required. Must be able to lift 40kg",
+    schedule_detail: "Same schedule for each day. One hour break will be provided for each shift.",
+    start_date: "Wednesday, 25 July 2018",
+    end_date: "Friday, 27 July 2018",
+    start_time: "14:00",
+    end_time: "0:00",
+    gender: "Male",
+    dress_code: "Street clothes. Please pay attention to the weather forecast on the day and make sure you dress accordingly.",
+    salary: "280",
+    currency: "EUR"
+  )
+event1 = Event.new(title: "2018 WOMEN'S HOCKEY WORLD CUP PRELIMINARY MATCH",
     description: "Hockey Competition",
-    venue: "Lee Valley Hockey and Tennis Centre",
+    venue: "San Siro Stadium",
     venue_detail: "Gate 28",
     start_date: "Tuesday, 24 July 2018",
     end_date: "Tuesday, 31 July 2018",
-    address: "Eton Manor, Queen Elizabeth Olympic Park, Leadmill Lane",
-    city: "London",
-    province: "London",
-    zip_code: "E20 3AD",
-    country: "UK",
+    address: "Via Piccolomini 5,",
+    city: "Milano",
+    province: "MI",
+    zip_code: "20151",
+    country: "Italia",
   )
-event2 = Event.new(title: "2018 WOMEN'S HOCKEY WORLD CUP",
+event2 = Event.new(title: "2018 WOMEN'S HOCKEY WORLD CUP PRELIMINARY MATCH",
     description: "Hockey Competition",
-    venue: "Lee Valley Hockey and Tennis Centre",
+    venue: "San Siro Stadium",
     venue_detail: "Gate 125, Fish and Chips Restaurant",
     start_date: "Saturday, 21 July 2018",
     end_date: "Tuesday, 05 August 2018",
-    address: "Eton Manor, Queen Elizabeth Olympic Park, Leadmill Lane",
-    city: "London",
-    province: "London",
-    zip_code: "E20 3AD",
-    country: "UK",
+    address: "Via Piccolomini 5,",
+    city: "Milano",
+    province: "MI",
+    zip_code: "20151",
+    country: "Italia",
   )
 event3 = Event.new(title: "Eminem Concert",
     description: "Rap Music Concert",
-    venue: "Quicken Loans Arene",
+    venue: "Fieramilano",
     venue_detail: "Meet outside of Gate 35",
     start_date: "Wednesday, 25 July 2018",
     end_date: "Friday, 27 July 2018",
-    address: "1 Center Ct",
-    city: "Cleveland",
-    province: "Ohio",
-    zip_code: "44115",
-    country: "USA"
+    address: "Strada Statale Sempione, 28",
+    city: "Milano",
+    province: "MI",
+    zip_code: "20017",
+    country: "Italia",
   )
   event4 = Event.new(title: "Le Wagon Demo Day",
-    description: "Groups present their projects",
-    venue: "Le Wagon Building Palla Corda",
-    venue_detail: "Inside, 2nd building, 2nd floor",
+    description: "Groups present their web applicationprojects",
+    venue: "H-Farm",
+    venue_detail: "Ground Floor",
     start_date: "Friday, 20 July 2018",
     end_date: "Friday, 20 July 2018",
-    address: "Corso Magenta, 52",
+    address: "Navigli Area",
     city: "Milano",
     province: "MI",
     zip_code: "20123",
     country: "Italia",
   )
-  event5 = Event.new(title: "Football World Cup Pool Party",
-    description: "Football themed party with lots of alcohol",
+  event5 = Event.new(title: "Milano Children's Book Festival",
+    description: "Selling and Trading of Books",
     venue: "5 Star Hotel",
-    venue_detail: "Rooftop",
-    start_date: "Sunday, 15 July 2018",
-    end_date: "Sunday, 15 July 2018",
+    venue_detail: "Business Center",
+    start_date: "Friday, 21 July 2018",
+    end_date: "Sunday, 23 July 2018",
     address: "Viale Certosa, 104",
     city: "Milano",
     province: "Milano",
     zip_code: "20156",
     country: "Italy",
   )
-  event6 = Event.new(title: "Private Pool Black and White Party",
-    description: "Party of 100 people in Black and White bathing suits",
+  event6 = Event.new(title: "Psychology of Mathematics Educators Conference",
+    description: "Meeting of Educators and Sharing of Research",
     venue: "Ceresio 7 Building",
-    venue_detail: "Rooftop pools",
-    start_date: "Wednesday, 25 July 2018",
-    end_date: "Wednesday, 25 July 2018",
+    venue_detail: "Business Conference Room and Rooftop pools",
+    start_date: "Tuesday, 24 July 2018",
+    end_date: "Tuesday, 27 July 2018",
     address: "Via Ceresio, 7",
     city: "Milano",
     province: "MI",
@@ -175,27 +204,28 @@ event3 = Event.new(title: "Eminem Concert",
 booking1 = Booking.new(start_date: "Tuesday, 24 July 2018", end_date: "Tuesday, 31 July 2018", status: "accepted")
 booking2 = Booking.new(start_date: "Saturday, 21 July 2018", end_date: "Tuesday, 05 August 2018", status: "declined")
 booking3 = Booking.new(start_date: "Wednesday, 25 July 2018", end_date: "Friday, 27 July 2018", status: "accepted")
-booking4 = Booking.new(start_date: "Friday, 20 July 2018", end_date: "Friday, 20 July 2018", status: "accepted")
-booking5 = Booking.new(start_date: "Sunday, 15 July 2018", end_date: "Sunday, 15 July 2018", status: "declined")
-booking6 = Booking.new(start_date: "Wednesday, 25 July 2018", end_date: "Wednesday, 25 July 2018", status: "accepted")
-
+booking4 = Booking.new(start_date: "Friday, 20 July 2018", end_date: "Friday, 20 July 2018", status: "pending")
+booking5 = Booking.new(start_date: "Friday, 21 July 2018", end_date: "Sunday, 23 July 2018", status: "pending")
+booking6 = Booking.new(start_date: "Tuesday, 24 July 2018", end_date: "Tuesday, 27 July 2018", status: "accepted")
+booking7 = Booking.new(start_date: "Tuesday, 24 July 2018",end_date: "Tuesday, 24 July 2018", status: "accepted")
+booking8 = Booking.new(start_date: "Wednesday, 25 July 2018", end_date: "Friday, 27 July 2018", status: "pending")
 
 candidate1 = User.new(first_name: "Brigitte", last_name: "Bardot", role: "candidate", email: "brigitte@yahoo.com", password: "brigitte@yahoo.com",
-    language: "Italian, English", experience: "10 years in the service industry. Model for 5 years.", ssn: "123456789", date_of_birth: "11/07/1996", mobile_phone: "+1 440 320 5673")
+    language: "Italian, English", experience: "10 years in the service industry. Model for 5 years.", ssn: "123456789", date_of_birth: "11/07/2003", mobile_phone: "+1 440 320 5673", gender: "female")
 candidate2 = User.new(first_name: "Laura", last_name: "Paselli", role: "candidate", email: "laura@gmail.com", password: "laura@gmail.com",
-    language: "Italian, French, German", experience: "4 years as a server in a high class restaurant. 3 years as a bartender. ", ssn: "444889918", date_of_birth: "21/07/1963", mobile_phone: "+1 216 890 5673")
+    language: "Italian, French, German", experience: "4 years as a hostess in a high class restaurant. 3 years as an assistant for special events. ", ssn: "444889918", date_of_birth: "21/07/1963", mobile_phone: "+1 216 890 5673", gender: "female")
 candidate3 = User.new(first_name: "Cristiano", last_name: "Malgioglio", role: "candidate", email: "cristiano@msn.com", password: "cristiano@msn.com",
-    language: "Italian, English", experience: "Butler for 20 years.", ssn: "987654321", date_of_birth: "30/12/1986", mobile_phone: "+39 48 29 22 22")
+    language: "Italian, English", experience: "Butler for 20 years.", ssn: "987654321", date_of_birth: "30/12/1999", mobile_phone: "+39 48 29 22 22", gender: "male")
 candidate4 = User.new(first_name: "Al", last_name: "Bundy", role: "candidate", email: "al@hotmail.com", password: "al@hotmail.com",
-    language: "Italian, French, German", experience: "Promoter for 3 years. Bartender for 5 years.", ssn: "444889918", date_of_birth: "21/07/1993", mobile_phone: "+39 02 26 14 22")
+    language: "Italian, French, German", experience: "Promoter for 3 years. Personal assistant to Rihanna for 4 years.", ssn: "444889918", date_of_birth: "21/07/1993", mobile_phone: "+39 02 26 14 22", gender: "male")
 candidate5 = User.new(first_name: "Randy", last_name: "Smith", role: "candidate", email: "randtheman@yahoo.com", password: "randtheman@yahoo.com@yahoo.com",
-    language: "Italian, English", experience: "10 years in the service industry. Model for 5 years.", ssn: "543390789", date_of_birth: "18/07/1998", mobile_phone: "+39 48 77 88 90")
+    language: "Italian, English", experience: "10 years in the service industry. Model for 5 years.", ssn: "543390789", date_of_birth: "18/07/1998", mobile_phone: "+39 48 77 88 90", gender: "male")
 candidate6 = User.new(first_name: "Anna", last_name: "Tabbi", role: "candidate", email: "tabbianna@gmail.com", password: "tabbianna@gmail.com",
-    language: "Italian, French, Spanish", experience: "4 years as a server in a high class restaurant. 3 years as a bartender. ", ssn: "444889918", date_of_birth: "21/07/1998", mobile_phone: "+39 02 98 45 38")
+    language: "Italian, French, German", experience: "4 years as a hostess in a high class restaurant. 3 years as a bartender. ", ssn: "444889918", date_of_birth: "21/07/1983", mobile_phone: "+39 02 98 45 38", gender: "female")
 candidate7 = User.new(first_name: "Francesca", last_name: "DeNiro", role: "candidate", email: "frenchie@gmail.com", password: "frenchie@gmail.com",
-    language: "Italian, English", experience: "Maid for 15 years.", ssn: "987654321", date_of_birth: "06/06/1989", mobile_phone: "+39 48 29 22 22")
+    language: "Italian, English", experience: "Event assistant of all kinds for 15 years.", ssn: "987654321", date_of_birth: "06/06/1989", mobile_phone: "+39 48 29 22 22", gender: "female")
 candidate8 = User.new(first_name: "Stephanie", last_name: "Tanner", role: "candidate", email: "ladygirlsteph@hotmail.com", password: "ladygirlsteph@hotmail.com",
-    language: "Italian, Spanish", experience: "Event assistant in beverage, serving, loading for 8 years", ssn: "444889918", date_of_birth: "21/07/1993", mobile_phone: "+39 48 29 22 22")
+    language: "Italian, Spanish", experience: "Event assistant in beverage, serving, loading for 8 years", ssn: "444889918", date_of_birth: "21/07/1993", mobile_phone: "+39 48 29 22 22", gender: "female")
 
 employer1 = User.new(first_name: "Jeremiah", last_name: "Scrooge", company_name: "Woolworth", position: "Hiring manager",
     vat_number: "84921393",  land_phone: "+1 216 890 5673", role: "employer", email: "scrooge@gmail.com", password: "scrooge@gmail.com")
@@ -235,6 +265,14 @@ booking6.job_listing = job_listing6
 booking6.user = candidate6
 booking6.save
 
+booking7.job_listing = job_listing7
+booking7.user = candidate7
+booking7.save
+
+booking8.job_listing = job_listing8
+booking8.user = candidate8
+booking8.save
+
 employer1.save
 employer2.save
 employer3.save
@@ -256,6 +294,8 @@ event3.user = employer3
 event3.save
 job_listing3.event = event3
 job_listing3.save
+job_listing8.event = event3
+job_listing8.save
 
 event4.user = employer4
 event4.save
@@ -271,6 +311,9 @@ event6.user = employer6
 event6.save
 job_listing6.event = event6
 job_listing6.save
+job_listing7.event = event6
+job_listing6.save
+
 
 
 url1 = "http://res.cloudinary.com/orexibus/image/upload/v1530867814/Staffize%20profile%20pict/businesswoman-portrait-picture-id501368096.jpg"
