@@ -59,6 +59,8 @@
           <%= f.input :user, :input_html => { :value => @user.id }, as: :hidden %>
           <% if !current_user.job_listings.nil? %>
           <%= f.association :job_listing, collection: current_user.job_listings, selected: current_user.job_listings.first %>
+                  <%= submit_tag 'Offer a jobsssssssssss', class: 'btn btn-primary' %>
+
           <% else %>
           <%= flash[:alert] = "You have not created any jobs" %>
           <% end %>

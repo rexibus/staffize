@@ -17,12 +17,16 @@ class BookingsController < ApplicationController
 
   def my_bookings
     @bookings = Booking.where(user_id: current_user.id)
+    @bookings_user = []
+    @bookings.each do |b|
+      @bookings_user << b
+    end
   end
 
   def create
     if current_user.role == "candidate"
       if !(params[:event_id].empty?)
-        @job_listing = JobListing.find(params[:event_id])
+        @job_listing = JobListing.find(params[:job_listing_id])
       else
         set_job_listing
       end
@@ -36,31 +40,30 @@ class BookingsController < ApplicationController
 
     @event = @job_listing.event
     @booking = Booking.new(booking_params)
+    @booking.start_date = @job_listing.start_date
+    @booking.end_date = @job_listing.end_date
     @booking.job_listing_id = @job_listing.id
 
     if current_user.role == "candidate"
       @booking.user_id = current_user.id
-    elsif current_user.role == "employer"
-      @booking.user_id = params[:booking][:user].to_i
-    end
-
-
-    if current_user.role == "candidate"
+      @booking.status = "applied"
       if @booking.save
         flash[:notice] = "You have successfully applied for this job"
-        redirect_to job_listing_path(@job_listing)
+        redirect_to bookings_path
       else
         flash[:alert] = "Your have already applied for this job"
-        redirect_to job_listing_path(@job_listing)
+        redirect_to bookings_path
       end
     elsif current_user.role == "employer"
-      if @booking.save
-        flash[:notice] = "You have successfully offered #{@job_listing.title} to #{@booking.user.first_name} "
-        redirect_to candidate_job_listings_path(@booking.user_id)
-      else
-        flash[:alert] = "Your have already offered #{@job_listing.title} to this candidate"
-        redirect_to candidate_job_listings_path(Booking.where(user: params[:booking][:user]).first.user)
-      end
+        @booking.user_id = params[:booking][:user].to_i
+        @booking.status = "offered"
+        if @booking.save
+          flash[:notice] = "You have successfully offered #{@job_listing.title} to #{@booking.user.first_name} "
+          redirect_to candidate_job_listings_path(@booking.user_id)
+        else
+          flash[:alert] = "Your have already offered #{@job_listing.title} to this candidate"
+          redirect_to candidate_job_listings_path(Booking.where(user: params[:booking][:user]).first.user)
+        end
     end
   end
 

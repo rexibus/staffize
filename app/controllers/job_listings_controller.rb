@@ -1,6 +1,5 @@
 class JobListingsController < ApplicationController
   before_action :set_event, only: [:new, :create, :edit, :update]
-
   def index
     if current_user and current_user.role == "employer"
       # User is logged in, and employer:
@@ -81,7 +80,7 @@ class JobListingsController < ApplicationController
     @bookings = @job_listing.bookings
     @applicants = []
     @bookings.each do |b|
-      @applicants << b.user
+      @applicants << b.user if ((b.status == "pending") || (b.status == "applied"))
     end
   end
 
