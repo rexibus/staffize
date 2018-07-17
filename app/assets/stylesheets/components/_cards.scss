@@ -381,25 +381,26 @@
   display: block;
   position: relative;
   border-radius: 10px;
-  padding: 20px;
+  padding: 0 16px 16px 16px;
+  width: 60%;
   p {
     margin: 0;
     font-size: 16px;
+
   }
 }
 
 .event-details-top {
   padding-bottom: 16px;
-  width: 70%;
   h3 a {
-    padding: 10px;
-    background-color: $mainblue;
-    color: white;
+    text-decoration: none;
+    color: black;
     margin-left: 6px;
     border-radius: 3px;
+    padding: 8px;
   }
   p {
-    padding: 10px;
+    padding: 16px;
   }
 }
 
@@ -409,9 +410,11 @@
     font-weight: lighter;
     color: gray;
     font-size: 14px;
+    padding-left: 6px;
   }
   span {
     font-size: 14px;
+
   }
 }
 
@@ -419,8 +422,8 @@
   right: 0;
   bottom: 0;
   height: 50px;
-  padding-bottom: 50px;
-  padding-left: 10px;
+  padding-bottom: 60px;
+  padding-left: 16px;
 
   p {
     padding: 0px;
@@ -428,6 +431,12 @@
   }
 }
 
-.events-card {
-  margin: 16px 0;
+.event-card-flex {
+  display: flex;
+  justify-content: space-between;
+  h3 {
+    display:flex;
+    padding: 5px;
+  }
+
 }

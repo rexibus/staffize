@@ -348,44 +348,51 @@
 }
 
 .event-buttons {
+  float: right;
+  width: 40%;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
 }
 
 .button-event-delete-employer {
   border: 1px solid $mainblue;
   border-radius: 3px;
+  width: 80%;
   padding: 3px;
-  position: absolute;
-  right: 55px;
-  top: 80px;
+  text-align: center;
+  margin-top: 30px;
   font-size: 16px;
-  color: white;
-  background-color: $mainblue;
+  color: $mainblue;
+  background-color: white;
+
 }
 
 .button-event-update-employer {
   border: 1px solid $mainblue;
   border-radius: 3px;
+  width: 80%;
   padding: 3px;
-  position: absolute;
-  right: 50px;
-  top: 38px;
+  text-align: center;
+  margin-top: 30px;
   font-size: 16px;
-  color: white;
-  background-color: $mainblue;
+  color: $mainblue;
+  background-color: white;
+
 }
 
 
 
 .button-event-delete-employer:hover {
-  background-color: white;
-  color: $mainblue;
+  background-color: $mainblue;
+  color: white;
 }
 
 .button-event-update-employer:hover {
-  background-color: white;
-  color: $mainblue;
+  background-color: $mainblue;
+  color: white;
 }
 
 .button-create {
@@ -416,4 +423,23 @@
   background-color: $maingreen;
   color: white;
 
+}
+
+.event-update {
+  width: 50%;
+  padding: 15px 25px;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  font-size: 18px;
+}
+
+.event-delete {
+  width: 50%;
+  margin-top: 35px;
+  padding: 15px 25px;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  font-size: 18px;
 }
