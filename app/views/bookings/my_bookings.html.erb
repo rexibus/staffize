@@ -7,11 +7,12 @@
     <div class ="bookings">
 
 
-      <% @bookings.each do |booking| %>
+      <% @bookings_user.each do |booking| %>
 
       <div class = "bookings-candidate">
 
         <div class="bookings-details">
+          <!-- <h4 class = booking-card-title><%#= booking.job_listing.event.title.upcase %></h4> -->
 
           <h3 class = booking-card-title><%= booking.job_listing.title.upcase %></h3>
           <p class = booking-card-status>Application status: <%= booking.status %>

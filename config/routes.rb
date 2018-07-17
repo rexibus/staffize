@@ -22,6 +22,14 @@ Rails.application.routes.draw do
   resources :bookings, only: [:destroy]
   get "/bookings", to: "bookings#my_bookings"
   post "/bookings", to: "bookings#create"
+  get "/offers", to: "pages#offers"
+  get "/applicants", to: "pages#applicants"
+  get "/received_offers", to: "pages#received_offers"
+  get "/staff", to: "pages#staff"
+  get "/candidate_jobs", to: "pages#candidate_jobs"
+
+
+
 
 
 root to: 'pages#home'

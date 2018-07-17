@@ -1,0 +1,5 @@
+<% @received_offers.each do |o| %>
+<%= o.job_listing.title %> <%#= link_to "OK", event_job_listing_booking_path(o.job_listing.event, o.job_listing), method: :post %>
+  <%= link_to "Accept", elisabetta_path(o, :status => "accepted"), class: "btn btn-success"%>
+  <%= link_to "Decline", elisabetta_path(o, :status => "declined"), class: "btn btn-danger"%>
+<% end %>

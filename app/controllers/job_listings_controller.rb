@@ -1,6 +1,5 @@
 class JobListingsController < ApplicationController
   before_action :set_event, only: [:new, :create, :edit, :update]
-
   def index
 
     @categories = ["Assembly/Dismantling Assistant", "Event Assistant", "Host/Hostess", "Promoter"]
@@ -113,7 +112,7 @@ class JobListingsController < ApplicationController
     @bookings = @job_listing.bookings
     @applicants = []
     @bookings.each do |b|
-      @applicants << b.user
+      @applicants << b.user if ((b.status == "pending") || (b.status == "applied"))
     end
   end
 
