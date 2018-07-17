@@ -166,7 +166,9 @@ event3 = Event.new(title: "Eminem Concert",
   )
   event4 = Event.new(title: "Le Wagon Demo Day",
     description: "Groups present their web applicationprojects",
+
     venue: "H-Farm",
+
     venue_detail: "Ground Floor",
     start_date: "Friday, 20 July 2018",
     end_date: "Friday, 20 July 2018",
