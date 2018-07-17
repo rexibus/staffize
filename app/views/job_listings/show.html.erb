@@ -52,6 +52,9 @@
             <h4 style="display: inline;">Address:</h4> <p style="display: inline;"><%= @job_listing.event.address %></p>
           </div>
           <div class="right-show-cards">
+             <h4 style="display: inline;">Venue:</h4> <p style="display: inline;"><%= @job_listing.event.venue %></p>
+          </div>
+          <div class="right-show-cards">
             <div>
               <h4 style="display: inline;">Start Date: </h4><p style="display: inline;"><%= @job_listing.start_date.strftime("%A, %d %B %Y") %>
             </div>
@@ -133,6 +136,9 @@
             </div>
             <div class="right-show-cards-candidate no-margin">
               <h4 style="display: inline;">Address:</h4> <p style="display: inline;"><%= @job_listing.event.address %></p>
+            </div>
+             <div class="right-show-cards-candidate">
+             <h4 style="display: inline;">Venue:</h4> <p style="display: inline;"><%= @job_listing.event.venue %></p>
             </div>
             <div class="right-show-cards-candidate">
               <div>
