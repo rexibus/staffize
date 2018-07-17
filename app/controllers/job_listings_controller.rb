@@ -59,7 +59,7 @@ class JobListingsController < ApplicationController
     @job_listings = JobListing.where(:user_id == current_user.id)
     @job_listing = @job_listings.find(params[:id])
     @job_listing.destroy
-    redirect_to job_listing_path(@job_listing)
+    redirect_to job_listings_path
   end
 
   def candidates

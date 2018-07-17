@@ -166,11 +166,13 @@ event3 = Event.new(title: "Eminem Concert",
   )
   event4 = Event.new(title: "Le Wagon Demo Day",
     description: "Groups present their web applicationprojects",
-    venue: "Beautiful Building in Navigli area",
+
+    venue: "H-Farm",
+
     venue_detail: "Ground Floor",
     start_date: "Friday, 20 July 2018",
     end_date: "Friday, 20 July 2018",
-    address: "Corso Magenta, 52",
+    address: "Navigli Area",
     city: "Milano",
     province: "MI",
     zip_code: "20123",

@@ -40,8 +40,8 @@
 }
 
 .btn-right-side-secondary-employer {
-  margin-top: 2px;
-  margin-right: 3px;
+  margin-top: 3px;
+  margin-right: -3px;
   background-color: $mainblue;
   border-color: $mainblue;
   color: white;
@@ -62,9 +62,9 @@
 }
 
 .btn-right-side-secondary-employer:hover {
-  background-color: $hoverblue;
-  border-color: rgb(14, 37, 130);
-  color: white;
+  background-color: white;
+  border-color: $mainblue;
+  color: $mainblue;
 }
 
 .btn-right-side-secondary-employer-back:hover {
@@ -385,4 +385,17 @@
 .button-event-update-employer:hover {
   background-color: white;
   color: $mainblue;
+}
+
+.button-create {
+  margin: 30px 0;
+  padding: 16px;
+
+}
+
+.button-create:hover {
+  background-color: white;
+  color: $mainblue;
+  border-color: $mainblue;
+
 }

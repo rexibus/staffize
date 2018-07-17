@@ -382,12 +382,13 @@
 
 .event-details-top {
   padding-bottom: 16px;
-  width: 60%;
+  width: 70%;
   h3 a {
     padding: 10px;
     background-color: $mainblue;
     color: white;
     margin-left: 6px;
+    border-radius: 3px;
   }
   p {
     padding: 10px;
@@ -410,10 +411,15 @@
   right: 0;
   bottom: 0;
   height: 50px;
-  padding: 0;
+  padding-bottom: 50px;
+  padding-left: 10px;
 
   p {
-    padding: 10px;
+    padding: 0px;
     font-weight: lighter;
   }
+}
+
+.events-card {
+  margin: 16px 0;
 }

@@ -7,8 +7,7 @@ const second = document.querySelector(".full-second");
 
 
 
-if ((typeof first !== 'null') && (typeof second !== 'null')) {
-
+if (first && second) {
 
 second.addEventListener("mouseover", function(){
 
