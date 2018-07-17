@@ -32,3 +32,29 @@
   margin-top: -2px;
 
 }
+
+.navbar-form {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 0;
+  padding-right: 15px;
+  align-items: stretch;
+  margin-bottom: 12px;
+}
+
+#search-in-filter {
+  flex-grow: 1;
+  margin: 0;
+  min-width: 150px;
+  ;
+
+}
+
+#search-icon {
+  padding: 1px 7px !important;
+  font-size: 12px;
+  border-radius: 3px;
+}
+
+
+

@@ -1,4 +1,4 @@
-  <% if current_user && current_user.role == "employer" %>
+<% if current_user && current_user.role == "employer" %>
     <div class="container">
       <div class="employer-job-listings">
         <% @job_listings.each do |job| %>
@@ -76,8 +76,42 @@
     <div class="container">
       <div class="flex-container">
         <div class="sidebar">
-          <br>
-          <p></p>
+          <div class="filters">
+            <h3>Filter by:</h3>
+            <div class="filtercategory">
+              <div class="filteritem">
+                <%= simple_form_for :category, :url => job_listings_path, :method => :get do |f| %>
+              </div>
+              <div class="filteroptions">
+                <%= f.input :job_category , collection: @categories, as: :check_boxes, required: false  %>
+                <%= f.button :submit, value: "Apply filters", class: "btn button-filters" %>
+
+                <%end  %>
+              </div>
+            </div>
+            <div class="filtercategory filtersearch">
+              <legend class="filter-label">Location</legend>
+            </div>
+              <div class="filteroptions filtersearch">
+                <form class="navbar-form" method="get" action="/job_listings">
+                  <div class="form-group">
+                    <input type="text" name="search_value" class="form-control-sm" placeholder="Search" id="search-in-filter">
+                  </div>
+                  <button type="submit" class="btn-default" id="search-icon"><span class="glyphicon glyphicon-search" ></span></button>
+                </form>
+              </div>
+              <div class="filtercategory">
+                <div class="filteritem">
+                  <%= simple_form_for :gender, :url => job_listings_path, :method => :get do |f| %>
+                </div>
+                <div class="filteroptions">
+                  <%= f.input :gender , collection: @gender_list, as: :check_boxes, required: false  %>
+                  <%= f.button :submit, value: "Apply filters", class: "btn button-filters" %>
+
+                  <%end  %>
+                </div>
+              </div>
+          </div>
         <!-- left-side end -->
         </div>
 
@@ -88,7 +122,7 @@
                 <%= form_tag(job_listings_path, :method => "get", class: "form-inline") do%>
                 <%= text_field_tag :search, params[:search], placeholder: "Search Jobs", id: "jobs-search-candidate", class: "form-group" %>
                 <%= submit_tag "Search", :name => nil, class: "form-group button-search-candidate" %>
-                <% if @job_listings.blank? %>
+                <% if @final.blank? %>
                   <h4>No results</h4>
                 <% end %>
                 <% end %>
@@ -101,7 +135,7 @@
             </div>
           </div>
 
-          <% @job_listings.each do |job| %>
+          <% @final.each do |job| %>
           <div class="job-details">
               <div class="col-xs-10 col-sm-8 col-md-6 job-listing-cards-candidate">
                 <div class="job-details-top">
@@ -137,7 +171,3 @@
     <!-- container end -->
   </div>
   <% end %>
-
-
-
-
