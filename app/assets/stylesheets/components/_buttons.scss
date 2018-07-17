@@ -399,3 +399,20 @@
   border-color: $mainblue;
 
 }
+
+.button-filters {
+  border-color: $maingreen;
+  border-radius: 3px;
+  color: $maingreen;
+  font-size: 12px;
+  padding: 8px;
+  margin-bottom: 12px;
+  margin-left: 100px;
+
+}
+
+.button-filters:hover {
+  background-color: $maingreen;
+  color: white;
+
+}

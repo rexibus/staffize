@@ -7,23 +7,19 @@
   display: block;
   float: left;
   width: 18%;
-  background-color: white;
-  border-radius: 3px;
-  margin-bottom: 5px;
-  border: 1px solid $maingreen;
   h3 {
     text-align: center;
     background-color: $maingreen;
     color: white;
-    font-size: 20px;
+    font-size: 16px;
     margin-top: 0;
-    padding: 16px;
+    padding: 12px;
   }
 
   p {
-    font-size: 16px;
+    font-size: 14px;
     text-align: left;
-    padding: 12px;
+    padding: 8px;
   }
 
 }
@@ -46,3 +42,58 @@
  color: black;
 
 }
+
+.filterelement {
+  padding: 8px;
+}
+
+.filtercategory {
+  font-size: 14px;
+}
+
+.filteritem {
+  font-size: 12px;
+}
+
+.filteroptions {
+  font-size: 12px;
+  font-weight: lighter;
+  padding-left: 5px;
+  border-bottom: 1px solid $maingreen;
+
+}
+
+.collection_check_boxes {
+  padding: 5px;
+  font-weight: lighter;
+}
+
+.col-form-label {
+  font-size: 14px;
+  margin-bottom: 16px;
+
+
+}
+
+.filter-label {
+  font-size: 14px;
+  font-weight: lighter;
+  padding: 12px 5px 0 5px;
+  margin-bottom: 30px;
+}
+
+.filtersearch {
+  margin-bottom: 10px;
+}
+
+.filters {
+  background-color: white;
+  border-radius: 3px;
+  border-top: 1px solid $maingreen;
+  border-right: 1px solid $maingreen;
+  border-left: 1px solid $maingreen;
+  position: sticky;
+  top: 80px;
+}
+
+

@@ -2,6 +2,9 @@ class JobListingsController < ApplicationController
   before_action :set_event, only: [:new, :create, :edit, :update]
 
   def index
+
+    @categories = ["Assembly/Dismantling Assistant", "Event Assistant", "Host/Hostess", "Promoter"]
+    @gender_list = ["Male", "Female"]
     if current_user and current_user.role == "employer"
       # User is logged in, and employer:
       @job_listings = current_user.job_listings
