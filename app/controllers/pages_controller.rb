@@ -75,6 +75,12 @@ class PagesController < ApplicationController
     Booking.where(user: current_user).each do |b|
           @candidate_jobs << b if b.status == "accepted"
     end
+
+    def delete_my_job
+      @offer = Booking.find(params[:id])
+      @offer.destroy
+      redirect_to candidate_jobs_path
+    end
   end
 
 end
