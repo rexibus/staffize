@@ -482,3 +482,20 @@
   border-radius: 4px;
   transition: background-color 0.3s;
 }
+
+.btn-right-side-secondary-candidate-job {
+  bottom: 0px;
+  background-color: $maingreen;
+  border-color: $maingreen;
+  transition: background-color 0.3s;
+  color: white;
+  a {
+    text-decoration: none;
+  }
+}
+
+.btn-right-side-secondary-candidate-job:hover {
+  background-color: white;
+  border-color: $maingreen;
+  color: $maingreen;
+}

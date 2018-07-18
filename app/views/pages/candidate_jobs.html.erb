@@ -1,1 +1,49 @@
-<%= @candidate_jobs %>
+<div class="container">
+  <h1 class="candidates-index-title">My jobs</h1>
+
+  <% if @candidate_jobs.empty? %>
+      <h4 class="nothing-to-display"> You have no jobs to display </h4>
+  <% end %>
+
+    <% @candidate_jobs.each do |b| %>
+      <div class="events-list-wrapper">
+        <div class="cards-wrapper-flex">
+            <div class="staff-card-flex border-green">
+              <%= b.job_listing.event.user.company_name %>
+            </div> <!-- card 1 -->
+
+          <div class="second-offers-card border-green">
+              <div>
+            <p><strong>Event: </strong> <%= b.job_listing.event.title %></p>
+            <p><strong>Job offered: </strong> <%= b.job_listing.title %></p>
+              <p><strong>Start date:</strong> <%= b.start_date.strftime("%A, %d %B %Y") %><strong> - </strong><strong>End date:</strong> <%= b.end_date.strftime("%A, %d %B %Y") %>
+            </p>
+          </div>
+          <div>
+            <p>
+            <strong>Total salary: <%= b.job_listing.salary %> <%= b.job_listing.currency %></strong>
+            </p>
+          </div>
+          </div>
+
+          <div>
+
+        </div>
+
+          <div class="third-staff-card border-green">
+            <p><em> Hired on: <%= b.created_at.strftime("%d %b %Y") %></em></p>
+            <%= link_to "Remove", arbi_path(b),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" }, class: "btn btn-right-side-secondary-candidate-job offer-delete" %>
+
+          </div>
+          <div class="fourth-staff-card border-green">
+            <p><i class="fas fa-times red-check"></i> Job completed</p>
+            <p><i class="fas fa-times red-check"></i> Payment</p>
+            <p><i class="fas fa-times red-check"></i> Rate and review</p>
+          </div>
+      </div> <!-- cards-wrapper -->
+    </div> <!-- total wrapper -->
+    <% end %>
+
+</div> <!-- container -->
