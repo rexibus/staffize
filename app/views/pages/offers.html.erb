@@ -6,10 +6,10 @@
   <% else %>
 
   <div class="events-list-wrapper">
-
     <% @offered_jobs.each do |b| %>
         <div class="cards-wrapper-flex">
             <div class="offers-card-flex border-blue">
+              <%= link_to candidate_job_listings_path(b.user_id) do %>
               <div class="candidate-avatar">
                 <%= image_tag (cl_image_path(b.user.photo)), class: "avatar-baby"%>
               </div>
@@ -20,21 +20,24 @@
                   <p> <strong><%= b.user.first_name %> <%= b.user.last_name %></strong>, <%= age %> </p>
                 </div>
                 <div class="info-bottom">
-                  <p>Languages:  <%= b.user.language %></p> <p>Rating: <% rand(1..5).times do  %>
+                  <p>Languages:  <%= b.user.language %></p> <p><% rand(1..5).times do  %>
                     <span class="glyphicon glyphicon-star"></span>
                      <% end %>
                   </p>
                 </div>
+                <% end %>
               </div>
           </div> <!-- card 1 -->
           <div class="second-offers-card border-blue">
-            <p><strong>Event: </strong> <%= b.job_listing.event.title %></p>
-            <p><strong>Job offered: </strong> <%= b.job_listing.title %></p>
-            <p><strong>Start date:</strong> <%= b.start_date.strftime("%A, %d %B %Y") %> /
-            <strong>End date:</strong> <%= b.end_date.strftime("%A, %d %B %Y") %></p>
+
+              <p><strong>Event: </strong> <%= b.job_listing.event.title %></p>
+              <p><strong>Job offered: </strong> <%= b.job_listing.title %></p>
+              <p><strong>Start date:</strong> <%= b.start_date.strftime("%A, %d %B %Y") %> <strong>-</strong>
+              <strong>End date:</strong> <%= b.end_date.strftime("%A, %d %B %Y") %></p>
+
           </div>
           <div class="third-offers-card border-blue">
-            <p><strong>Offer sent:</strong> <br> <%= b.created_at.strftime("%A, %d %B %Y") %></p>
+            <p><em> Offer sent: <%= b.created_at.strftime("%d %b %Y") %></em></p>
               <%= link_to "Remove", offer_path(b),
                   method: :delete,
                   data: { confirm: "Are you sure?" }, class: "btn btn-right-side-secondary-employer offer-delete" %>
