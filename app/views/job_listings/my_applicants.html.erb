@@ -1,18 +1,51 @@
+<div class="container">
+  <h1 class="candidates-index-title">List of applicants</h1>
 
-  <h1>Applicants</h1>
-
-
-
-
-  <% @applicants.each do |applicant| %>
-
-   <p> <%= applicant.first_name %>  <%= applicant.last_name %> </p>
-  <% booking = applicant.bookings.where(job_listing_id: params[:id]).first %>
-  <%= link_to "Accept", elisabetta_path(booking, :status => "accepted"), class: "btn btn-success"%>
-  <%= link_to "Decline", elisabetta_path(booking, :status => "declined"), class: "btn btn-danger"%>
-
+  <% if @applicants.empty? %>
+      <h4 class="nothing-to-display"> You have no applicants to display </h4>
   <% end %>
 
+    <% @applicants.each do |b| %>
+      <div class="events-list-wrapper">
+        <div class="cards-wrapper-flex">
+            <div class="offers-card-flex border-blue">
+              <%= link_to candidate_job_listings_path(b) do %>
+              <div class="candidate-avatar">
+                <%= image_tag (cl_image_path(b.photo)), class: "avatar-baby"%>
+              </div>
+              <div class="candidate-info-flex">
+                <div class="top-info">
+                  <% age =  Date.today.year - b.date_of_birth.year  %>
+                  <% age -= 1 if Date.today < b.date_of_birth.year + age.years  %>
+                  <p> <strong><%= b.first_name %> <%= b.last_name %></strong>, <%= age %> </p>
+                </div>
+                <div class="info-bottom">
+                  <p>Languages:  <%= b.language %></p> <p><% rand(1..5).times do  %>
+                    <span class="glyphicon glyphicon-star"></span>
+                     <% end %>
+                  </p>
+                </div>
+                <% end %>
+              </div>
+          </div> <!-- card 1 -->
+          <div class="second-offers-card border-blue">
+            <% booking = b.bookings.where(job_listing_id: params[:id]).first %>
+            <p><strong>Event: </strong> <%= b.bookings.where(job_listing_id: params[:id]).first.job_listing.event.title %></p>
+            <p><strong>Job offered: </strong> <%= b.bookings.where(job_listing_id: params[:id]).first.job_listing.title %></p>
+            <p><strong>Start date:</strong> <%= b.bookings.where(job_listing_id: params[:id]).first.start_date.strftime("%A, %d %B %Y") %> <strong>-</strong>
+              <strong>End date:</strong> <%= b.bookings.where(job_listing_id: params[:id]).first.end_date.strftime("%A, %d %B %Y") %></p>
 
+          </div>
+          <div class="third-offers-card border-blue">
+            <p><em> Application received: <%= b.created_at.strftime("%d %b %Y") %></em></p>
+            <div class="applicants-accept-decline">
+              <%= link_to "Accept", elisabetta_path(booking, :status => "accepted"), class: "btn btn-accept"%>
+              <%= link_to "Decline", elisabetta_path(booking, :status => "declined"), class: "btn btn-danger btn-decline"%>
+            </div>
 
+          </div>
+      </div> <!-- cards-wrapper -->
+    </div> <!-- total wrapper -->
+    <% end %>
 
+</div> <!-- container -->

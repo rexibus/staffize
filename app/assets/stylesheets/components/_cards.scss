@@ -504,6 +504,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  width: 20%;
 
   p {
     margin: 0;
@@ -518,5 +519,86 @@
 
 .applicants-accept-decline {
   padding: 5px;
+
+}
+
+
+#company-name {
+  text-transform: uppercase;
+  font-weight: bolder;
+  margin: 0 auto;
+
+.fourth-staff-card {
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 12%;
+  p {
+    margin: 0;
+    font-size: 14px;
+    font-weight: lighter;
+    padding: 5px;
+
+  }
+}
+
+.red-check {
+  color: red;
+}
+
+.staff-card-flex {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 5px 5px 5px 10px;
+  width: 20%;
+
+  p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: lighter;
+
+  }
+  a {
+    text-decoration: none;
+    color: black;
+  }
+}
+
+.second-staff-card {
+  padding: 5px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-grow: 1;
+  p {
+    margin: 0;
+    font-size: 14px;
+    font-weight: lighter;
+    padding: 5px 5px 0 5px;
+
+  }
+}
+
+.third-staff-card {
+  padding: 5px;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 15%;
+
+  p {
+    margin: 0;
+    font-size: 14px;
+    font-weight: lighter;
+    padding: 5px;
+    color: gray;
+
+  }
+
 
 }
