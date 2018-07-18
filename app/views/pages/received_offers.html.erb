@@ -34,10 +34,12 @@
 
 
         <div class="third-offers-card border-green">
-        <p><strong>Offer Received:</strong> <br> <%= o.created_at.strftime("%A, %d %B %Y") %></p>
-        <%= link_to "Accept", elisabetta_path(o, :status => "accepted"), class: "btn btn-accept"%>
-        <%= link_to "Decline", elisabetta_path(o, :status => "declined"), class: "btn btn-danger btn-decline"%>
-        </div>
+          <p><strong>Offer Received:</strong> <br> <%= o.created_at.strftime("%A, %d %B %Y") %></p>
+          <div class="applicants-accept-decline">
+            <%= link_to "Accept", elisabetta_path(o, :status => "accepted"), class: "btn btn-accept"%>
+          <%= link_to "Decline", elisabetta_path(o, :status => "declined"), class: "btn btn-danger btn-decline"%>
+          </div>
+       </div>
 
 
 
