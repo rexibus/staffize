@@ -1,15 +1,15 @@
-<div>
-  <h1 class="canditade-index-title"> Offers I received from an employer:</h1>
+<div class ="container">
+  <h1 class="candidates-index-title"> Offers I received from an employer:</h1>
 
-  <% if @received_offers.blank? %>
-      <p> <%= You have no offers to display %> </p>
+  <% if @received_offers.empty? %>
+      <h4 class="nothing-to-display">  You have no offers to display </h4>
   <% else %>
 
   <div class="events-list-wrapper">
     <% @received_offers.each do |o| %>
       <div class="cards-wrapper-flex">
         <div class="offers-card-flex border-green">
-        <%= o.job_listing.event.user.company_name %>
+       <p id = "company-name"> <%= o.job_listing.event.user.company_name %> </p>
         </div>
 
         <div class="second-offers-card border-green">
@@ -34,7 +34,7 @@
         <div class="third-offers-card border-green">
         <p><strong>Offer Received:</strong> <br> <%= o.created_at.strftime("%A, %d %B %Y") %></p>
         <%= link_to "Accept", elisabetta_path(o, :status => "accepted"), class: "btn btn-accept"%>
-        <%= link_to "Decline", elisabetta_path(o, :status => "declined"), class: "btn btn-danger"%>
+        <%= link_to "Decline", elisabetta_path(o, :status => "declined"), class: "btn btn-danger btn-decline"%>
         </div>
 
 
