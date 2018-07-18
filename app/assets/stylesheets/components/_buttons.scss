@@ -465,3 +465,20 @@
   font-size: 18px;
 }
 
+.btn-accept {
+  background: $maingreen;
+  color: white;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.btn-accept:hover {
+  background-color: white;
+  border-color: $maingreen;
+  color: $maingreen;
+}
+
+.btn-decline {
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
