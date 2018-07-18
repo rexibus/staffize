@@ -33,6 +33,19 @@ class PagesController < ApplicationController
     end
   end
 
+  def accept_applicant
+    @booking = Booking.find(params[:id])
+    if params[:status] == "accepted"
+      @booking.status = params[:status]
+      @booking.save
+      redirect_to applicants_path
+    elsif params[:status] == "declined"
+      @booking.status = params[:status]
+      @booking.save
+      redirect_to applicants_path
+    end
+  end
+
   def received_offers
     @received_offers = []
     Booking.where(user: current_user).each do |b|
@@ -50,6 +63,11 @@ class PagesController < ApplicationController
       end
     end
 
+    def delete_hired
+      @offer = Booking.find(params[:id])
+      @offer.destroy
+      redirect_to staff_path
+    end
   end
 
   def candidate_jobs

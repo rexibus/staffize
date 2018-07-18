@@ -39,8 +39,8 @@
           <div class="third-offers-card border-blue">
             <p><em> Application received: <%= b.created_at.strftime("%d %b %Y") %></em></p>
             <div class="applicants-accept-decline">
-              <%= link_to "Accept", elisabetta_path(b, :status => "accepted"), class: "btn btn-accept"%>
-              <%= link_to "Decline", elisabetta_path(b, :status => "declined"), class: "btn btn-danger btn-decline"%>
+              <%= link_to "Accept", eli_path(b, :status => "accepted"), class: "btn btn-accept"%>
+              <%= link_to "Decline", eli_path(b, :status => "declined"), class: "btn btn-danger btn-decline"%>
             </div>
 
           </div>

@@ -3,7 +3,7 @@
 
   <% if @offered_jobs.empty? %>
       <h4 class="nothing-to-display"> You have no offers to display </h4>
-  <% else %>
+  <% end %>
 
   <div class="events-list-wrapper">
     <% @offered_jobs.each do |b| %>
@@ -46,5 +46,4 @@
       </div> <!-- cards-wrapper -->
     <% end %>
     </div> <!-- total wrapper -->
-  <% end %>
 </div> <!-- container -->
