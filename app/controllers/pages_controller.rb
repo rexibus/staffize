@@ -13,6 +13,13 @@ class PagesController < ApplicationController
         end
       end
     end
+
+    def delete_offers
+      @offer = Booking.find(params[:id])
+      @offer.destroy
+      redirect_to offers_path
+
+    end
   end
 
   def applicants
