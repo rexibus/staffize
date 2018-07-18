@@ -463,6 +463,7 @@
   display: flex;
   flex-direction: column;
   padding: 10px;
+  justify-content: space-around;
 
 }
 
@@ -474,12 +475,22 @@
 
 .second-offers-card {
   padding: 5px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
   p {
     margin: 0;
     font-size: 14px;
     font-weight: lighter;
-    padding: 5px;
+    padding: 5px 5px 0 5px;
 
+  }
+}
+
+.info-bottom {
+  p {font-size: 14px;
   }
 }
 
@@ -494,6 +505,7 @@
     font-size: 14px;
     font-weight: lighter;
     padding: 5px;
+    color: gray;
 
   }
 
