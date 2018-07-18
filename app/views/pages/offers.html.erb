@@ -1,8 +1,8 @@
 <div class="container">
   <h1 class="candidates-index-title">List of candidates I offered a job to:</h1>
 
-  <% if @offered_jobs.blank? %>
-      <p> <%= You have no offers to display %> </p>
+  <% if @offered_jobs.empty? %>
+      <h4 class="nothing-to-display"> You have no offers to display </h4>
   <% else %>
 
   <div class="events-list-wrapper">

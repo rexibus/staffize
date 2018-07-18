@@ -1,4 +1,88 @@
-<% @applicants.each do |b| %>
-  <%= b.job_listing.title %>
-  <%= b.status %>
-<% end %>
+<div class="container">
+  <h1 class="candidates-index-title">List of applicants:</h1>
+
+  <% if @applicants.empty? %>
+      <h4 class="nothing-to-display"> You have no applicants to display </h4>
+  <% end %>
+
+    <% @applicants.each do |b| %>
+      <div class="events-list-wrapper">
+        <div class="cards-wrapper-flex">
+            <div class="offers-card-flex border-blue">
+              <%= link_to candidate_job_listings_path(b.user_id) do %>
+              <div class="candidate-avatar">
+                <%= image_tag (cl_image_path(b.user.photo)), class: "avatar-baby"%>
+              </div>
+              <div class="candidate-info-flex">
+                <div class="top-info">
+                  <% age =  Date.today.year - b.user.date_of_birth.year  %>
+                  <% age -= 1 if Date.today < b.user.date_of_birth.year + age.years  %>
+                  <p> <strong><%= b.user.first_name %> <%= b.user.last_name %></strong>, <%= age %> </p>
+                </div>
+                <div class="info-bottom">
+                  <p>Languages:  <%= b.user.language %></p> <p><% rand(1..5).times do  %>
+                    <span class="glyphicon glyphicon-star"></span>
+                     <% end %>
+                  </p>
+                </div>
+                <% end %>
+              </div>
+          </div> <!-- card 1 -->
+          <div class="second-offers-card border-blue">
+
+              <p><strong>Event: </strong> <%= b.job_listing.event.title %></p>
+              <p><strong>Job offered: </strong> <%= b.job_listing.title %></p>
+              <p><strong>Start date:</strong> <%= b.start_date.strftime("%A, %d %B %Y") %> <strong>-</strong>
+              <strong>End date:</strong> <%= b.end_date.strftime("%A, %d %B %Y") %></p>
+
+          </div>
+          <div class="third-offers-card border-blue">
+            <p><em> Application received: <%= b.created_at.strftime("%d %b %Y") %></em></p>
+            <div class="applicants-accept-decline">
+              <%= link_to "Accept", elisabetta_path(b, :status => "accepted"), class: "btn btn-accept"%>
+              <%= link_to "Decline", elisabetta_path(b, :status => "declined"), class: "btn btn-danger btn-decline"%>
+            </div>
+
+          </div>
+      </div> <!-- cards-wrapper -->
+    </div> <!-- total wrapper -->
+    <% end %>
+
+</div> <!-- container -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

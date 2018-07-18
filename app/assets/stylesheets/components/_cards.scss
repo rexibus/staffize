@@ -444,8 +444,9 @@
 .offers-card-flex {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 5px;
+  justify-content: flex-start;
+  padding: 5px 5px 5px 10px;
+  width: 25%;
 
   p {
     margin: 0;
@@ -465,12 +466,14 @@
   padding: 10px;
   justify-content: space-around;
 
+
 }
 
 .cards-wrapper-flex {
   display: flex;
   justify-content: center;
   margin-bottom: 16px;
+  width: 100%;
 }
 
 .second-offers-card {
@@ -480,6 +483,7 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: flex-start;
+  flex-grow: 1;
   p {
     margin: 0;
     font-size: 14px;
@@ -500,6 +504,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+
   p {
     margin: 0;
     font-size: 14px;
@@ -511,4 +516,7 @@
 
 }
 
+.applicants-accept-decline {
+  padding: 5px;
 
+}
