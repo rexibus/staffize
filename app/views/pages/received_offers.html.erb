@@ -1,8 +1,50 @@
+<div>
+  <h1 class="canditade-index-title"> Offers I received from an employer:</h1>
 
-<h1 class=Canditade-index-title> Offers I received from an employer</h1>
+  <% if @received_offers.blank? %>
+      <p> <%= You have no offers to display %> </p>
+  <% else %>
 
-<% @received_offers.each do |o| %>
-<%= o.job_listing.title %> <%#= link_to "OK", event_job_listing_booking_path(o.job_listing.event, o.job_listing), method: :post %>
-  <%= link_to "Accept", elisabetta_path(o, :status => "accepted"), class: "btn btn-success"%>
-  <%= link_to "Decline", elisabetta_path(o, :status => "declined"), class: "btn btn-danger"%>
-<% end %>
+  <div class="events-list-wrapper">
+    <% @received_offers.each do |o| %>
+      <div class="cards-wrapper-flex">
+        <div class="offers-card-flex border-green">
+        <%= o.job_listing.event.user.company_name %>
+        </div>
+
+        <div class="second-offers-card border-green">
+          <div>
+            <p><strong>Event: </strong> <%= o.job_listing.event.title %></p>
+            <p><strong>Job offered: </strong> <%= o.job_listing.title %></p>
+              <p><strong>Start date:</strong> <%= o.start_date.strftime("%A, %d %B %Y") %><strong> - </strong><strong>End date:</strong> <%= o.end_date.strftime("%A, %d %B %Y") %>
+            </p>
+          </div>
+          <div>
+            <p>
+            <strong>Total salary: <%= o.job_listing.salary %> <%= o.job_listing.currency %></strong>
+            </p>
+          </div>
+          </div>
+
+          <div>
+
+        </div>
+
+
+        <div class="third-offers-card border-green">
+        <p><strong>Offer Received:</strong> <br> <%= o.created_at.strftime("%A, %d %B %Y") %></p>
+        <%= link_to "Accept", elisabetta_path(o, :status => "accepted"), class: "btn btn-accept"%>
+        <%= link_to "Decline", elisabetta_path(o, :status => "declined"), class: "btn btn-danger"%>
+        </div>
+
+
+
+        <%#= o.job_listing.title %> <%#= link_to "OK", event_job_listing_booking_path(o.job_listing.event, o.job_listing), method: :post %>
+
+
+
+      </div>
+    <% end %>
+  </div><!-- total wrapper -->
+  <% end %>
+</div> <!-- container -->
