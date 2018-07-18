@@ -28,6 +28,8 @@ Rails.application.routes.draw do
   get "/staff", to: "pages#staff"
   get "/candidate_jobs", to: "pages#candidate_jobs"
   delete "/offer/:id", to: "pages#delete_offers", as: :offer
+  delete "/staff/:id", to: "pages#delete_hired", as: :regis
+  get "/applicant/:id", to: "pages#accept_applicant", as: :eli
 
 
 
