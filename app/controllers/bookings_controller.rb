@@ -19,7 +19,7 @@ class BookingsController < ApplicationController
     @bookings = Booking.where(user_id: current_user.id)
     @bookings_user = []
     @bookings.each do |b|
-      @bookings_user << b
+      @bookings_user << b if b.status == "applied"
     end
   end
 
