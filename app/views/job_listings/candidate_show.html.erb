@@ -4,21 +4,21 @@
     <div class ="row profile-row1 ">
 
       <div class="col-xs-12 col-sm-6 col-md-3">
-        <div class="avatar-cropper">
-        <%= image_tag (cl_image_path(@user.photo)) %>
-      </div>
+         <!-- <div class="avatar-cropper"> -->
+        <%= cl_image_tag(@user.photo, :width => 200, :height =>200, :gravity=>"faces", :crop => "fill", :radius => "max") %>
+       <!-- </div> -->
 
       </div>
       <div class = "profile-main-info col-xs-12 col-sm-6 col-md-3">
         <% age =  Date.today.year - @user.date_of_birth.year  %>
         <% age -= 1 if Date.today < @user.date_of_birth.year + age.years  %>
         <h5 ><%= @user.first_name %>, <%= age %></h5>
-        <p><%= @user.gender %></p>
-        <p>Milano</p>
+        <p><%= @user.gender.capitalize %></p>
+         <p><%= @user.province = "Milan, IT" %> </p>
         <p><%= @user.language %></p>
       </div>
       <div class = "profile-join-info col-xs-12 col-sm-6 col-md-3">
-        <h5>I can join u as a:</h5>
+        <h5>I can join you as a:</h5>
 
             <p>Promoter</p>
             <p>Event Assistant</p>
@@ -26,11 +26,11 @@
       </div>
       <div col-xs-12 col-sm-6 col-md-3">
         <div class="mission-number", style= "margin-top: 0px">
-          <h5>Number of Staffize mission: </h5> 5 times
+          <h5>Number of mission with Staffize: </h5><%=rand(8..19) %> missions !
         </div>
         <div class="profile-show-rating">
           <p>
-          <% rand(1..5).times do  %>
+          <% rand(3..5).times do  %>
           <span class="glyphicon glyphicon-star"></span>
           <% end %>
           </p>
@@ -39,25 +39,33 @@
       </div>
     </div>
 
-    <div class =" row profile-row2">
-      <div style= "width: 80%";>
-      <%= simple_form_for @booking do |f| %>
+
+
+    <% if current_user.role == "employer"  %>
+
+    <div class ="row profile-row2">
+
+
+
+        <% if !current_user.job_listings.first.nil? %>
+
+          <%= simple_form_for @booking, wrapper: :inline_form, html: { class: 'form-inline' }  do |f| %>
           <%= f.input :user, :input_html => { :value => @user.id }, as: :hidden %>
-          <% if !current_user.job_listings.nil? %>
-          <%= f.association :job_listing, collection: current_user.job_listings, selected: current_user.job_listings.first %>
-                  <%= submit_tag 'Offer a jobsssssssssss', class: 'btn btn-primary' %>
+          <%= f.association :job_listing, collection: current_user.job_listings, selected: current_user.job_listings.first, label: false  %>
+          <%= submit_tag 'Offer a job', class: 'btn btn-job' %>
+          <% end %>
 
           <% else %>
-          <%= flash[:alert] = "You have not created any jobs" %>
-          <% end %>
+
+          <p class="text-center"> No job to propose yet. Create a job for this candidate </p>
+
       <% end %>
-    </div>
-      <div class ="button-offer">
-        <%= submit_tag 'Offer a job', class: 'btn btn-primary' %>
-      </div>
+
 
 
     </div>
+
+    <% end  %>
 
 
     <div class="row profile-row3" >

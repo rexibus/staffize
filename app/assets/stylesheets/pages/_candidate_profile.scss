@@ -15,9 +15,9 @@
 .profile-row2 {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: left;
   flex-direction: row;
-  padding: 6px;
+  padding: 15px;
   background: white;
   box-shadow: 0px 1px 2px rgba(10,10,10,0.3);
   background-color:  #F6F6F6;
@@ -43,23 +43,24 @@ border: 1px solid #0072ff;
 
 
 .avatar-cropper {
-       width: 150px;
-    height: 150px;
-    position: relative;
-    overflow: hidden;
-    border-radius: 50%;
-    box-shadow: 0px 1px 2px rgba(10,10,10,0.3);
-
+ width: 150px;
+ height: 150px;
+ position: absolute;
+ overflow: hidden;
+ border-radius: 50%;
+ box-shadow: 0px 1px 2px rgba(10,10,10,0.3);
 
 }
 
 
 
-  .avatar-cropper img {
+ .avatar-cropper img {
 
 
-    height: 100%;
-    }
+   height: 100%;
+   margin-left: -25%;
+
+}
 
 
 
@@ -112,5 +113,9 @@ border: 1px solid #0072ff;
 .my-presentation{
 padding: 5px 5px 5px 5px;
 
+}
+
+abbr[title="required"] {
+  display: none;
 }
 

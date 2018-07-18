@@ -483,6 +483,12 @@
   transition: background-color 0.3s;
 }
 
+
+.btn-job  {
+
+  background-color: $mainblue;
+  color: white;
+
 .btn-right-side-secondary-candidate-job {
   bottom: 0px;
   background-color: $maingreen;
@@ -498,4 +504,5 @@
   background-color: white;
   border-color: $maingreen;
   color: $maingreen;
+
 }
