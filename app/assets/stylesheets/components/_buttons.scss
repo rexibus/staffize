@@ -444,6 +444,17 @@
   font-size: 18px;
 }
 
+.offer-delete {
+  transition: background-color 0.3s;
+  font-size: 14px;
+  text-align: center;
+  padding: 12px 20px;
+  font-weight: bold;
+  border-radius: 4px;
+  margin-bottom: 5px;
+
+}
+
 .event-create-job {
   width: 50%;
   margin-top: 35px;
@@ -452,5 +463,5 @@
   font-weight: bold;
   transition: background-color 0.3s;
   font-size: 18px;
-
 }
+
