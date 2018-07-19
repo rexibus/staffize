@@ -4,8 +4,7 @@ class Booking < ApplicationRecord
 
   has_many :reviews
 
-  validates :user_id, uniqueness: { scope: :job_listing_id }
-  validates :job_listing_id, presence: true
+  validates :user, uniqueness: { scope: :job_listing }
 
   def accept
     self.status = "accepted"
