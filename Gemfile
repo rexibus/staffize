@@ -22,6 +22,9 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+gem 'momentjs-rails'
+gem 'bootstrap3-datetimepicker-rails'
+
 
 group :development do
   gem 'web-console', '>= 3.3.0'

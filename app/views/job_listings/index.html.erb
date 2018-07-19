@@ -64,16 +64,6 @@
                 <% end %>
                 <%= counter_2 %> accepted
               </li>
-              <li>
-                <% counter_3 = 0 %>
-                <% job.bookings.each do |booking|%>
-                  <% if booking.status == "pending" %>
-                    <% counter_3 += 1 %>
-                  <% end %>
-                <% counter_3 %>
-                <% end %>
-                <%= counter_3 %> pending
-              </li>
             </ul>
           </div>
           </div>
