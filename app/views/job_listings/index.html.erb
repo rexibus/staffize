@@ -34,17 +34,25 @@
                 Job created: <%= job.created_at.strftime("%d %B %Y")%>
               </li>
               <li>
-                <%= link_to "#{job.bookings.count}" + " applied", my_applicants_job_listing_path(job) %>
-              </li>
-              <li>
                 <% counter = 0 %>
                 <% job.bookings.each do |booking|%>
-                  <% if booking.status == "declined" %>
-                    <% counter += 1 %>
+                    <% if booking.status == "applied" %>
+                      <% counter += 1 %>
                   <% end %>
-                <% counter %>
+                  <% counter %>
+                  <% end %>
+
+                <%= link_to "#{counter}" + " applied", my_applicants_job_listing_path(job) %>
+              </li>
+              <li>
+                <% counter_1 = 0 %>
+                <% job.bookings.each do |booking|%>
+                  <% if booking.status == "declined" %>
+                    <% counter_1 += 1 %>
+                  <% end %>
+                <% counter_1 %>
                 <% end %>
-                <%= counter %> declined
+                <%= counter_1 %> declined
               </li>
               <li>
                 <% counter_2 = 0 %>
@@ -57,14 +65,14 @@
                 <%= counter_2 %> accepted
               </li>
               <li>
-                <% counter_2 = 0 %>
+                <% counter_3 = 0 %>
                 <% job.bookings.each do |booking|%>
                   <% if booking.status == "pending" %>
-                    <% counter_2 += 1 %>
+                    <% counter_3 += 1 %>
                   <% end %>
-                <% counter_2 %>
+                <% counter_3 %>
                 <% end %>
-                <%= counter_2 %> pending
+                <%= counter_3 %> pending
               </li>
             </ul>
           </div>

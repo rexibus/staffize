@@ -8,7 +8,7 @@
     <% @applicants.each do |b| %>
       <div class="events-list-wrapper">
         <div class="cards-wrapper-flex">
-            <div class="offers-card-flex border-blue">
+            <div class="offers-card-flex border-blue-right">
               <%= link_to candidate_job_listings_path(b.user_id) do %>
               <div class="candidate-avatar">
                 <%= image_tag (cl_image_path(b.user.photo)), class: "avatar-baby"%>
@@ -28,7 +28,7 @@
                 <% end %>
               </div>
           </div> <!-- card 1 -->
-          <div class="second-offers-card border-blue">
+          <div class="second-offers-card border-blue-right">
 
               <p><strong>Event: </strong> <%= b.job_listing.event.title %></p>
               <p><strong>Job offered: </strong> <%= b.job_listing.title %></p>

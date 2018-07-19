@@ -1,5 +1,5 @@
 <div class ="container">
-  <h1 class="candidates-index-title"> Offers I received from an employer:</h1>
+  <h1 class="candidates-index-title"> Offers I received from an employer</h1>
 
   <% if @received_offers.empty? %>
 
@@ -9,16 +9,17 @@
 
   <div class="events-list-wrapper">
     <% @received_offers.each do |o| %>
-      <div class="cards-wrapper-flex">
-        <div class="offers-card-flex border-green">
-       <p id = "company-name"> <%= o.job_listing.event.user.company_name %> </p>
+      <div class="cards-wrapper-flex card-with-link">
+        <div class="offers-card-flex border-green-right">
+          <%= link_to job_listing_path(o.job_listing) do %>
+            <p id="company-name"><span id="company-name-label"><em> Company: </em></span><br> <%= o.job_listing.event.user.company_name %> </p>
         </div>
 
-        <div class="second-offers-card border-green">
+        <div class="second-offers-card border-green-right">
           <div>
             <p><strong>Event: </strong> <%= o.job_listing.event.title %></p>
             <p><strong>Job offered: </strong> <%= o.job_listing.title %></p>
-              <p><strong>Start date:</strong> <%= o.start_date.strftime("%A, %d %B %Y") %><strong> - </strong><strong>End date:</strong> <%= o.end_date.strftime("%A, %d %B %Y") %>
+            <p><strong>Start date:</strong> <%= o.start_date.strftime("%A, %d %B %Y") %><strong> - </strong><strong>End date:</strong> <%= o.end_date.strftime("%A, %d %B %Y") %>
             </p>
           </div>
           <div>
@@ -26,29 +27,23 @@
             <strong>Total salary: <%= o.job_listing.salary %> <%= o.job_listing.currency %></strong>
             </p>
           </div>
-          </div>
-
-          <div>
-
         </div>
+
 
 
         <div class="third-offers-card border-green">
           <p><strong>Offer Received:</strong> <br> <%= o.created_at.strftime("%A, %d %B %Y") %></p>
           <div class="applicants-accept-decline">
-            <%= link_to "Accept", elisabetta_path(o, :status => "accepted"), class: "btn btn-accept"%>
-          <%= link_to "Decline", elisabetta_path(o, :status => "declined"), class: "btn btn-danger btn-decline"%>
+            <%= link_to "Accept", velaj_path(o, :status => "accepted"), class: "btn btn-accept"%>
+            <%= link_to "Decline", velaj_path(o, :status => "declined"), class: "btn btn-danger btn-decline"%>
           </div>
-       </div>
-
-
-
-        <%#= o.job_listing.title %> <%#= link_to "OK", event_job_listing_booking_path(o.job_listing.event, o.job_listing), method: :post %>
-
-
+        </div>
 
       </div>
-    <% end %>
-  </div><!-- total wrapper -->
+
+      <% end %>
+      <% end %>
+    </div><!-- total wrapper -->
   <% end %>
-</div> <!-- container -->
+
+  </div> <!-- container -->

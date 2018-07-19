@@ -8,11 +8,11 @@
     <% @candidate_jobs.each do |b| %>
       <div class="events-list-wrapper">
         <div class="cards-wrapper-flex">
-            <div class="staff-card-flex border-green">
-              <%= b.job_listing.event.user.company_name %>
+            <div class="staff-card-flex border-green-right">
+              <p id="company-name"><span id="company-name-label"><em> Company: </em></span><br><%= b.job_listing.event.user.company_name %>
             </div> <!-- card 1 -->
 
-          <div class="second-offers-card border-green">
+          <div class="second-offers-card border-green-right">
               <div>
             <p><strong>Event: </strong> <%= b.job_listing.event.title %></p>
             <p><strong>Job offered: </strong> <%= b.job_listing.title %></p>
@@ -30,7 +30,7 @@
 
         </div>
 
-          <div class="third-staff-card border-green">
+          <div class="third-staff-card border-green-right">
             <p><em> Hired on: <%= b.created_at.strftime("%d %b %Y") %></em></p>
             <%= link_to "Remove", arbi_path(b),
                   method: :delete,

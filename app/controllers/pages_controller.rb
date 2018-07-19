@@ -51,6 +51,19 @@ class PagesController < ApplicationController
     Booking.where(user: current_user).each do |b|
           @received_offers << b if b.status == "offered"
     end
+
+    def accept_offer
+    @booking = Booking.find(params[:id])
+    if params[:status] == "accepted"
+      @booking.status = params[:status]
+      @booking.save
+      redirect_to received_offers_path
+    elsif params[:status] == "declined"
+      @booking.status = params[:status]
+      @booking.save
+      redirect_to received_offers_path
+    end
+  end
   end
 
   def staff
