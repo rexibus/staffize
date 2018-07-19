@@ -3,6 +3,7 @@
     <div class="container">
       <div class="employer-job-listings">
         <% @job_listings.each do |job| %>
+        <div class="row" style="display: -webkit-box; margin-bottom: 20px">
           <div class="job-listing-cards-employer jobcard">
             <div class="job-details">
               <div class="job-details-top">
@@ -67,6 +68,7 @@
                 <%= counter_2 %> pending
               </li>
             </ul>
+          </div>
           </div>
         <% end %>
       <!-- job-listings end -->
