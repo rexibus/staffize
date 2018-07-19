@@ -4,6 +4,6 @@ $(document).ready(function() {
 
 
   console.log($("div.alert"));
-  $("div.alert").fadeOut(2000);
+  $("div.alert").fadeOut(5000);
 
 });
