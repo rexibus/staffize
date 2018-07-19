@@ -41,7 +41,7 @@ employer3 = User.create(first_name: "Melissa", last_name: "Cavalli", company_nam
     vat_number: "9800016",  land_phone: "+39 12 22 89 08 ", role: "employer", email: "scrooge@gmail.com", password: "scrooge@gmail.com")
 employer4 = User.create(first_name: "Marshall", last_name: "Mathers", company_name: "8 Mile Productions", position: "CEO",
     vat_number: "11110998",  land_phone: "+1 313 802 1219", role: "employer", email: "eminem@gmail.com", password: "eminem@gmail.com")
-employer5 = User.create(first_name: "Jan", last_name: "Jansen", company_name: "Virgin Gym", position: "Events Manager",
+employer5 = User.create(first_name: "Jan", last_name: "Jansen", company_name: "Monkadori", position: "Events Manager",
     vat_number: "9898336",  land_phone: "+39 73 65 77 12 ", role: "employer", email: "jantheman@gmail.com", password: "jantheman@gmail.com")
 employer6 = User.create(first_name: "Jakob", last_name: "Alexander", company_name: "BeerTime", position: "CEO",
     vat_number: "1198498",  land_phone: "+39 22 84 74 28", role: "employer",  email: "jalex@yahoo.com", password: "jalex@yahoo.com")
