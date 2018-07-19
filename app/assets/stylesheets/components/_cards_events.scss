@@ -1,0 +1,37 @@
+.column-event {
+
+  border-color: #0072ff;
+  border-style: solid;
+  border-width: 1px;
+  height: 250px;
+  font-size: 14px;
+font-weight: lighter;
+   display: flex;
+
+    align-items: center;
+
+}
+
+
+.status-event {
+
+  border-color: #0072ff;
+  border-style: solid;
+  border-width: 1px;
+  height: 250px;
+  font-size: 14px;
+font-weight: lighter;
+   display: flex;
+
+    align-items: center;
+
+    div {
+      padding: 6px;
+      width: 88%;
+
+
+    }
+
+
+
+}
