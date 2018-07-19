@@ -10,8 +10,8 @@
         <div class="cards-wrapper-flex">
             <div class="staff-card-flex border-blue">
               <%= link_to candidate_job_listings_path(b.user_id) do %>
-              <div class="candidate-avatar">
-                <%= image_tag (cl_image_path(b.user.photo)), class: "avatar-baby"%>
+              <div>
+                   <%= cl_image_tag(b.user.photo, :width => 65, :height =>65, :gravity=>"faces", :crop => "fill", :radius => "max") %>
               </div>
               <div class="candidate-info-flex">
                 <div class="top-info">
