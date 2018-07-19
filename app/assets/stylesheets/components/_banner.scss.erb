@@ -11,49 +11,28 @@ transition: 0.2s ease-in;
 
 }
 
-// .backcolor2 {
-// /*transition: 1s ease-in-out;*/
-// // background: linear-gradient(-225deg,rgba(0,128,252,1) 0%, rgba(0,128,252,1) 50%) !important;
-// background: linear-gradient(to right, rgba(109, 175, 255,1), rgba(0,128,252,1) );
-// cursor: pointer;
-// transition: 0.2s ease-in;
+.backcolor2 {
+/*transition: 1s ease-in-out;*/
+// background: linear-gradient(-225deg,rgba(0,128,252,1) 0%, rgba(0,128,252,1) 50%) !important;
+background: linear-gradient(to right, rgba(109, 175, 255,1), rgba(0,128,252,1) );
+cursor: pointer;
+transition: 0.2s ease-in;
 
-// }
-
-.full-second {
-  /*transition: 1s ease;*/
-  background: linear-gradient(-225deg,rgba(0,128,252,0.7) 0%, rgba(0,128,252,0.8) 100%),url('<%= asset_path("worker2.jpg")%>') 0 0 no-repeat;
-  overflow: hidden;
-
-  &:hover {
-  overflow: hidden;
-  opacity: 1;
-  background: linear-gradient(-225deg, rgba(0,128,252,0.7) 0%, rgba(0,128,252,0.8) 100%) ;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  transition: ease-in-out 0.5s;
-  }
 }
 
-.full {
+.backimage2 {
+  /*transition: 1s ease;*/
+
+
+  background: linear-gradient(-225deg,rgba(0,128,252,0.7) 0%, rgba(0,128,252,0.8) 100%), url('<%= asset_path("worker2.jpg")%>'), 0 0 no-repeat;
   overflow: hidden;
-  background: linear-gradient(-225deg, rgba(0, 217, 32,0.7) 0%, rgba(0, 217, 32,0.7) 100%),url('<%= asset_path("worker.jpg") %> ');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+}
 
-
-
-  &:hover {
+.backimage {
+  background: linear-gradient(-225deg, rgba(0, 217, 32,0.7) 0%, rgba(0, 217, 32,0.7) 100%),url('<%= asset_path("worker.jpg") %> '),
+ 0 0 no-repeat;
   overflow: hidden;
-  opacity: 1;
-  background: linear-gradient(-225deg, rgba(0, 217, 32,0.7) 0%, rgba(0, 217, 32,0.7) 100%);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  transition: ease-in-out 0.5s;
-  }
+
 }
 
 .wrapper {
