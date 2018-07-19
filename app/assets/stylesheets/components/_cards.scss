@@ -183,10 +183,7 @@
   }
 }
 
-.employer-job-listings {
-  display: flex;
 
-}
 
 .jobcard {
   width: 65%;
@@ -299,10 +296,12 @@
   }
 }
 .employer-job-listings {
-  display: flex;
+  //display: flex;
 }
 .jobcard {
   width: 65%;
+  margin-right: 0px;
+   float: left;
   h3 {
     font-size: 24px;
     margin-left: 35px;
@@ -318,7 +317,8 @@
   }
 }
 .statuscard {
-  width: 35%;
+  width: 30%;
+  margin-left: 0px;
   h3 {
     font-size: 24px;
     margin-left: 35px;
@@ -437,6 +437,7 @@
   h3 {
     display:flex;
     padding: 5px;
+
   }
 
 }

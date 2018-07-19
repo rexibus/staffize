@@ -44,6 +44,7 @@
   background-color: $mainblue;
   border-color: $mainblue;
   color: white;
+
 }
 
 .btn-right-side-secondary-employer-back {
@@ -426,8 +427,8 @@
 }
 
 .event-update {
-  width: 50%;
-  padding: 15px 25px;
+  width: 40%;
+  //padding: 15px 25px;
   border-radius: 4px;
   font-weight: bold;
   transition: background-color 0.3s;
@@ -435,9 +436,9 @@
 }
 
 .event-delete {
-  width: 50%;
+  width: 40%;
   margin-top: 35px;
-  padding: 15px 25px;
+  //padding: 15px 25px;
   border-radius: 4px;
   font-weight: bold;
   transition: background-color 0.3s;
@@ -456,9 +457,9 @@
 }
 
 .event-create-job {
-  width: 50%;
+  width: 40%;
   margin-top: 35px;
-  padding: 15px 25px;
+  //padding: 15px 25px;
   border-radius: 4px;
   font-weight: bold;
   transition: background-color 0.3s;
