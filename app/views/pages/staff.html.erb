@@ -8,7 +8,7 @@
     <% @hired_jobs.each do |b| %>
       <div class="events-list-wrapper">
         <div class="cards-wrapper-flex">
-            <div class="staff-card-flex border-blue">
+            <div class="staff-card-flex border-blue-right">
               <%= link_to candidate_job_listings_path(b.user_id) do %>
               <div>
                    <%= cl_image_tag(b.user.photo, :width => 65, :height =>65, :gravity=>"faces", :crop => "fill", :radius => "max") %>
@@ -28,7 +28,7 @@
                 <% end %>
               </div>
           </div> <!-- card 1 -->
-          <div class="second-staff-card border-blue">
+          <div class="second-staff-card border-blue-right">
 
               <p><strong>Event: </strong> <%= b.job_listing.event.title %></p>
               <p><strong>Job offered: </strong> <%= b.job_listing.title %></p>
@@ -36,7 +36,7 @@
               <strong>End date:</strong> <%= b.end_date.strftime("%A, %d %B %Y") %></p>
 
           </div>
-          <div class="third-staff-card border-blue">
+          <div class="third-staff-card border-blue-right">
             <p><em> Hired on: <%= b.created_at.strftime("%d %b %Y") %></em></p>
             <%= link_to "Remove", regis_path(b),
                   method: :delete,

@@ -233,7 +233,9 @@
 
 .job-listing-cards-employer {
   list-style-type: none;
-  border: 1px solid $mainblue;
+  border-top: 1px solid $mainblue;
+  border-bottom: 1px solid $mainblue;
+  border-left: 1px solid $mainblue;
   background-color: white;
   border-radius: 3px;
   margin: 5px 16px;
@@ -458,7 +460,12 @@
   a {
     text-decoration: none;
     color: black;
+    font-size: 16px;
+    margin: 0 auto;
   }
+  link {
+  text-align: center;
+ }
 }
 
 .candidate-info-flex {
@@ -490,6 +497,13 @@
     font-size: 14px;
     font-weight: lighter;
     padding: 5px 5px 0 5px;
+    color: black;
+    text-decoration: none;
+
+  }
+  a {
+    color: black;
+    text-decoration: none;
 
   }
 }
@@ -528,6 +542,13 @@
   text-transform: uppercase;
   font-weight: bolder;
   margin: 0 auto;
+  color: black;
+}
+
+#company-name-label {
+  text-transform: none;
+  color: black;
+
 }
 
 .fourth-staff-card {
@@ -603,4 +624,13 @@
   }
 
 
+}
+
+
+.card-with-link {
+ transition: transform .5s;
+}
+
+.card-with-link:hover {
+  transform: scale3d(1.006, 1.006, 1);
 }

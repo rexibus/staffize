@@ -1,52 +1,49 @@
-<h1 class="candidates-index-title">My Applications</h1>
+<div class ="container">
+  <h1 class="candidates-index-title"> My Applications</h1>
 
-<div class="container">
-  <!-- <div class=""> -->
+  <% if @bookings_user.empty? %>
 
+    <h4 class="nothing-to-display"> You have no applications to display. <br><br>
+      <%= link_to "Browse jobs now", job_listings_path, class: "btn btn-right-side-secondary-candidate-job"%>
+    </h4>
 
-    <div class ="bookings">
+  <% else %>
 
-
-      <% @bookings_user.each do |booking| %>
-
-      <div class = "bookings-candidate">
-
-        <div class="bookings-details">
-          <!-- <h4 class = booking-card-title><%#= booking.job_listing.event.title.upcase %></h4> -->
-
-          <h3 class = booking-card-title><%= booking.job_listing.title.upcase %></h3>
-          <p class = booking-card-status>Application status: <%= booking.status %>
-            <% if booking.status == nil  %>
-            <%= "pending" %>
-            <% end %>
-          </p>
-
-          <p class = "booking-card1">From: <%= booking.start_date.strftime("%A, %d %B %Y") %></p>
-          <p class = "booking-card2">To: <%= booking.end_date.strftime("%A, %d %B %Y") %></p>
+  <div class="events-list-wrapper">
+    <% @bookings_user.each do |b| %>
+      <div class="cards-wrapper-flex">
+        <div class="offers-card-flex border-green-right">
+          <p id="company-name"><span id="company-name-label"><em> Company: </em></span><br> <%= b.job_listing.event.user.company_name %> </p>
         </div>
 
-        <div class = "bookings-buttons">
-          <div class = "view-button">
-            <%= link_to "View", job_listing_path(booking.job_listing) %>
+        <div class="second-offers-card border-green-right">
+          <div>
+            <p><strong>Event: </strong> <%= b.job_listing.event.title %></p>
+            <p><strong>Job offered: </strong> <%= b.job_listing.title %></p>
+            <p>
+              <strong>Start date:</strong> <%= b.start_date.strftime("%A, %d %B %Y") %><strong> - </strong><strong>End date:</strong> <%= b.end_date.strftime("%A, %d %B %Y") %>
+            </p>
           </div>
-
-          <div class = "delete-button">
-            <%= link_to "Delete", booking_path(booking), method: :delete, data: { confirm: "Are you sure?" } %>
+          <div>
+            <p>
+            <strong>Total salary: <%= b.job_listing.salary %> <%= b.job_listing.currency %></strong>
+            </p>
           </div>
         </div>
 
-      </div>
+        <div class="third-offers-card border-green">
+          <p><strong>Applied on:</strong> <br> <%= b.created_at.strftime("%A, %d %B %Y") %></p>
+          <div class="applicants-accept-decline">
+            <%= link_to "View", job_listing_path(b.job_listing), class: "btn btn-accept" %>
+            <%= link_to "Delete", booking_path(b), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger btn-decline" %>
+          </div>
+        </div>
 
+    <% end %>
+    </div><!-- total wrapper -->
+  <% end %>
+</div> <!-- container -->
 
-
-
-      <% end %>
-
-
-    </div>
-
-  </div>
-</div>
 
 
 

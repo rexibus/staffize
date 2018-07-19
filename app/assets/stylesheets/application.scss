@@ -38,17 +38,51 @@ a:hover {
 }
 
 .border-green {
-    background-color: white;
-    border: 1px solid $maingreen;
-    border-radius: 3px;
+  background-color: white;
+  border: 1px solid $maingreen;
+  border-radius: 3px;
+
+}
+
+.border-green-left {
+  background-color: white;
+  border-top: 1px solid $maingreen;
+  border-right: 1px solid $maingreen;
+  border-bottom: 1px solid $maingreen;
+  border-radius: 3px;
+
+}
+
+.border-green-right {
+  background-color: white;
+  border-top: 1px solid $maingreen;
+  border-left: 1px solid $maingreen;
+  border-bottom: 1px solid $maingreen;
+  border-radius: 3px;
 
 }
 
 .border-blue {
-    background-color: white;
-    border: 1px solid $mainblue;
-    border-radius: 3px;
+  background-color: white;
+  border: 1px solid $mainblue;
+  border-radius: 3px;
 
+}
+
+.border-blue-left {
+  background-color: white;
+  border-top: 1px solid $mainblue;
+  border-right: 1px solid $mainblue;
+  border-bottom: 1px solid $mainblue;
+  border-radius: 3px;
+}
+
+.border-blue-right {
+  background-color: white;
+  border-top: 1px solid $mainblue;
+  border-left: 1px solid $mainblue;
+  border-bottom: 1px solid $mainblue;
+  border-radius: 3px;
 }
 
 .container {

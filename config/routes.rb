@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   get "/offers", to: "pages#offers"
   get "/applicants", to: "pages#applicants"
   get "/received_offers", to: "pages#received_offers"
+  get "/received_offers/:id", to: "pages#accept_offer", as: :velaj
   get "/staff", to: "pages#staff"
   get "/candidate_jobs", to: "pages#candidate_jobs"
   delete "/offer/:id", to: "pages#delete_offers", as: :offer
