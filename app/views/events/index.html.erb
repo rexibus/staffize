@@ -1,6 +1,13 @@
 <div class="container">
 
     <div class="events-wrapper">
+
+      <h1 class="candidates-index-title"> My Events</h1>
+      <% if @events.empty? %>
+        <h4 class="nothing-to-display"> You have no events to display <br><br>
+      <%= link_to "Create an event", new_event_path, class: "btn btn-right-side-secondary-employer"%></h4>
+      <% else %>
+
       <div class="events-search-and-create">
         <div class="form-group events-search">
           <%= form_tag(events_path, :method => "get", class: "form-inline") do %>
@@ -56,5 +63,6 @@
 
       </div>
 
+    <% end %>
     </div>
 </div>
