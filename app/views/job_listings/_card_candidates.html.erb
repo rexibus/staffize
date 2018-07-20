@@ -2,11 +2,8 @@
 <!-- height: 300, width: 400, crop: :fill -->
 <%= link_to candidate_job_listings_path(user.id) do %>
 
-  <% if !user.photo.file.nil? %>
-
     <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path(user.photo) %>);">
 
-      <% if !user.date_of_birth.nil? %>
 
         <div class="card-name-age">
           <% age =  Date.today.year - user.date_of_birth.year  %>
@@ -26,15 +23,6 @@
           </p>
         </div>
 
-      <% end  %>
-
-  <% elsif user.date_of_birth.nil?  %>
-
-    <% next  %>
-
-  <% end %>
-
     </div>
 
 <% end %>
-
