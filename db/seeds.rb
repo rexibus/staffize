@@ -14,7 +14,7 @@ User.delete_all
 
 
 
-puts "create candidate.."
+
 candidate1 = User.create(first_name: "Paola", last_name: "Vesco", role: "candidate", email: "brigitte@yahoo.com", password: "brigitte@yahoo.com",
     language: "Italian, English", experience: "10 years in the service industry. Model for 5 years.", ssn: "123456789", date_of_birth: "11/07/1993", mobile_phone: "+1 440 320 5673", gender: "female")
 candidate2 = User.create(first_name: "Laura", last_name: "Paselli", role: "candidate", email: "laura@gmail.com", password: "laura@gmail.com",
@@ -32,8 +32,8 @@ candidate7 = User.create(first_name: "Francesca", last_name: "De Niro", role: "c
 candidate8 = User.create(first_name: "Stephanie", last_name: "Tanner", role: "candidate", email: "ladygirlsteph@hotmail.com", password: "ladygirlsteph@hotmail.com",
     language: "Italian, Spanish", experience: "Event assistant in beverage, serving, loading for 8 years", ssn: "444889918", date_of_birth: "21/07/1994", mobile_phone: "+39 48 29 22 22", gender: "female")
 
-puts "create employer.."
-employer1 = User.create(first_name: "Jeremiah", last_name: "Scrooge", company_name: "Atlantic Production", position: "Hiring manager",
+
+employer1 = User.create(first_name: "Jeremiah", last_name: "Scrooge", company_name: "Dolce & Gabbana", position: "Hiring manager",
     vat_number: "84921393",  land_phone: "+1 216 890 5673", role: "employer", email: "scrooge@gmail.com", password: "scrooge@gmail.com")
 employer2 = User.create(first_name: "Arbi", last_name: "Velaj", company_name: "Spiambot", position: "Bossman",
     vat_number: "7836186",  land_phone: "+39 44 55 33 87", role: "employer", email: "arbi@gmail.com", password: "arbi@gmail.com")
@@ -49,7 +49,7 @@ employer6 = User.create(first_name: "Jakob", last_name: "Alexander", company_nam
 
 
 
-puts "Create event.."
+
 event1 = Event.new(title: "2018 Women's Hockey World Cup Preliminary Match",
     description: "Hockey Competition",
     venue: "San Siro Stadium",
@@ -132,7 +132,7 @@ event3 = Event.new(title: "Eminem Concert",
   )
 
 
-  event7 = Event.new(title: "Football Reboot-World Cup With Italy",
+  event7 = Event.new(title: "Football Confederation Cup",
     description: "Football Match",
     venue: "Stadio San Siro",
     venue_detail: "On the pitch",
@@ -153,7 +153,7 @@ event3 = Event.new(title: "Eminem Concert",
 
 
 # "Assembly/Dismantling Assistant", "Event assistant", "Host/Hostess", "Promoter"
-puts "Create job_listing.."
+
 
 
 
@@ -279,7 +279,7 @@ job_listing7 = JobListing.new(title: "Event Assistant needed for Mathematics Con
     currency: "EUR"
   )
 
-    job_listing9 = JobListing.new(title: "Opening game - group 1 : Italy-Sweeden",
+    job_listing9 = JobListing.new(title: "Opening game - group 1 : Italy-Spain",
     category: "Host/Hostess",
     description: "Seating people and serving wines, beers, long drinks etc. Key to this role is being smiley, proactive and extremely presentable.",
     requirement: "Must be able to serve guests with a smile.",
@@ -345,7 +345,7 @@ job_listing7 = JobListing.new(title: "Event Assistant needed for Mathematics Con
 
 
 
-puts "create booking.."
+
 booking1 = Booking.new(start_date: "Tuesday, 24 July 2018", end_date: "Tuesday, 31 July 2018", status: "accepted")
 booking2 = Booking.new(start_date: "Saturday, 21 July 2018", end_date: "Tuesday, 05 August 2018", status: "accepted")
 booking3 = Booking.new(start_date: "Wednesday, 25 July 2018", end_date: "Friday, 27 July 2018", status: "accepted")
