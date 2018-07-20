@@ -7,9 +7,11 @@
 
     <% @users.each do |user| %>
 
+      <% if user.date_of_birth.present? && user.photo.file.present? %>
         <div class="col-xs-12 col-sm-4">
           <%= render "card_candidates", user:user  %>
         </div>
+      <% end %>
 
     <% end %>
 

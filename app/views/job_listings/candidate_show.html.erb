@@ -10,10 +10,14 @@
 
       </div>
       <div class = "profile-main-info col-xs-12 col-sm-6 col-md-3">
-        <% age =  Date.today.year - @user.date_of_birth.year  %>
-        <% age -= 1 if Date.today < @user.date_of_birth.year + age.years  %>
-        <h5 ><%= @user.first_name %>, <%= age %></h5>
-        <p><%= @user.gender.capitalize %></p>
+        <% age = nil %>
+          <% if @user.date_of_birth.present? %>
+          <% age =  Date.today.year - @user.date_of_birth.year  %>
+          <% age -= 1 if Date.today < @user.date_of_birth.year + age.years  %>
+        <% end %>
+
+        <h5><%= @user.first_name %>,  <%= age.nil? ? "" : age %></h5>
+        <p><%= @user.gender.capitalize if @user.gender %></p>
          <p><%= @user.province = "Milan, IT" %> </p>
         <p><%= @user.language %></p>
       </div>
@@ -70,7 +74,7 @@
 
     <div class="row profile-row3" >
         <div class="profile-image col-xs-12 col-sm-4"; style="padding: 0px;">
-        <%= image_tag (cl_image_path(@user.photo))  %>
+        <%= image_tag (cl_image_path(@user.photo)) if @user.photo.file.present?  %>
         </div>
 
         <div class="profile-presentation col-xs-12 col-sm-7 col-sm-offset-1">
